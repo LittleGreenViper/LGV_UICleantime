@@ -41,6 +41,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="5dR-iV-gKf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-VC-I9g">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-wx-aJT">
                                 <rect key="frame" x="0.0" y="44" width="414" height="130"/>
                                 <constraints>
@@ -91,8 +95,10 @@
                             <constraint firstAttribute="trailing" secondItem="5dR-iV-gKf" secondAttribute="trailing" id="Apr-gM-cmS"/>
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CgY-jk-L7X"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D9Y-Fk-v9o"/>
+                            <constraint firstItem="xd3-VC-I9g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fq1-7i-AXM"/>
                             <constraint firstItem="0E8-cf-CxM" firstAttribute="top" secondItem="kj7-wx-aJT" secondAttribute="bottom" id="Kg4-fG-gVn"/>
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="top" secondItem="0E8-cf-CxM" secondAttribute="bottom" constant="8" symbolic="YES" id="Lim-Xc-BZb"/>
+                            <constraint firstItem="xd3-VC-I9g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zll-N3-mcE"/>
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bPu-gr-efd"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fHB-nR-LwN"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hT7-za-ISJ"/>
@@ -109,6 +115,7 @@
                         <outlet property="cleantime" destination="bsA-py-38B" id="wMG-ZI-621"/>
                         <outlet property="cleantimeReportLabel" destination="0E8-cf-CxM" id="eRn-cT-Zcg"/>
                         <outlet property="dateSelector" destination="kj7-wx-aJT" id="gTx-5z-6nR"/>
+                        <outlet property="throbber" destination="xd3-VC-I9g" id="ahF-1S-5TG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,6 +133,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jwJ-QG-7F4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eoO-vE-cOw">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="IpH-WD-sOd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="130"/>
                                 <constraints>
@@ -201,9 +212,11 @@
                         <viewLayoutGuide key="safeArea" id="1dL-I4-Gfh"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
+                            <constraint firstItem="eoO-vE-cOw" firstAttribute="centerY" secondItem="sDJ-Vd-Pkn" secondAttribute="centerY" id="2hf-sP-qr7"/>
                             <constraint firstAttribute="bottom" secondItem="jwJ-QG-7F4" secondAttribute="bottom" id="Box-IT-qDW"/>
                             <constraint firstItem="IpH-WD-sOd" firstAttribute="leading" secondItem="1dL-I4-Gfh" secondAttribute="leading" id="H9G-em-Em4"/>
                             <constraint firstItem="Mhp-66-lY1" firstAttribute="top" secondItem="IpH-WD-sOd" secondAttribute="bottom" id="Jb4-tY-ByD"/>
+                            <constraint firstItem="eoO-vE-cOw" firstAttribute="centerX" secondItem="sDJ-Vd-Pkn" secondAttribute="centerX" id="RvW-gE-78O"/>
                             <constraint firstItem="IpH-WD-sOd" firstAttribute="trailing" secondItem="1dL-I4-Gfh" secondAttribute="trailing" id="TUD-eZ-FhB"/>
                             <constraint firstAttribute="trailing" secondItem="jwJ-QG-7F4" secondAttribute="trailing" id="UAa-fb-tWs"/>
                             <constraint firstItem="IpH-WD-sOd" firstAttribute="top" secondItem="1dL-I4-Gfh" secondAttribute="top" id="WPA-n9-FM7"/>
@@ -224,7 +237,10 @@
                     <connections>
                         <outlet property="cleantime" destination="HCf-AQ-Hu9" id="V8Q-Vz-1sW"/>
                         <outlet property="dateSelector" destination="IpH-WD-sOd" id="MlB-zi-YoI"/>
+                        <outlet property="horizontalSwitchLabel" destination="5N4-z6-Qg0" id="3OH-0Q-9es"/>
                         <outlet property="horizontalVerticalSwitch" destination="yEt-MG-1MW" id="dg7-nW-xve"/>
+                        <outlet property="throbber" destination="eoO-vE-cOw" id="mhN-WB-ker"/>
+                        <outlet property="verticalSwitchLabel" destination="Vzr-Jy-paZ" id="OTO-sc-8qo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iX1-wz-whN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -242,6 +258,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Jn9-Li-aRu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="77I-2F-VKn">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-Uh-ejl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="130"/>
                                 <constraints>
@@ -298,6 +318,7 @@
                         <viewLayoutGuide key="safeArea" id="k8T-e5-ooH"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
+                            <constraint firstItem="77I-2F-VKn" firstAttribute="centerY" secondItem="fXn-Z8-CKS" secondAttribute="centerY" id="2kG-3a-s23"/>
                             <constraint firstItem="BmC-5X-DXL" firstAttribute="top" secondItem="ExF-Yg-dHX" secondAttribute="bottom" constant="8" id="8Ti-fI-Zle"/>
                             <constraint firstItem="Jn9-Li-aRu" firstAttribute="top" secondItem="fXn-Z8-CKS" secondAttribute="top" id="9md-kC-Vdk"/>
                             <constraint firstItem="2NE-Uh-ejl" firstAttribute="height" secondItem="fXn-Z8-CKS" secondAttribute="height" multiplier="0.25" priority="750" id="Dcy-YG-RU4"/>
@@ -309,6 +330,7 @@
                             <constraint firstItem="ExF-Yg-dHX" firstAttribute="leading" secondItem="k8T-e5-ooH" secondAttribute="leading" constant="20" id="PG6-YV-gFM"/>
                             <constraint firstItem="2NE-Uh-ejl" firstAttribute="top" secondItem="k8T-e5-ooH" secondAttribute="top" id="ZUE-f7-lsU"/>
                             <constraint firstAttribute="bottom" secondItem="Jn9-Li-aRu" secondAttribute="bottom" id="dKl-fT-e72"/>
+                            <constraint firstItem="77I-2F-VKn" firstAttribute="centerX" secondItem="fXn-Z8-CKS" secondAttribute="centerX" id="dQv-0T-dBx"/>
                             <constraint firstItem="2NE-Uh-ejl" firstAttribute="trailing" secondItem="k8T-e5-ooH" secondAttribute="trailing" id="iFG-au-5e5"/>
                             <constraint firstItem="ExF-Yg-dHX" firstAttribute="top" secondItem="2NE-Uh-ejl" secondAttribute="bottom" id="maz-pi-lKa"/>
                             <constraint firstItem="BmC-5X-DXL" firstAttribute="trailing" secondItem="k8T-e5-ooH" secondAttribute="trailing" id="qqM-f3-MUT"/>
@@ -321,7 +343,9 @@
                     <connections>
                         <outlet property="cleantime" destination="t7q-2t-yY1" id="oHj-Vx-OyM"/>
                         <outlet property="dateSelector" destination="2NE-Uh-ejl" id="Nra-oo-ZSP"/>
+                        <outlet property="isTopClosedLabel" destination="yun-JZ-gJw" id="b1S-dJ-6lf"/>
                         <outlet property="isTopClosedSwitch" destination="AoR-mo-une" id="bWz-PL-wcx"/>
+                        <outlet property="throbber" destination="77I-2F-VKn" id="fXg-ls-BtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIq-LG-AwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,6 +363,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-gradient" translatesAutoresizingMaskIntoConstraints="NO" id="19P-8Z-32O">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="YDQ-XI-E8H">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor"/>
+                            </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hV5-j8-5ED">
                                 <rect key="frame" x="0.0" y="44" width="414" height="130"/>
                                 <constraints>
@@ -374,8 +402,10 @@
                             <constraint firstAttribute="bottom" secondItem="19P-8Z-32O" secondAttribute="bottom" id="17S-LN-Ss7"/>
                             <constraint firstItem="hV5-j8-5ED" firstAttribute="top" secondItem="t39-yH-CZK" secondAttribute="top" id="J6a-Wh-Lba"/>
                             <constraint firstItem="hV5-j8-5ED" firstAttribute="height" secondItem="5k4-pn-52d" secondAttribute="height" multiplier="0.25" priority="750" id="Lyb-xy-sQd"/>
+                            <constraint firstItem="YDQ-XI-E8H" firstAttribute="centerY" secondItem="5k4-pn-52d" secondAttribute="centerY" id="Qcz-40-EcK"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="trailing" secondItem="t39-yH-CZK" secondAttribute="trailing" id="deF-Fa-rTG"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="bottom" secondItem="t39-yH-CZK" secondAttribute="bottom" id="ew8-j5-vhB"/>
+                            <constraint firstItem="YDQ-XI-E8H" firstAttribute="centerX" secondItem="5k4-pn-52d" secondAttribute="centerX" id="frn-61-TQi"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="leading" secondItem="t39-yH-CZK" secondAttribute="leading" id="lLu-Qe-Vcd"/>
                             <constraint firstAttribute="trailing" secondItem="19P-8Z-32O" secondAttribute="trailing" id="mrf-xm-DPd"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="top" secondItem="hV5-j8-5ED" secondAttribute="bottom" id="oA1-kN-q70"/>
@@ -391,6 +421,7 @@
                     <connections>
                         <outlet property="cleantime" destination="JrZ-cY-Xxh" id="d8N-up-GsH"/>
                         <outlet property="dateSelector" destination="hV5-j8-5ED" id="pw2-3p-ZoI"/>
+                        <outlet property="throbber" destination="YDQ-XI-E8H" id="aGg-3p-ahI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNx-VC-tKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -414,6 +445,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

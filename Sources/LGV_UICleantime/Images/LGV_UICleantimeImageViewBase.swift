@@ -147,7 +147,9 @@ public extension LGV_UICleantimeImageViewBase {
      */
     override func layoutSubviews() {
         super.layoutSubviews()
-        if nil == image {
+        if let cachedImage = image {
+            newImage(cachedImage)
+        } else {
             DispatchQueue.main.async { [weak self] in self?.newImage(self?.generatedImage) }
         }
     }

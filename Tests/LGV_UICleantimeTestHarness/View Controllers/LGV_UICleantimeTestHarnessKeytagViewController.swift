@@ -20,7 +20,6 @@
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
-import RVS_GeneralObserver
 import LGV_Cleantime
 import LGV_UICleantime
 
@@ -29,58 +28,37 @@ import LGV_UICleantime
 /* ###################################################################################################################################### */
 /**
  */
-class LGV_UICleantimeTestHarnessKeytagViewController: UIViewController, RVS_GeneralObserverSubTrackerProtocol {
-    /* ################################################################## */
-    /**
-     This is the cleantime medallion image.
-    */
-    @IBOutlet weak var cleantime: LGV_UISingleCleantimeKeytagImageView?
-    
+class LGV_UICleantimeTestHarnessKeytagViewController: LGV_UICleantimeBaseViewController {
     /* ################################################################## */
     /**
      This is a switch that selectes whether the ring is open or closed.
     */
     @IBOutlet weak var isTopClosedSwitch: UISwitch?
-    
-    /* ################################################################## */
-    /**
-     This allows the tester to select a date.
-    */
-    @IBOutlet weak var dateSelector: UIDatePicker?
-        
-    /* ################################################################################################################################## */
-    // MARK: RVS_GeneralObserverSubTrackerProtocol Conformance
-    /* ################################################################################################################################## */
-    /* ################################################################## */
-    /**
-     This is a UUID that is used internally
-     */
-    var uuid = UUID()
-    
-    /* ############################################################## */
-    /**
-     This stores our subscriptions.
-     */
-    var subscriptions: [RVS_GeneralObservableProtocol] = []
-}
 
-/* ###################################################################################################################################### */
-// MARK: Base Class Overrides
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessKeytagViewController {
     /* ################################################################## */
     /**
-     Called just before the view appears. We use it to set the date picker date.
-     
-     - parameter inIsAnimated: True, if the appearance is to be animated.
+     The top closed label.
     */
-    override func viewWillAppear(_ inIsAnimated: Bool) {
-        super.viewWillAppear(inIsAnimated)
-        cleantime?.subscribe(self)
-        if let dateSelector = dateSelector {
-            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
-            newDate(dateSelector)
-        }
+    @IBOutlet weak var isTopClosedLabel: UILabel?
+
+    /* ################################################################## */
+    /**
+     This will show a "busy throbber," while the images are being composited.
+    */
+    override func showThrobber() {
+        super.showThrobber()
+        isTopClosedSwitch?.isHidden = true
+        isTopClosedLabel?.isHidden = true
+    }
+    
+    /* ################################################################## */
+    /**
+     This will hide the "busy throbber," after the images were composited.
+    */
+    override func hideThrobber() {
+        super.hideThrobber()
+        isTopClosedSwitch?.isHidden = false
+        isTopClosedLabel?.isHidden = false
     }
 }
 
@@ -95,35 +73,7 @@ extension LGV_UICleantimeTestHarnessKeytagViewController {
      - parameter inSwitch: The switch.
     */
     @IBAction func switchChanged(_ inSwitch: UISwitch) {
-        cleantime?.isRingClosed = inSwitch.isOn
-    }
-    
-    /* ################################################################## */
-    /**
-     When a new date is selected, it is given to the medallion image.
-     
-     - parameter inDatePicker: The picker instance.
-    */
-    @IBAction func newDate(_ inDatePicker: UIDatePicker) {
-        LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate = inDatePicker.date
-        let calculator = LGV_CleantimeDateCalc(startDate: inDatePicker.date, calendar: Calendar.current).cleanTime
-        cleantime?.totalDays = calculator.totalDays
-        cleantime?.totalMonths = calculator.totalMonths
-        cleantime?.setNeedsLayout()
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: LGV_UICleantimeImageViewObserver Conformance
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessKeytagViewController: LGV_UICleantimeImageViewObserver {
-    /* ################################################################## */
-    /**
-     This is called when the images have completed rendering.
-     
-     - parameter view: The completed UIImageView
-     */
-    func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
-        print("Received rendering complete callback!")
+        showThrobber()
+        (cleantime as? LGV_UISingleCleantimeKeytagImageView)?.isRingClosed = inSwitch.isOn
     }
 }

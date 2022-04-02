@@ -20,7 +20,6 @@
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
-import RVS_GeneralObserver
 import LGV_Cleantime
 import LGV_UICleantime
 
@@ -29,39 +28,46 @@ import LGV_UICleantime
 /* ###################################################################################################################################### */
 /**
  */
-class LGV_UICleantimeTestHarnessKeytagsViewController: UIViewController, RVS_GeneralObserverSubTrackerProtocol {
-    /* ################################################################## */
-    /**
-     This is the cleantime medallion image.
-    */
-    @IBOutlet var cleantime: LGV_UIMultipleCleantimeKeytagImageView!
-    
-    /* ################################################################## */
-    /**
-     This allows the tester to select a date.
-    */
-    @IBOutlet weak var dateSelector: UIDatePicker?
-    
+class LGV_UICleantimeTestHarnessKeytagsViewController: LGV_UICleantimeBaseViewController {
     /* ################################################################## */
     /**
      This allows the user to switch between horizontal arrangement, and vertical arrangement.
     */
     @IBOutlet weak var horizontalVerticalSwitch: UISwitch?
-    
-    /* ################################################################################################################################## */
-    // MARK: RVS_GeneralObserverSubTrackerProtocol Conformance
-    /* ################################################################################################################################## */
+
     /* ################################################################## */
     /**
-     This is a UUID that is used internally
-     */
-    var uuid = UUID()
+     The horizontal side label.
+    */
+    @IBOutlet weak var horizontalSwitchLabel: UILabel?
 
-    /* ############################################################## */
+    /* ################################################################## */
     /**
-     This stores our subscriptions.
-     */
-    var subscriptions: [RVS_GeneralObservableProtocol] = []
+     The vertical side label.
+    */
+    @IBOutlet weak var verticalSwitchLabel: UILabel?
+
+    /* ################################################################## */
+    /**
+     This will show a "busy throbber," while the images are being composited.
+    */
+    override func showThrobber() {
+        super.showThrobber()
+        horizontalVerticalSwitch?.isHidden = true
+        horizontalSwitchLabel?.isHidden = true
+        verticalSwitchLabel?.isHidden = true
+    }
+    
+    /* ################################################################## */
+    /**
+     This will hide the "busy throbber," after the images were composited.
+    */
+    override func hideThrobber() {
+        super.hideThrobber()
+        horizontalVerticalSwitch?.isHidden = false
+        horizontalSwitchLabel?.isHidden = false
+        verticalSwitchLabel?.isHidden = false
+    }
 }
 
 /* ###################################################################################################################################### */
@@ -75,21 +81,8 @@ extension LGV_UICleantimeTestHarnessKeytagsViewController {
      - parameter inSwitch: The switch instance.
     */
     @IBAction func orientationSwitchChanged(_ inSwitch: UISwitch) {
-        cleantime?.keytagsAreAVerticalStrip = inSwitch.isOn
-    }
-    
-    /* ################################################################## */
-    /**
-     When a new date is selected, it is given to the medallion image.
-     
-     - parameter inDatePicker: The picker instance.
-    */
-    @IBAction func newDate(_ inDatePicker: UIDatePicker) {
-        LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate = inDatePicker.date
-        let calculator = LGV_CleantimeDateCalc(startDate: inDatePicker.date, calendar: Calendar.current).cleanTime
-        cleantime?.totalDays = calculator.totalDays
-        cleantime?.totalMonths = calculator.totalMonths
-        cleantime?.setNeedsLayout()
+        showThrobber()
+        (cleantime as? LGV_UIMultipleCleantimeKeytagImageView)?.keytagsAreAVerticalStrip = inSwitch.isOn
     }
 }
 
@@ -105,26 +98,6 @@ extension LGV_UICleantimeTestHarnessKeytagsViewController {
     */
     override func viewWillAppear(_ inIsAnimated: Bool) {
         super.viewWillAppear(inIsAnimated)
-        cleantime?.subscribe(self)
-        if let dateSelector = dateSelector {
-            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
-            horizontalVerticalSwitch?.isOn = cleantime?.keytagsAreAVerticalStrip ?? false
-            newDate(dateSelector)
-        }
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: LGV_UICleantimeImageViewObserver Conformance
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessKeytagsViewController: LGV_UICleantimeImageViewObserver {
-    /* ################################################################## */
-    /**
-     This is called when the images have completed rendering.
-     
-     - parameter view: The completed UIImageView
-     */
-    func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
-        print("Received rendering complete callback!")
+        horizontalVerticalSwitch?.isOn = (cleantime as? LGV_UIMultipleCleantimeKeytagImageView)?.keytagsAreAVerticalStrip ?? false
     }
 }

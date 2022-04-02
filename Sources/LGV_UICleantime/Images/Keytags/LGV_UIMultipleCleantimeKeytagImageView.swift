@@ -55,6 +55,13 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     
     /* ################################################################## */
     /**
+     To speed things up, we cache the bodies, so we don't have to reload images.
+     The key is the image resource name.
+     */
+    private var _cachedBodyImages: [String: UIImage] = [:]
+    
+    /* ################################################################## */
+    /**
      Contains cached drawn tags.
      */
     private var _cachedVerticalKeytags: UIImage?
@@ -115,21 +122,19 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
             print("Drawing Vertical keytags.")
         #endif
 
-        if var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue) {
+        if var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue),
+           let openRingImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Open.rawValue) {
             let keytagDescriptions = LGV_CleantimeKeytagDescription.getTheFullMonty(totalDays: totalDays, totalMonths: totalMonths)
             
-            var topOffset = CGFloat(0)
             var imageSize = ringImage.size
             let offsetIncrement = (imageSize.height * Self._verticalOrientationOffsetCoefficient)
             imageSize.height += offsetIncrement * CGFloat(keytagDescriptions.count - 1)
             UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+            var rectToFill = CGRect(origin: .zero, size: ringImage.size)
             keytagDescriptions.forEach {
-                _drawAKeytagImage(for: $0, putARingOnIt: ringImage, in: CGRect(origin: CGPoint(x: 0, y: topOffset), size: ringImage.size))
-                if 0 == topOffset {
-                    ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Open.rawValue) ?? ringImage
-                }
-                
-                topOffset += offsetIncrement
+                _drawAKeytagImage(for: $0, putARingOnIt: ringImage, in: rectToFill)
+                ringImage = openRingImage
+                rectToFill.origin.y += offsetIncrement
             }
             
             _cachedVerticalKeytags = UIGraphicsGetImageFromCurrentImageContext()
@@ -197,13 +202,14 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
      - parameter in: The rect in which to draw the image. It should be the size of the entire keytag.
      */
     private func _drawAKeytagImage(for inDescription: LGV_CleantimeKeytagDescription, putARingOnIt inRingImage: UIImage?, in inRect: CGRect) {
-        if nil != inRingImage,
-           let bodyImage = UIImage(named: inDescription.bodyImage.rawValue),
+        if let ringImage = inRingImage,
+           let bodyImage = _cachedBodyImages[inDescription.bodyImage.rawValue] ?? UIImage(named: inDescription.bodyImage.rawValue),
            let textImage = UIImage(named: inDescription.textImage.rawValue) {
             #if DEBUG
                 print("Drawing keytag into \(inRect).")
             #endif
-            inRingImage?.draw(in: inRect, blendMode: .normal, alpha: 1)
+            _cachedBodyImages[inDescription.bodyImage.rawValue] = bodyImage
+            ringImage.draw(in: inRect, blendMode: .normal, alpha: 1)
             bodyImage.draw(in: inRect, blendMode: .normal, alpha: 1)
             textImage.draw(in: inRect, blendMode: .normal, alpha: 1)
         }

@@ -10,6 +10,7 @@
 		D400F6B02698971C001C261A /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */; };
 		D401FAF726989C2700540C9F /* LGV_UICleantimeMedallions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */; };
 		D40EF5B126AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */; };
+		D41361C027F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41361BF27F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift */; };
 		D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */; };
 		D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */; };
 		D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C82694AC20007D5883 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeMedallions.swift; sourceTree = "<group>"; };
 		D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionsViewController.swift; sourceTree = "<group>"; };
+		D41361BF27F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeBaseViewController.swift; sourceTree = "<group>"; };
 		D42272C927A45D9C0006A828 /* UICleantime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UICleantime.docc; sourceTree = "<group>"; };
 		D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionViewController.swift; sourceTree = "<group>"; };
 		D43C66C82694AC20007D5883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		D4B247C2269F0C76004D8D1E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D41361BF27F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift */,
 				D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */,
 				D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */,
 				D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */,
@@ -408,6 +411,7 @@
 			files = (
 				D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */,
 				D40EF5B126AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift in Sources */,
+				D41361C027F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift in Sources */,
 				D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */,
 				D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */,
 				D4878F882698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift in Sources */,

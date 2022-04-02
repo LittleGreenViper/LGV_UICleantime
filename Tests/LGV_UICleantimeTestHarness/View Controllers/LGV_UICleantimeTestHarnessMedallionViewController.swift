@@ -20,23 +20,16 @@
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
-import RVS_GeneralObserver
 import LGV_Cleantime
 import LGV_UICleantime
 
 /* ###################################################################################################################################### */
-// MARK: - Main View Controller -
+// MARK: - Single Medallion View Controller -
 /* ###################################################################################################################################### */
 /**
  This provides a simple view, with a date picker, and a display medallion instance.
  */
-class LGV_UICleantimeTestHarnessMedallionViewController: UIViewController, RVS_GeneralObserverSubTrackerProtocol {
-    /* ################################################################## */
-    /**
-     This allows the tester to select a date.
-    */
-    @IBOutlet weak var dateSelector: UIDatePicker?
-    
+class LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeBaseViewController {    
     /* ################################################################## */
     /**
      This displays a textual representation of the cleantime.
@@ -51,77 +44,32 @@ class LGV_UICleantimeTestHarnessMedallionViewController: UIViewController, RVS_G
 
     /* ################################################################## */
     /**
-     This is the cleantime medallion image.
+     This will show a "busy throbber," while the images are being composited.
     */
-    @IBOutlet var cleantime: LGV_UISingleCleantimeMedallionImageView?
+    override func showThrobber() {
+        super.showThrobber()
+        cleantimeReportLabel?.isHidden = true
+        includeTagsSwitch?.isHidden = true
+    }
     
-    /* ################################################################################################################################## */
-    // MARK: RVS_GeneralObserverSubTrackerProtocol Conformance
-    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
-     This is a UUID that is used internally
-     */
-    var uuid = UUID()
-
-    /* ############################################################## */
-    /**
-     This stores our subscriptions.
-     */
-    var subscriptions: [RVS_GeneralObservableProtocol] = []
-}
-
-/* ###################################################################################################################################### */
-// MARK: Callbacks
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionViewController {
+     This will hide the "busy throbber," after the images were composited.
+    */
+    override func hideThrobber() {
+        super.hideThrobber()
+        cleantimeReportLabel?.isHidden = false
+        includeTagsSwitch?.isHidden = false
+    }
+    
     /* ################################################################## */
     /**
-     When a new date is selected, it is given to the medallion image.
+     When a new date is selected, it is used to fill the cleantime report label.
      
      - parameter inDatePicker: The picker instance.
     */
-    @IBAction func newDate(_ inDatePicker: UIDatePicker) {
-        LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate = inDatePicker.date
-        let calculator = LGV_CleantimeDateCalc(startDate: inDatePicker.date, calendar: Calendar.current).cleanTime
+    override func newDate(_ inDatePicker: UIDatePicker) {
         cleantimeReportLabel?.beginDate = inDatePicker.date
-        cleantime?.totalDays = inDatePicker.date > Date() ? -1 : calculator.totalDays
-        cleantime?.totalMonths = calculator.totalMonths
-        cleantime?.setNeedsLayout()
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: Base Class Overrides
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionViewController {
-    /* ################################################################## */
-    /**
-     Called just before the view appears. We use it to set the date picker date.
-     
-     - parameter inIsAnimated: True, if the appearance is to be animated.
-    */
-    override func viewWillAppear(_ inIsAnimated: Bool) {
-        super.viewWillAppear(inIsAnimated)
-        cleantime?.subscribe(self)
-        if let dateSelector = dateSelector {
-            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
-            newDate(dateSelector)
-        }
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: LGV_UICleantimeImageViewObserver Conformance
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeImageViewObserver {
-    /* ################################################################## */
-    /**
-     This is called when the images have completed rendering.
-     
-     - parameter view: The completed UIImageView
-     */
-    func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
-        print("Received rendering complete callback!")
+        super.newDate(inDatePicker)
     }
 }

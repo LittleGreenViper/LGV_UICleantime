@@ -20,7 +20,6 @@
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
-import RVS_GeneralObserver
 import LGV_Cleantime
 import LGV_UICleantime
 
@@ -29,85 +28,4 @@ import LGV_UICleantime
 /* ###################################################################################################################################### */
 /**
  */
-class LGV_UICleantimeTestHarnessMedallionsViewController: UIViewController, RVS_GeneralObserverSubTrackerProtocol {
-    /* ################################################################## */
-    /**
-     This is the cleantime medallion image.
-    */
-    @IBOutlet var cleantime: LGV_UICleantimeMultipleMedallionsImageView!
-    
-    /* ################################################################## */
-    /**
-     This allows the tester to select a date.
-    */
-    @IBOutlet weak var dateSelector: UIDatePicker?
-    
-    /* ################################################################################################################################## */
-    // MARK: RVS_GeneralObserverSubTrackerProtocol Conformance
-    /* ################################################################################################################################## */
-    /* ################################################################## */
-    /**
-     This is a UUID that is used internally
-     */
-    var uuid = UUID()
-
-    /* ############################################################## */
-    /**
-     This stores our subscriptions.
-     */
-    var subscriptions: [RVS_GeneralObservableProtocol] = []
-}
-
-/* ###################################################################################################################################### */
-// MARK: Callbacks
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionsViewController {
-    /* ################################################################## */
-    /**
-     When a new date is selected, it is given to the medallion image.
-     
-     - parameter inDatePicker: The picker instance.
-    */
-    @IBAction func newDate(_ inDatePicker: UIDatePicker) {
-        LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate = inDatePicker.date
-        let calculator = LGV_CleantimeDateCalc(startDate: inDatePicker.date, calendar: Calendar.current).cleanTime
-        cleantime?.totalDays = calculator.totalDays
-        cleantime?.totalMonths = calculator.totalMonths
-        cleantime?.setNeedsLayout()
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: Base Class Overrides
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionsViewController {
-    /* ################################################################## */
-    /**
-     Called just before the view appears. We use it to set the date picker date.
-     
-     - parameter inIsAnimated: True, if the appearance is to be animated.
-    */
-    override func viewWillAppear(_ inIsAnimated: Bool) {
-        super.viewWillAppear(inIsAnimated)
-        cleantime?.subscribe(self)
-        if let dateSelector = dateSelector {
-            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
-            newDate(dateSelector)
-        }
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: LGV_UICleantimeImageViewObserver Conformance
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeTestHarnessMedallionsViewController: LGV_UICleantimeImageViewObserver {
-    /* ################################################################## */
-    /**
-     This is called when the images have completed rendering.
-     
-     - parameter view: The completed UIImageView
-     */
-    func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
-        print("Received rendering complete callback!")
-    }
-}
+class LGV_UICleantimeTestHarnessMedallionsViewController: LGV_UICleantimeBaseViewController { }
