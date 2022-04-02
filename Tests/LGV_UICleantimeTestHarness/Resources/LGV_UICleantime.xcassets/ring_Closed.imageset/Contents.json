@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Ring-Closed.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

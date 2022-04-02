@@ -1,0 +1,37 @@
+disabled_rules:
+- identifier_name
+- nesting
+- function_parameter_count
+- function_body_length
+- trailing_whitespace
+- type_name
+- file_length
+- type_body_length
+- inclusive_language
+- large_tuple
+- private_over_fileprivate
+
+opt_in_rules:
+- control_statement
+- empty_count
+- trailing_newline
+- colon
+- comma
+
+excluded:
+- Package.swift
+- "Sources/Meta/DoNotCheckThisIntoSourceControl.swift"
+- ".build"
+- docs
+- img
+- spec
+- Project-Meta
+- DerivedData
+
+line_length:
+- 400 # warning
+- 500 # error
+
+cyclomatic_complexity:
+- 15 # warning
+- 16 # error

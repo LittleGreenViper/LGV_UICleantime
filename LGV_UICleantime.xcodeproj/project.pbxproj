@@ -1,0 +1,785 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D400F6B02698971C001C261A /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */; };
+		D401FAF726989C2700540C9F /* LGV_UICleantimeMedallions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */; };
+		D40EF5B126AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */; };
+		D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */; };
+		D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */; };
+		D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C82694AC20007D5883 /* Assets.xcassets */; };
+		D43C66D22694AC20007D5883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */; };
+		D43C66D32694AC20007D5883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43C66CB2694AC20007D5883 /* Main.storyboard */; };
+		D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */; };
+		D468D1A626A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */; };
+		D46C6D64269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */; };
+		D46C6D67269EF2C90057A080 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D46C6D65269EF2C90057A080 /* Localizable.strings */; };
+		D48390B02698B932004617A7 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */; };
+		D4878F862698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */; };
+		D4878F882698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */; };
+		D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D4895DD326A230B700624F0D /* LGV_Cleantime */; };
+		D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */; };
+		D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */; };
+		D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D41772422698978A00DA944B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43C667F2694AA88007D5883 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D42491BD2695F44C0094C15F;
+			remoteInfo = UICleantime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D42C6A40269642DA00CD27B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeMedallions.swift; sourceTree = "<group>"; };
+		D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionsViewController.swift; sourceTree = "<group>"; };
+		D42272C927A45D9C0006A828 /* UICleantime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UICleantime.docc; sourceTree = "<group>"; };
+		D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionViewController.swift; sourceTree = "<group>"; };
+		D43C66C82694AC20007D5883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D43C66CA2694AC20007D5883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D43C66CC2694AC20007D5883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessAppDelegate.swift; sourceTree = "<group>"; };
+		D43C66CE2694AC20007D5883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D43C66D82694AC33007D5883 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
+		D44261A527F86390004BCB6C /* LGV_UICleantime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LGV_UICleantime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LGV_UICleantimeTestHarness (Framework).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeImageViewBase.swift; sourceTree = "<group>"; };
+		D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeDisplayTextLabel.swift; sourceTree = "<group>"; };
+		D46C6D66269EF2C90057A080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LGV_UICleantime.xcassets; sourceTree = "<group>"; };
+		D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UISingleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
+		D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagViewController.swift; sourceTree = "<group>"; };
+		D4A5FE91269732BE009D0D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UIMultipleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
+		D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D42491BB2695F44C0094C15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */,
+				D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D42491CA2695F44C0094C15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D400F6B02698971C001C261A /* RVS-Generic-Swift-Toolbox in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D40EF5AA26AC327C009153A8 /* Text Report */ = {
+			isa = PBXGroup;
+			children = (
+				D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */,
+			);
+			path = "Text Report";
+			sourceTree = "<group>";
+		};
+		D40EF5AB26AC3289009153A8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */,
+				D40EF5AD26AC32A1009153A8 /* Keytags */,
+				D40EF5AC26AC3297009153A8 /* Medallions */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D40EF5AC26AC3297009153A8 /* Medallions */ = {
+			isa = PBXGroup;
+			children = (
+				D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */,
+			);
+			path = Medallions;
+			sourceTree = "<group>";
+		};
+		D40EF5AD26AC32A1009153A8 /* Keytags */ = {
+			isa = PBXGroup;
+			children = (
+				D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */,
+				D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */,
+			);
+			path = Keytags;
+			sourceTree = "<group>";
+		};
+		D43C667E2694AA88007D5883 = {
+			isa = PBXGroup;
+			children = (
+				D43C66912694AB9E007D5883 /* Sources */,
+				D43C66C52694AC20007D5883 /* Tests */,
+				D43C66D72694AC33007D5883 /* Project-Meta */,
+				D44261A527F86390004BCB6C /* LGV_UICleantime.framework */,
+				D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */,
+			);
+			sourceTree = "<group>";
+		};
+		D43C66912694AB9E007D5883 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5FE90269732BE009D0D17 /* Meta */,
+				D43C66922694AB9E007D5883 /* LGV_UICleantime */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D43C66922694AB9E007D5883 /* LGV_UICleantime */ = {
+			isa = PBXGroup;
+			children = (
+				D40EF5AA26AC327C009153A8 /* Text Report */,
+				D40EF5AB26AC3289009153A8 /* Images */,
+				D42272C927A45D9C0006A828 /* UICleantime.docc */,
+			);
+			path = LGV_UICleantime;
+			sourceTree = "<group>";
+		};
+		D43C66C52694AC20007D5883 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D43C66C62694AC20007D5883 /* LGV_UICleantimeTestHarness */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D43C66C62694AC20007D5883 /* LGV_UICleantimeTestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				D4B247C3269F0C83004D8D1E /* Main App */,
+				D4B247C2269F0C76004D8D1E /* View Controllers */,
+				D4B247C0269F0C52004D8D1E /* Resources */,
+				D4B247C1269F0C65004D8D1E /* Meta */,
+			);
+			path = LGV_UICleantimeTestHarness;
+			sourceTree = "<group>";
+		};
+		D43C66D72694AC33007D5883 /* Project-Meta */ = {
+			isa = PBXGroup;
+			children = (
+				D43C66D82694AC33007D5883 /* Warnings.xcconfig */,
+			);
+			path = "Project-Meta";
+			sourceTree = "<group>";
+		};
+		D4A5FE90269732BE009D0D17 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5FE91269732BE009D0D17 /* Info.plist */,
+			);
+			name = Meta;
+			path = Sources/Meta;
+			sourceTree = SOURCE_ROOT;
+		};
+		D4B247C0269F0C52004D8D1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */,
+				D43C66C82694AC20007D5883 /* Assets.xcassets */,
+				D46C6D65269EF2C90057A080 /* Localizable.strings */,
+				D43C66CB2694AC20007D5883 /* Main.storyboard */,
+				D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4B247C1269F0C65004D8D1E /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				D43C66CE2694AC20007D5883 /* Info.plist */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		D4B247C2269F0C76004D8D1E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */,
+				D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */,
+				D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */,
+				D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D4B247C3269F0C83004D8D1E /* Main App */ = {
+			isa = PBXGroup;
+			children = (
+				D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */,
+			);
+			path = "Main App";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D42491BD2695F44C0094C15F /* LGV_UICleantime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D42491C72695F44C0094C15F /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */;
+			buildPhases = (
+				D4BD88EF269E2E65009015D1 /* SwiftLint */,
+				D42491BA2695F44C0094C15F /* Sources */,
+				D42491BB2695F44C0094C15F /* Frameworks */,
+				D42491BC2695F44C0094C15F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LGV_UICleantime;
+			packageProductDependencies = (
+				D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */,
+				D4895DD326A230B700624F0D /* LGV_Cleantime */,
+				D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */,
+			);
+			productName = "UICleantime (Dylib)";
+			productReference = D44261A527F86390004BCB6C /* LGV_UICleantime.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D43C66B02694ABFF007D5883 /* LGV_UICleantimeTestHarness (Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D43C66C22694AC00007D5883 /* Build configuration list for PBXNativeTarget "LGV_UICleantimeTestHarness (Framework)" */;
+			buildPhases = (
+				D43C66E02694AF28007D5883 /* SwiftLint */,
+				D43C66AD2694ABFF007D5883 /* Sources */,
+				D43C66AF2694ABFF007D5883 /* Resources */,
+				D42491CA2695F44C0094C15F /* Frameworks */,
+				D42C6A40269642DA00CD27B9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D41772432698978A00DA944B /* PBXTargetDependency */,
+			);
+			name = "LGV_UICleantimeTestHarness (Framework)";
+			packageProductDependencies = (
+				D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */,
+			);
+			productName = UICleantimeTestHarness;
+			productReference = D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D43C667F2694AA88007D5883 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					D42491BD2695F44C0094C15F = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+					D43C66B02694ABFF007D5883 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = D43C66822694AA88007D5883 /* Build configuration list for PBXProject "LGV_UICleantime" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D43C667E2694AA88007D5883;
+			packageReferences = (
+				D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+				D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */,
+				D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */,
+			);
+			productRefGroup = D43C667E2694AA88007D5883;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D42491BD2695F44C0094C15F /* LGV_UICleantime */,
+				D43C66B02694ABFF007D5883 /* LGV_UICleantimeTestHarness (Framework) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D42491BC2695F44C0094C15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D43C66AF2694ABFF007D5883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46C6D67269EF2C90057A080 /* Localizable.strings in Resources */,
+				D43C66D32694AC20007D5883 /* Main.storyboard in Resources */,
+				D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */,
+				D48390B02698B932004617A7 /* LGV_UICleantime.xcassets in Resources */,
+				D43C66D22694AC20007D5883 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D43C66E02694AF28007D5883 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
+		};
+		D4BD88EF269E2E65009015D1 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D42491BA2695F44C0094C15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46C6D64269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift in Sources */,
+				D4878F862698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */,
+				D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */,
+				D401FAF726989C2700540C9F /* LGV_UICleantimeMedallions.swift in Sources */,
+				D468D1A626A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D43C66AD2694ABFF007D5883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */,
+				D40EF5B126AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift in Sources */,
+				D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */,
+				D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */,
+				D4878F882698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D41772432698978A00DA944B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D42491BD2695F44C0094C15F /* LGV_UICleantime */;
+			targetProxy = D41772422698978A00DA944B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D43C66CA2694AC20007D5883 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D43C66CB2694AC20007D5883 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D43C66CC2694AC20007D5883 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D46C6D65269EF2C90057A080 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D46C6D66269EF2C90057A080 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D42491C82695F44C0094C15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QZAZ424GRK;
+				DRIVERKIT_DEPLOYMENT_TARGET = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Meta/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		D42491C92695F44C0094C15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QZAZ424GRK;
+				DRIVERKIT_DEPLOYMENT_TARGET = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Meta/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Release;
+		};
+		D43C668C2694AA88007D5883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43C66D82694AC33007D5883 /* Warnings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D43C668D2694AA88007D5883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43C66D82694AC33007D5883 /* Warnings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D43C66C32694AC00007D5883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = QZAZ424GRK;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/LGV_UICleantimeTestHarness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		D43C66C42694AC00007D5883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = QZAZ424GRK;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/LGV_UICleantimeTestHarness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D42491C72695F44C0094C15F /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D42491C82695F44C0094C15F /* Debug */,
+				D42491C92695F44C0094C15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D43C66822694AA88007D5883 /* Build configuration list for PBXProject "LGV_UICleantime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43C668C2694AA88007D5883 /* Debug */,
+				D43C668D2694AA88007D5883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D43C66C22694AC00007D5883 /* Build configuration list for PBXNativeTarget "LGV_UICleantimeTestHarness (Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43C66C32694AC00007D5883 /* Debug */,
+				D43C66C42694AC00007D5883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.6;
+			};
+		};
+		D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:LittleGreenViper/LGV_Cleantime.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
+		};
+		D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
+		};
+		D4895DD326A230B700624F0D /* LGV_Cleantime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */;
+			productName = LGV_Cleantime;
+		};
+		D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
+			productName = "RVS-GeneralObserver";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D43C667F2694AA88007D5883 /* Project object */;
+}

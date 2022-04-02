@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Text-TenThousandDays.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

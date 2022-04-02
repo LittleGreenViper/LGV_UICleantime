@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Text-FiveYears.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
