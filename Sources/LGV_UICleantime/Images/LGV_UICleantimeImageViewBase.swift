@@ -109,31 +109,20 @@ open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBa
     /**
      The total number of days to display.
      */
-    @IBInspectable public var totalDays: Int = 0 {
-        didSet {
-            if oldValue != totalDays {
-                DispatchQueue.main.async { self.image = nil }
-            }
-        }
-    }
+    @IBInspectable public var totalDays: Int = 0 { didSet { image = nil } }
     
     /* ################################################################## */
     /**
      The total number of months to display (including years).
      */
-    @IBInspectable public var totalMonths: Int = 0 {
-        didSet {
-            if oldValue != totalMonths {
-                DispatchQueue.main.async { self.image = nil }
-            }
-        }
-    }
+    @IBInspectable public var totalMonths: Int = 0 { didSet { image = nil } }
     
     /* ################################################################## */
     /**
      This returns the dynamically-generated  image. The base class is nil.
      This needs to be declared (as opposed to being defined as a protocol default).
      This is why: https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/
+     This operates asynchrnously, in the main thread.
      */
     var generatedImage: UIImage? { nil }
 
@@ -154,20 +143,23 @@ public extension LGV_UICleantimeImageViewBase {
     /**
      Called when the view is laid out.
      
-     We use this to create the image.
+     We use this to create the image. It starts the image drawing (asynchronously, but in the main thread).
      */
     override func layoutSubviews() {
         super.layoutSubviews()
         if nil == image {
-            self.image = self.generatedImage
+            DispatchQueue.main.async { [weak self] in self?.newImage(self?.generatedImage) }
         }
-        
-        if nil != image {
-            self.observers.forEach {
-                guard let observer = $0 as? LGV_UICleantimeImageViewObserver else { return }
-                observer.renderingComplete(view: self)
-            }
-        }
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+public extension LGV_UICleantimeImageViewBase {
+    func newImage(_ inImage: UIImage?) {
+        image = inImage
+        observers.forEach { ($0 as? LGV_UICleantimeImageViewObserver)?.renderingComplete(view: self) }
     }
 }
 #endif

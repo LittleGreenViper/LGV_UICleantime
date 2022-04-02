@@ -92,10 +92,8 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
         defer { UIGraphicsEndImageContext() }
         ringImage.draw(in: boundRect, blendMode: .normal, alpha: 1)
         bodyImage.draw(in: boundRect, blendMode: .normal, alpha: 1)
-        textImage.draw(in: boundRect, blendMode: .normal, alpha: 1)
-        image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        return image
+        textImage.draw(in: boundRect, blendMode: .normal, alpha: 1)        
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
 #endif

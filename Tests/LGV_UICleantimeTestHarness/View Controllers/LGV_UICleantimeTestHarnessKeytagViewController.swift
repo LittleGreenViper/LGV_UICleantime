@@ -20,6 +20,7 @@
 
 import UIKit
 import RVS_Generic_Swift_Toolbox
+import RVS_GeneralObserver
 import LGV_Cleantime
 import LGV_UICleantime
 
@@ -28,12 +29,12 @@ import LGV_UICleantime
 /* ###################################################################################################################################### */
 /**
  */
-class LGV_UICleantimeTestHarnessKeytagViewController: UIViewController {
+class LGV_UICleantimeTestHarnessKeytagViewController: UIViewController, RVS_GeneralObserverSubTrackerProtocol {
     /* ################################################################## */
     /**
      This is the cleantime medallion image.
     */
-    @IBOutlet var cleantime: LGV_UISingleCleantimeKeytagImageView!
+    @IBOutlet weak var cleantime: LGV_UISingleCleantimeKeytagImageView?
     
     /* ################################################################## */
     /**
@@ -46,7 +47,47 @@ class LGV_UICleantimeTestHarnessKeytagViewController: UIViewController {
      This allows the tester to select a date.
     */
     @IBOutlet weak var dateSelector: UIDatePicker?
+        
+    /* ################################################################################################################################## */
+    // MARK: RVS_GeneralObserverSubTrackerProtocol Conformance
+    /* ################################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is a UUID that is used internally
+     */
+    var uuid = UUID()
+    
+    /* ############################################################## */
+    /**
+     This stores our subscriptions.
+     */
+    var subscriptions: [RVS_GeneralObservableProtocol] = []
+}
 
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeTestHarnessKeytagViewController {
+    /* ################################################################## */
+    /**
+     Called just before the view appears. We use it to set the date picker date.
+     
+     - parameter inIsAnimated: True, if the appearance is to be animated.
+    */
+    override func viewWillAppear(_ inIsAnimated: Bool) {
+        super.viewWillAppear(inIsAnimated)
+        cleantime?.subscribe(self)
+        if let dateSelector = dateSelector {
+            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
+            newDate(dateSelector)
+        }
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Callbacks
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeTestHarnessKeytagViewController {
     /* ################################################################## */
     /**
      When the open/closed switch is changed, this is called.
@@ -70,19 +111,19 @@ class LGV_UICleantimeTestHarnessKeytagViewController: UIViewController {
         cleantime?.totalMonths = calculator.totalMonths
         cleantime?.setNeedsLayout()
     }
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: LGV_UICleantimeImageViewObserver Conformance
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeTestHarnessKeytagViewController: LGV_UICleantimeImageViewObserver {
     /* ################################################################## */
     /**
-     Called just before the view appears. We use it to set the date picker date.
+     This is called when the images have completed rendering.
      
-     - parameter inIsAnimated: True, if the appearance is to be animated.
-    */
-    override func viewWillAppear(_ inIsAnimated: Bool) {
-        super.viewWillAppear(inIsAnimated)
-        if let dateSelector = dateSelector {
-            dateSelector.date = LGV_UICleantimeTestHarnessAppDelegate.appDelegateInstance?.cleandate ?? Date()
-            newDate(dateSelector)
-        }
-        view?.setNeedsLayout()
+     - parameter view: The completed UIImageView
+     */
+    func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
+        print("Received rendering complete callback!")
     }
 }

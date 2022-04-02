@@ -93,11 +93,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /**
      This returns the dynamically-generated keytag set image.
      */
-    override public var generatedImage: UIImage? {
-        image = _generateKeytagImages
-        
-        return image
-    }
+    override public var generatedImage: UIImage? { _generateKeytagImages }
 }
 
 /* ###################################################################################################################################### */
