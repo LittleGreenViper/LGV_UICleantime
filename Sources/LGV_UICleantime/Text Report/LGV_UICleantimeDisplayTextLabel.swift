@@ -124,9 +124,19 @@ open class LGV_UICleantimeDateReportString {
 // MARK: - Cleantime Report Label Display View -
 /* ###################################################################################################################################### */
 /**
- This class extends the label class to display a localizable cleantime "report."
+ This class extends the [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel) class to display a localizable cleantime "report." This report is built, using the [`String(format:)`](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html) builder.
  
- This requires a begin date, and an end date be supplied, and it will generate a text report, in conversational English (by default), using format strings.
+ This requires a begin date, and an end date be supplied, and it will generate a text report, in conversational English (by default), using format strings. You can leave the end date, and "today" will be used. Date granularity is 1 day (24 hours).
+ 
+ This creates an instance of [`LGV_CleantimeDateCalc`](https://github.com/LittleGreenViper/LGV_Cleantime/blob/master/Sources/LGV_Cleantime/LGV_CleantimeDateCalc.swift) to calculate the interval, and build the String.
+ 
+ The "engine" is an instance of `LGV_UICleantimeDateReportString`, which is designed to allow subclassing and customization.
+ 
+ It uses localization tokens, and the [`RVS_Generic_Swift_Toolbox`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)[`.localizedVariant`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift#L39) extension to provide localization.
+ 
+ Users of this class should take the strings in the [`Localizable.strings`](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/Resources/Base.lproj/Localizable.strings) file, and add the tokens to their own app localizations.
+ 
+ The way that you use this class in Interface Builder, is drag in an instance of [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel), and set the class to `LGV_UICleantimeDisplayTextLabel`.
  */
 @IBDesignable
 open class LGV_UICleantimeDisplayTextLabel: UILabel {
