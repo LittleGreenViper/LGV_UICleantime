@@ -90,12 +90,11 @@ open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBa
     /* ################################################################## */
     /**
      This returns the dynamically-generated  image. The base class is nil.
-     This is an internal property. It is not exposed.
      This needs to be declared (as opposed to being defined as a protocol default).
      This is why: https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/
      This operates asynchronously, in the main thread.
      */
-    var generatedImage: UIImage? { nil }
+    open var generatedImage: UIImage? { nil }
 
     /* ################################################################## */
     /**

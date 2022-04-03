@@ -120,7 +120,7 @@ open class LGV_UISingleCleantimeMedallionImageView: LGV_UICleantimeImageViewBase
      This returns the dynamically-generated medallion  image.
      This needs to be implemented in the main class declaration.
      */
-    override var generatedImage: UIImage? {
+    public override var generatedImage: UIImage? {
         super.image = _medallionImage
         
         return super.image
@@ -334,7 +334,7 @@ open class LGV_UICleantimeMultipleMedallionsImageView: LGV_UICleantimeImageViewB
     /**
      This returns a generated matrix of medallions.
      */
-    override var generatedImage: UIImage? {
+    public override var generatedImage: UIImage? {
         guard nil == _cachedMedallions else { return _cachedMedallions }
         
         let totalYears = Int(totalMonths / 12)

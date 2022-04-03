@@ -78,7 +78,7 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
      This returns a dynamically-generated keytag image.
      This needs to be implemented in the main class declaration.
      */
-    override var generatedImage: UIImage? {
+    public override var generatedImage: UIImage? {
         guard let keyTagDescription = LGV_CleantimeKeytagDescription.getLastTagThatApplies(totalDays: totalDays, totalMonths: totalMonths),
            let bodyImage = UIImage(named: keyTagDescription.bodyImage.rawValue),
            let textImage = UIImage(named: keyTagDescription.textImage.rawValue),

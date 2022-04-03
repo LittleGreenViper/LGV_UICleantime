@@ -77,7 +77,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
      This returns the dynamically-generated keytag set image.
      This needs to be implemented in the main class declaration.
      */
-    override var generatedImage: UIImage? { _generateKeytagImages }
+    public override var generatedImage: UIImage? { _generateKeytagImages }
 
     /* ################################################################################################################################## */
     // MARK: Open to the World
