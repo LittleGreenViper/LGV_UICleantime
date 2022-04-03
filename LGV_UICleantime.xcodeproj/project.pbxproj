@@ -14,18 +14,18 @@
 		D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */; };
 		D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */; };
 		D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C82694AC20007D5883 /* Assets.xcassets */; };
-		D43C66D22694AC20007D5883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */; };
-		D43C66D32694AC20007D5883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43C66CB2694AC20007D5883 /* Main.storyboard */; };
 		D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */; };
 		D468D1A626A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */; };
 		D46C6D64269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */; };
-		D46C6D67269EF2C90057A080 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D46C6D65269EF2C90057A080 /* Localizable.strings */; };
-		D48390B02698B932004617A7 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */; };
 		D4878F862698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */; };
 		D4878F882698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */; };
 		D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D4895DD326A230B700624F0D /* LGV_Cleantime */; };
 		D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */; };
 		D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */; };
+		D4C79A1F27F9189800FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */; };
+		D4C79A2027F9189800FBB7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */; };
+		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
+		D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1D27F9189800FBB7D3 /* Localizable.strings */; };
 		D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +59,6 @@
 		D42272C927A45D9C0006A828 /* UICleantime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UICleantime.docc; sourceTree = "<group>"; };
 		D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionViewController.swift; sourceTree = "<group>"; };
 		D43C66C82694AC20007D5883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D43C66CA2694AC20007D5883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D43C66CC2694AC20007D5883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessAppDelegate.swift; sourceTree = "<group>"; };
 		D43C66CE2694AC20007D5883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43C66D82694AC33007D5883 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
@@ -68,13 +66,15 @@
 		D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LGV_UICleantimeTestHarness (Framework).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeImageViewBase.swift; sourceTree = "<group>"; };
 		D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeDisplayTextLabel.swift; sourceTree = "<group>"; };
-		D46C6D66269EF2C90057A080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LGV_UICleantime.xcassets; sourceTree = "<group>"; };
 		D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UISingleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
 		D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagViewController.swift; sourceTree = "<group>"; };
 		D4A5FE91269732BE009D0D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UIMultipleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
 		D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagsViewController.swift; sourceTree = "<group>"; };
+		D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LGV_UICleantime.xcassets; sourceTree = "<group>"; };
+		D4C79A1A27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4C79A1C27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4C79A1E27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,7 @@
 		D43C66922694AB9E007D5883 /* LGV_UICleantime */ = {
 			isa = PBXGroup;
 			children = (
+				D4C79A1727F9189800FBB7D3 /* Resources */,
 				D40EF5AA26AC327C009153A8 /* Text Report */,
 				D40EF5AB26AC3289009153A8 /* Images */,
 				D42272C927A45D9C0006A828 /* UICleantime.docc */,
@@ -203,11 +204,9 @@
 		D4B247C0269F0C52004D8D1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D48390AF2698B932004617A7 /* LGV_UICleantime.xcassets */,
+				D4C79A1B27F9189800FBB7D3 /* Main.storyboard */,
+				D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */,
 				D43C66C82694AC20007D5883 /* Assets.xcassets */,
-				D46C6D65269EF2C90057A080 /* Localizable.strings */,
-				D43C66CB2694AC20007D5883 /* Main.storyboard */,
-				D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -238,6 +237,15 @@
 				D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */,
 			);
 			path = "Main App";
+			sourceTree = "<group>";
+		};
+		D4C79A1727F9189800FBB7D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */,
+				D4C79A1D27F9189800FBB7D3 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +351,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46C6D67269EF2C90057A080 /* Localizable.strings in Resources */,
-				D43C66D32694AC20007D5883 /* Main.storyboard in Resources */,
+				D4C79A1F27F9189800FBB7D3 /* LGV_UICleantime.xcassets in Resources */,
 				D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */,
-				D48390B02698B932004617A7 /* LGV_UICleantime.xcassets in Resources */,
-				D43C66D22694AC20007D5883 /* LaunchScreen.storyboard in Resources */,
+				D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */,
+				D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */,
+				D4C79A2027F9189800FBB7D3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,26 +437,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D43C66C92694AC20007D5883 /* LaunchScreen.storyboard */ = {
+		D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D43C66CA2694AC20007D5883 /* Base */,
+				D4C79A1A27F9189800FBB7D3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		D43C66CB2694AC20007D5883 /* Main.storyboard */ = {
+		D4C79A1B27F9189800FBB7D3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D43C66CC2694AC20007D5883 /* Base */,
+				D4C79A1C27F9189800FBB7D3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D46C6D65269EF2C90057A080 /* Localizable.strings */ = {
+		D4C79A1D27F9189800FBB7D3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D46C6D66269EF2C90057A080 /* Base */,
+				D4C79A1E27F9189800FBB7D3 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

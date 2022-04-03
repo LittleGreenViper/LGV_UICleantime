@@ -92,6 +92,15 @@ extension LGV_UICleantimeTestHarnessKeytagsViewController {
 extension LGV_UICleantimeTestHarnessKeytagsViewController {
     /* ################################################################## */
     /**
+     Called after the view is loaded, the first time.
+    */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        (cleantime as? LGV_UIMultipleCleantimeKeytagImageView)?.keytagsAreAVerticalStrip = false
+    }
+
+    /* ################################################################## */
+    /**
      Called just before the view appears. We use it to set the date picker date.
      
      - parameter inIsAnimated: True, if the appearance is to be animated.
