@@ -14,6 +14,48 @@ Use these methods and resources to implement a visual, "[skeuomorphic](https://w
 
 This makes it very easy to provide a visual representation of important NA Recovery milestones. [LGV_Cleantime](https://github.com/LittleGreenViper/LGV_Cleantime/) will calculate them, but this module will display them (only on [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)).
 
+### Displays
+
+#### Keytags
+
+Keytags are displayed as classic "saddle" keytags (the real ones are made from plastic), with a ring at the top. This ring can be specified as "open," or "closed" (more on that, later)
+
+|Figure 1: The Standard Keytag|Figure 2: With the Top Ring "Open"|
+|:----:|:----:|
+|![The standard Keytag](img/Figure-01.png)|![The standard Keytag, With Its Ring "Open"](img/Figure-02.png)|
+
+#### Medallions
+
+The medallions are "skeuomorphic" renditions of the standard NA cleantime medallions (front only):
+
+|Figure 3: The Medallion|
+|:----:|
+|![The standard Medallion](img/Figure-03.png)|
+
+#### Singly, Or In Groups
+
+These can be displayed, either as "one-off," single images, or in arrays, Figures 1-3 show them "singly," while Figures 4-6 show them in arrays:
+
+|Figure 4: A Horizontal Matrix of Keytags|Figure 5: A Vertical Strip of Keytags|Figure 6: A Horizontal Matrix of Medallions|
+|:----:|:----:|:----:|
+|![A Horizontal Matrix of Keytags](img/Figure-04.png)|![A Vertical Strip of Keytags](img/Figure-05.png)|![A Horizontal Matrix of Medallions](img/Figure-06.png)|
+
+You can see why the top ring is optionally open, in Figure 5.
+
+These are provided as [UIKit `UIImage`](https://developer.apple.com/documentation/uikit/uiimage/)s, embedded in [UIKit `UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview)s. These can be put into scrollers, or other contexts.
+
+## REQUIREMENTS
+
+These classes are [UIKit](https://developer.apple.com/documentation/uikit/)-only ([iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)), and require the [Swift Programming Language](https://apple.com/developer/swift).
+
+### Dependencies
+
+The package is dependent upon the following three packages:
+
+- [LGV_Cleantime](https://github.com/LittleGreenViper/LGV_Cleantime)
+- [RVS_GeneralObserver](https://github.com/RiftValleySoftware/RVS_GeneralObserver)
+- [RVS_Generic_Swift_Toolbox](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)
+
 ## IMPLEMENTATION
 
 ### Installation
@@ -26,12 +68,6 @@ The URI for the repo is:
 - [https://github.com/LittleGreenViper/LGV_UICleantime.git](https://github.com/LittleGreenViper/LGV_UICleantime.git) (HTTPS).
 
 If you want to find out more about SPM, then you might want to [view this series](https://littlegreenviper.com/series/spm/)).
-
-#### [Carthage](https://github.com/Carthage/Carthage):
-
-You can include the library by adding the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
-
-    github "LittleGreenViper/LGV_UICleantime"
     
 ### Resources
 
@@ -45,7 +81,15 @@ Once you have the package included in your project, you'll need to include the l
 
     import LGV_UICleantime
     
-The package has four different classes that can be used. One, is a subclass of [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel), and the other three are subclasses of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview).
+The package has four different classes that can be used. One, is a subclass of [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel), and the other three are subclasses of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview):
+
+- [LGV_UICleantimeDisplayTextLabel](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Text%20Report/LGV_UICleantimeDisplayTextLabel.swift) is a subclass of [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel). It will display a "natural English (or other localization) summary of total cleantime (total days, also years, months, etc.).
+
+- [LGV_UIMultipleCleantimeKeytagImageView](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Keytags/LGV_UIMultipleCleantimeKeytagImageView.swift) and [LGV_UISingleCleantimeKeytagImageView](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Keytags/LGV_UISingleCleantimeKeytagImageView.swift) are subclasses of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview), and display keytags, as shown in Figures 1, 2, 4, and 5.
+
+- [LGV_UISingleCleantimeMedallionImageView](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Medallions/LGV_UICleantimeMedallions.swift#L76) is a subclass of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview), and displays a single medallion (like Figure 3).
+
+- [LGV_UICleantimeMultipleMedallionsImageView](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Medallions/LGV_UICleantimeMedallions.swift#L329) is also a subclass of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview), and displays a matrix of medallions (as in Figure 6).
 
 ## LICENSE
 
