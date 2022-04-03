@@ -28,7 +28,27 @@ import LGV_Cleantime
 // MARK: - Cleantime Keytag Display View -
 /* ###################################################################################################################################### */
 /**
- This is a view class that will display a "cleantime" commemoration set of keytags.
+ This is a view class that will display a set "cleantime" commemoration keytags, arranged, and delivered as a [`UIImage`](https://developer.apple.com/documentation/uikit/uiimage),
+ which is then set into the [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview)[`.image`](https://developer.apple.com/documentation/uikit/uiimageview/1621069-image) property.
+ These keytags represent all the keytags that would have been collected, from the original cleandate, until the end date (usually today).
+ 
+ The class can be set to generate the composite image as either a "chain" (all tags in a vertical strip), or as a "matrix" (tags in horizontal rows, each below the first).
+
+ This class uses the [`LGV_CleantimeKeytagDescription`](https://github.com/LittleGreenViper/LGV_Cleantime/blob/master/Sources/LGV_Cleantime/LGV_CleantimeKeytagDescription.swift) struct to get names for the components of the 3-layer ARGB image (transparent PNG).
+ 
+ The tags are all shown with their "backs" visible. This eliminates the issue of dealing with the registered trademark NA logo that appears on the front of each tag.
+ 
+ Each tag is composed of three layers of transparent PNG:
+ 
+    1. The image has a ring, on top. This can be "open" or "closed." "Open" means that the top is missing, and is sized to make a "chain" of keytags. Default is "closed."
+ 
+ This ring is placed under the other two layers.
+ 
+    2. The second layer is a "body." This is the blank, colored keytag.
+ 
+    3. The top layer is the "text" layer. This is rendered text for the given keytag. This is the asset that can be localized.
+ 
+ All layers are the same size (the entire keytag size).
  */
 @IBDesignable
 open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
@@ -85,6 +105,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /* ################################################################## */
     /**
      If true (default), the the keytags are arranged as a long vertical strip. If false, they are laid out in horizontal rows.
+     If it is changed, the cached image is deleted, forcing a recalculation.
      */
     @IBInspectable open var keytagsAreAVerticalStrip: Bool = true {
         didSet {
@@ -100,8 +121,18 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /* ################################################################## */
     /**
      This is the maximum number of columns to display. Its default is 8.
+     If it is changed, the cached image is deleted, forcing a recalculation.
      */
-    @IBInspectable open var maxColumns: Int = 8
+    @IBInspectable open var maxColumns: Int = 8 {
+        didSet {
+            if oldValue != maxColumns {
+                DispatchQueue.main.async {
+                    self.image = nil
+                    self.setNeedsLayout()
+                }
+            }
+        }
+    }
 }
 
 /* ###################################################################################################################################### */
@@ -110,7 +141,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
 extension LGV_UIMultipleCleantimeKeytagImageView {
     /* ################################################################## */
     /**
-     This handles drawing all the keytags into the scrolled view.
+     This handles drawing all the keytags into the image.
      */
     private var _generateKeytagImages: UIImage? { keytagsAreAVerticalStrip ? _cachedVerticalKeytags ?? _verticalKeytags : _cachedHorizontalKeytags ?? _horizontalKeytags }
     
@@ -123,7 +154,8 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
             print("Drawing Vertical keytags.")
         #endif
 
-        if var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue),
+        if nil == _cachedVerticalKeytags,
+           var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue),
            let openRingImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Open.rawValue) {
             let keytagDescriptions = LGV_CleantimeKeytagDescription.getTheFullMonty(totalDays: totalDays, totalMonths: totalMonths)
             
@@ -154,7 +186,8 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
             print("Drawing Horizontal keytags.")
         #endif
         
-        if  let ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue) {
+        if  nil == _cachedHorizontalKeytags,
+            let ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue) {
             let keytagDescriptions = LGV_CleantimeKeytagDescription.getTheFullMonty(totalDays: totalDays, totalMonths: totalMonths)
             if !keytagDescriptions.isEmpty {
                 let topOffsetIncrement = (ringImage.size.height * Self._horizontalTopOrientationOffsetCoefficient)

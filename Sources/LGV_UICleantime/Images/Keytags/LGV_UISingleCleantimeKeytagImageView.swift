@@ -25,10 +25,26 @@ import UIKit
 import LGV_Cleantime
 
 /* ###################################################################################################################################### */
-// MARK: - Cleantime Keytag Display View -
+// MARK: - Single Cleantime Keytag Display View -
 /* ###################################################################################################################################### */
 /**
- This is a view class that will display a single "cleantime" commemoration keytag.
+ This is a view class that will display a single "cleantime" commemoration keytag, delivered as a [`UIImage`](https://developer.apple.com/documentation/uikit/uiimage), which is then set into the [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview)[`.image`](https://developer.apple.com/documentation/uikit/uiimageview/1621069-image) property.
+
+ This class uses the [`LGV_CleantimeKeytagDescription`](https://github.com/LittleGreenViper/LGV_Cleantime/blob/master/Sources/LGV_Cleantime/LGV_CleantimeKeytagDescription.swift) struct to get names for the components of the 3-layer ARGB image (transparent PNG).
+ 
+ The tags are all shown with their "backs" visible. This eliminates the issue of dealing with the registered trademark NA logo that appears on the front of each tag.
+ 
+ The tag is composed of three layers of transparent PNG:
+ 
+    1. The image has a ring, on top. This can be "open" or "closed." "Open" means that the top is missing, and is sized to make a "chain" of keytags. Default is "closed."
+ 
+ This ring is placed under the other two layers.
+ 
+    2. The second layer is a "body." This is the blank, colored keytag.
+ 
+    3. The top layer is the "text" layer. This is rendered text for the given keytag. This is the asset that can be localized.
+
+ All layers are the same size (the entire keytag size).
  */
 @IBDesignable
 open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
@@ -37,20 +53,24 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
     /* ################################################################################################################################## */
     /**
      This enum has the names for all of the various keytag ring visual resources.
+     It is string, because we use the values to get images from the bundle.
      */
     public enum KeytagResourceNamesRing: String {
         /* ########################################################## */
         /**
+         This should not happen. It's an error.
          */
         case none = ""
 
         /* ########################################################## */
         /**
+         This means that the ring is "closed" at the top.
          */
         case ring_Closed
 
         /* ########################################################## */
         /**
+         This means that the ring is "open" at the top.
          */
         case ring_Open
     }
@@ -61,6 +81,7 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
     /* ################################################################## */
     /**
      True (default) if the ring is closed on top.
+     If it is changed, the cached image is deleted, forcing a recalculation.
      */
     @IBInspectable open var isRingClosed: Bool = true {
         didSet {
@@ -87,7 +108,7 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
         let imageSize = bodyImage.size
         let boundRect = CGRect(origin: .zero, size: imageSize)
         #if DEBUG
-            print("Drawing keytag into \(boundRect).")
+            print("Drawing single keytag into \(boundRect).")
         #endif
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
         defer { UIGraphicsEndImageContext() }

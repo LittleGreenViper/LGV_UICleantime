@@ -44,6 +44,8 @@ These are not being embedded into the package, because it is likely that you wil
 Once you have the package included in your project, you'll need to include the library:
 
     import LGV_UICleantime
+    
+The package has four different classes that can be used. One, is a subclass of [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel), and the other three are subclasses of [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview).
 
 ## LICENSE
 
