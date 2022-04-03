@@ -1,7 +1,7 @@
 /*
   © Copyright 2022, Little Green Viper Software Development LLC
  
- Version: 1.0.0
+ Version: 1.0.2
  
  LICENSE:
  

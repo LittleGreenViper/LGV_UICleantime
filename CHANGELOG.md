@@ -1,3 +1,7 @@
+**1.0.2** *April 2, 2022*
+
+- I had to move the resources out of the source dir
+
 **1.0.1** *April 2, 2022*
 
 - I had to play around with some visibility settings for methods and properties.

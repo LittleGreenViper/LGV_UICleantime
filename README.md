@@ -35,7 +35,7 @@ You can include the library by adding the following line to your [Cartfile](http
     
 ### Resources
 
-The package relies on resources that should be provided in a [Localizable.strings](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Resources/Base.lproj/Localizable.strings) file, and [embedded as images](https://github.com/LittleGreenViper/LGV_UICleantime/tree/master/Sources/LGV_UICleantime/Resources/Base.lproj/LGV_UICleantime.xcassets) in your app bundle.
+The package relies on resources that should be provided in a [Localizable.strings](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/Resources/Base.lproj/Localizable.strings) file, and [embedded as images](https://github.com/LittleGreenViper/LGV_UICleantime/tree/master/Sources/Resources/Base.lproj/LGV_UICleantime.xcassets) in your app bundle.
 
 These are not being embedded into the package, because it is likely that you will want to mix them with your own localization resources.
 
