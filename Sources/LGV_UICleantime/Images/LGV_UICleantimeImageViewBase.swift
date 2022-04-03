@@ -41,7 +41,7 @@ import RVS_GeneralObserver
     - [`uuid: UUID`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L273)
     - [`subscriptions: [RVS_GeneralObservableProtocol]`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L383)
  */
-public protocol LGV_UICleantimeImageViewObserver: RVS_GeneralObserverSubTrackerProtocol {
+public protocol LGV_UICleantimeImageViewObserverProtocol: RVS_GeneralObserverSubTrackerProtocol {
     /* ################################################################## */
     /**
      This is called when the images have completed rendering.
@@ -54,7 +54,7 @@ public protocol LGV_UICleantimeImageViewObserver: RVS_GeneralObserverSubTrackerP
 /* ###################################################################################################################################### */
 // MARK: Defaults Do Nothing
 /* ###################################################################################################################################### */
-extension LGV_UICleantimeImageViewObserver {
+extension LGV_UICleantimeImageViewObserverProtocol {
     /* ################################################################## */
     /**
      This is called when the images have completed rendering.
@@ -70,7 +70,7 @@ extension LGV_UICleantimeImageViewObserver {
 /**
  This is a protocol that describes the base class. We use it to make sure that we can override the generatedImage func easily, and allows us to cast to a protocol.
  */
-protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProtocol {
+public protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProtocol {
     /* ################################################################## */
     /**
      The total number of days to display.
@@ -171,6 +171,23 @@ open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBa
 }
 
 /* ###################################################################################################################################### */
+// MARK: Private Callbacks
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeImageViewBase {
+    /* ################################################################## */
+    /**
+     This is called after rendering is complete.
+     It sets the image, triggers a redraw, and also calls the observers.
+     
+     - parameter inImage: The image to be set as the view's image.
+     */
+    private func _newImage(_ inImage: UIImage?) {
+        image = inImage // Doing this will set a redraw.
+        observers.forEach { ($0 as? LGV_UICleantimeImageViewObserverProtocol)?.renderingComplete(view: self) }
+    }
+}
+
+/* ###################################################################################################################################### */
 // MARK: Base Class Overrides
 /* ###################################################################################################################################### */
 extension LGV_UICleantimeImageViewBase {
@@ -184,27 +201,10 @@ extension LGV_UICleantimeImageViewBase {
         super.layoutSubviews()
         // If we have a cache, we just go straight to the callback.
         if let cachedImage = image {
-            newImage(cachedImage)
+            _newImage(cachedImage)
         } else {    // Otherwise, we tell the instance to create new images. This will initiate a method call on the main thread, with a callback when done.
-            DispatchQueue.main.async { [weak self] in self?.newImage(self?.generatedImage) }
+            DispatchQueue.main.async { [weak self] in self?._newImage(self?.generatedImage) }
         }
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: Callbacks
-/* ###################################################################################################################################### */
-extension LGV_UICleantimeImageViewBase {
-    /* ################################################################## */
-    /**
-     This is called after rendering is complete.
-     It sets the image, triggers a redraw, and also calls the observers.
-     
-     - parameter inImage: The image to be set as the view's image.
-     */
-    func newImage(_ inImage: UIImage?) {
-        image = inImage // Doing this will set a redraw.
-        observers.forEach { ($0 as? LGV_UICleantimeImageViewObserver)?.renderingComplete(view: self) }
     }
 }
 #endif

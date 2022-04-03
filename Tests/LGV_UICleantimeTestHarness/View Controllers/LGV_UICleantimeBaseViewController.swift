@@ -30,7 +30,7 @@ import LGV_UICleantime
 /**
  This provides the observer stuff.
  */
-class LGV_UICleantimeBaseViewController: UIViewController, LGV_UICleantimeImageViewObserver {
+class LGV_UICleantimeBaseViewController: UIViewController, LGV_UICleantimeImageViewObserverProtocol {
     /* ################################################################## */
     /**
      This is the cleantime medallion image.
