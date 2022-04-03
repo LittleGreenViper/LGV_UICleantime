@@ -28,7 +28,18 @@ import RVS_GeneralObserver
 // MARK: - This is the Protocol that Obesrvers of the Views Must Use -
 /* ###################################################################################################################################### */
 /**
- This protocol allows other objects to register as observers, and receive messages from the image.
+ This protocol allows other objects to register as observers, and receive messages from the image view.
+ 
+ There is only one message that the image view will send:
+ 
+    - [`renderingComplete(view inImageView: LGV_UICleantimeImageViewBase)`](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/LGV_UICleantimeImageViewBase.swift#L33).
+ 
+ The images are generated in a separate thread _(sort of -it's the main thread)_, and this is called when rendering is complete.
+ 
+ Note that this class extends [the `RVS_GeneralObserverSubTrackerProtocol` protocol](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L378). This means that the observer needs to be a class _(not a struct)_, and should define a couple of instance properties:
+ 
+    - [`uuid: UUID`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L273)
+    - [`subscriptions: [RVS_GeneralObservableProtocol]`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L383)
  */
 public protocol LGV_UICleantimeImageViewObserver: RVS_GeneralObserverSubTrackerProtocol {
     /* ################################################################## */
@@ -89,9 +100,9 @@ protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProtocol {
 open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBaseProtocol {
     /* ################################################################## */
     /**
-     This returns the dynamically-generated  image. The base class is nil.
-     This needs to be declared (as opposed to being defined as a protocol default).
-     This is why: https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/
+     This returns the dynamically-generated image. The base class returns nil.
+     This needs to be declared as an instance property (as opposed to being defined as a protocol default).
+     [This is why.](https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/)
      This operates asynchronously, in the main thread.
      */
     open var generatedImage: UIImage? { nil }
@@ -150,9 +161,10 @@ extension LGV_UICleantimeImageViewBase {
      */
     override public func layoutSubviews() {
         super.layoutSubviews()
+        // If we have a cache, we just go straight to the callback.
         if let cachedImage = image {
             newImage(cachedImage)
-        } else {
+        } else {    // Otherwise, we tell the instance to create new images.
             DispatchQueue.main.async { [weak self] in self?.newImage(self?.generatedImage) }
         }
     }

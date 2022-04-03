@@ -42,7 +42,7 @@ open class LGV_UICleantimeDateReportString {
     
     /* ################################################################## */
     /**
-     A special static version of the generator.
+     A special static version of the generator. This should work, even if the instance method is overloaded.
      
      - parameter beginDate: The starting date. This must be provided.
      - parameter endDate: The ending date. If not provided, today is assumed.
