@@ -108,6 +108,68 @@
 <h2 id='what-problem-does-this-solve' class='heading'>WHAT PROBLEM DOES THIS SOLVE?</h2>
 
 <p>This makes it very easy to provide a visual representation of important NA Recovery milestones. <a href="https://github.com/LittleGreenViper/LGV_Cleantime/">LGV_Cleantime</a> will calculate them, but this module will display them (only on <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>).</p>
+<h3 id='displays' class='heading'>Displays</h3>
+<h4 id='keytags' class='heading'>Keytags</h4>
+
+<p>Keytags are displayed as classic &ldquo;saddle&rdquo; keytags (the real ones are made from plastic), with a ring at the top. This ring can be specified as &ldquo;open,&rdquo; or &ldquo;closed&rdquo; (more on that, later)</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 1: The Standard Keytag</th>
+<th style="text-align: center">Figure 2: With the Top Ring &ldquo;Open&rdquo;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-01.png" alt="The standard Keytag"></td>
+<td style="text-align: center"><img src="img/Figure-02.png" alt="The standard Keytag, With Its Ring &quot;Open&quot;"></td>
+</tr>
+</tbody></table>
+<h4 id='medallions' class='heading'>Medallions</h4>
+
+<p>The medallions are &ldquo;skeuomorphic&rdquo; renditions of the standard NA cleantime medallions (front only):</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 3: The Medallion</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-03.png" alt="The standard Medallion"></td>
+</tr>
+</tbody></table>
+<h4 id='singly-or-in-groups' class='heading'>Singly, Or In Groups</h4>
+
+<p>These can be displayed, either as &ldquo;one-off,&rdquo; single images, or in arrays, Figures 1-3 show them &ldquo;singly,&rdquo; while Figures 4-6 show them in arrays:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 4: A Horizontal Matrix of Keytags</th>
+<th style="text-align: center">Figure 5: A Vertical Strip of Keytags</th>
+<th style="text-align: center">Figure 6: A Horizontal Matrix of Medallions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-04.png" alt="A Horizontal Matrix of Keytags"></td>
+<td style="text-align: center"><img src="img/Figure-05.png" alt="A Vertical Strip of Keytags"></td>
+<td style="text-align: center"><img src="img/Figure-06.png" alt="A Horizontal Matrix of Medallions"></td>
+</tr>
+</tbody></table>
+
+<p>You can see why the top ring is optionally open, in Figure 5.</p>
+
+<p>These are provided as <a href="https://developer.apple.com/documentation/uikit/uiimage/">UIKit <code>UIImage</code></a>s, embedded in <a href="https://developer.apple.com/documentation/uikit/uiimageview">UIKit <code>UIImageView</code></a>s. These can be put into scrollers, or other contexts.</p>
+<h2 id='requirements' class='heading'>REQUIREMENTS</h2>
+
+<p>These classes are <a href="https://developer.apple.com/documentation/uikit/">UIKit</a>-only (<a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>), and require the <a href="https://apple.com/developer/swift">Swift Programming Language</a>.</p>
+<h3 id='dependencies' class='heading'>Dependencies</h3>
+
+<p>The package is dependent upon the following three packages:</p>
+
+<ul>
+<li><a href="https://github.com/LittleGreenViper/LGV_Cleantime">LGV_Cleantime</a></li>
+<li><a href="https://github.com/RiftValleySoftware/RVS_GeneralObserver">RVS_GeneralObserver</a></li>
+<li><a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox">RVS_Generic_Swift_Toolbox</a></li>
+</ul>
 <h2 id='implementation' class='heading'>IMPLEMENTATION</h2>
 <h3 id='installation' class='heading'>Installation</h3>
 <h4 id='a-href-https-swift-org-package-manager-swift-package-manager-spm-a' class='heading'><a href="https://swift.org/package-manager/">Swift Package Manager (SPM)</a>:</h4>
@@ -120,11 +182,6 @@
 </ul>
 
 <p>If you want to find out more about SPM, then you might want to <a href="https://littlegreenviper.com/series/spm/">view this series</a>).</p>
-<h4 id='a-href-https-github-com-carthage-carthage-carthage-a' class='heading'><a href="https://github.com/Carthage/Carthage">Carthage</a>:</h4>
-
-<p>You can include the library by adding the following line to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
-<pre class="highlight plaintext"><code>github "LittleGreenViper/LGV_UICleantime"
-</code></pre>
 <h3 id='resources' class='heading'>Resources</h3>
 
 <p>The package relies on resources that should be provided in a <a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/Resources/Base.lproj/Localizable.strings">Localizable.strings</a> file, and <a href="https://github.com/LittleGreenViper/LGV_UICleantime/tree/master/Sources/Resources/Base.lproj/LGV_UICleantime.xcassets">embedded as images</a> in your app bundle.</p>
@@ -136,7 +193,50 @@
 <pre class="highlight plaintext"><code>import LGV_UICleantime
 </code></pre>
 
-<p>The package has four different classes that can be used. One, is a subclass of <a href="https://developer.apple.com/documentation/uikit/uilabel"><code>UILabel</code></a>, and the other three are subclasses of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>.</p>
+<p>The package has four different classes that can be used. One, is a subclass of <a href="https://developer.apple.com/documentation/uikit/uilabel"><code>UILabel</code></a>, and the other three are subclasses of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>:</p>
+
+<ul>
+<li><p><a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Text%20Report/LGV_UICleantimeDisplayTextLabel.swift">LGV_UICleantimeDisplayTextLabel</a> is a subclass of <a href="https://developer.apple.com/documentation/uikit/uilabel"><code>UILabel</code></a>. It will display a &ldquo;natural English (or other localization) summary of total cleantime (total days, also years, months, etc.).</p></li>
+<li><p><a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Keytags/LGV_UIMultipleCleantimeKeytagImageView.swift">LGV_UIMultipleCleantimeKeytagImageView</a> and <a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Keytags/LGV_UISingleCleantimeKeytagImageView.swift">LGV_UISingleCleantimeKeytagImageView</a> are subclasses of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>, and display keytags, as shown in Figures 1, 2, 4, and 5.</p></li>
+<li><p><a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Medallions/LGV_UICleantimeMedallions.swift#L76">LGV_UISingleCleantimeMedallionImageView</a> is a subclass of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>, and displays a single medallion (like Figure 3).</p></li>
+<li><p><a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/LGV_UICleantime/Images/Medallions/LGV_UICleantimeMedallions.swift#L329">LGV_UICleantimeMultipleMedallionsImageView</a> is also a subclass of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>, and displays a matrix of medallions (as in Figure 6).</p></li>
+</ul>
+<h3 id='the-test-harness-app' class='heading'>The Test Harness App</h3>
+
+<p>The test harness app is designed to demonstrate the various aspects of the package, and provide some sample implementation. It is an <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a> app, and its source code is in the <a href="https://github.com/LittleGreenViper/LGV_UICleantime/tree/master/Tests/LGV_UICleantimeTestHarness">Tests/LGV_UICleantimeTestHarness</a> subdirectory.</p>
+
+<p>It has four tabs, which illustrate each of the above subclasses:</p>
+<h5 id='tab-0-the-text-report-label-and-single-medallion-view' class='heading'>Tab 0: The Text Report Label, and Single Medallion View</h5>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 7: Tab 0 (&quot;Medallion&rdquo;)</th>
+<th style="text-align: center">Figure 8: Tab 1 (&ldquo;Keytag&rdquo;)</th>
+<th style="text-align: center">Figure 9: Tab 2 (&ldquo;Keytags&rdquo;)</th>
+<th style="text-align: center">Figure 10: Tab 3 (&ldquo;Medallions&rdquo;)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-07.png" alt="Tab0"></td>
+<td style="text-align: center"><img src="img/Figure-08.png" alt="Tab1"></td>
+<td style="text-align: center"><img src="img/Figure-09.png" alt="Tab2"></td>
+<td style="text-align: center"><img src="img/Figure-10.png" alt="Tab3"></td>
+</tr>
+</tbody></table>
+
+<p>The two keytag tabs have switches, allowing you to change the appearance/layout:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Figure 11: Keytag Open Top</th>
+<th style="text-align: center">Figure 12: Vertical Keytag Strip</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="img/Figure-11.png" alt="The standard Keytag, With Its Ring &quot;Open&quot;"></td>
+<td style="text-align: center"><img src="img/Figure-12.png" alt="Keytags, Arranged as A Strip"></td>
+</tr>
+</tbody></table>
 <h2 id='license' class='heading'>LICENSE</h2>
 
 <p>The code and keytag images are <a href="https://opensource.org/licenses/MIT">MIT license</a>. Use them as you will.</p>

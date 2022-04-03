@@ -56,7 +56,7 @@
 		D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeMedallions.swift; sourceTree = "<group>"; };
 		D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionsViewController.swift; sourceTree = "<group>"; };
 		D41361BF27F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeBaseViewController.swift; sourceTree = "<group>"; };
-		D42272C927A45D9C0006A828 /* UICleantime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UICleantime.docc; sourceTree = "<group>"; };
+		D42272C927A45D9C0006A828 /* LGV_UICleantime.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LGV_UICleantime.docc; sourceTree = "<group>"; };
 		D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessMedallionViewController.swift; sourceTree = "<group>"; };
 		D43C66C82694AC20007D5883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessAppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			children = (
 				D40EF5AA26AC327C009153A8 /* Text Report */,
 				D40EF5AB26AC3289009153A8 /* Images */,
-				D42272C927A45D9C0006A828 /* UICleantime.docc */,
+				D42272C927A45D9C0006A828 /* LGV_UICleantime.docc */,
 			);
 			path = LGV_UICleantime;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -530,7 +530,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -682,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -708,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -765,7 +765,7 @@
 			repositoryURL = "git@github.com:LittleGreenViper/LGV_Cleantime.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.2;
+				minimumVersion = 1.3.3;
 			};
 		};
 		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {
