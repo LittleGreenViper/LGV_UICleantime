@@ -1,3 +1,7 @@
+**1.0.4** *April 3, 2022*
+
+- The images in the DocC resources dir were out of sync.
+
 **1.0.3** *April 3, 2022*
 
 - Lots of documentation improvements.
