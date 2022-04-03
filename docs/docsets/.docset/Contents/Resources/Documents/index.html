@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          LGV_UICleantime Doumentation
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/LittleGreenViper/LGV_UICleantime">
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html"> Reference</a>
+      <img class="carat" src="img/carat.png" alt=""/>
+        Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UICleantimeDateReportString.html">LGV_UICleantimeDateReportString</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UICleantimeDisplayTextLabel.html">LGV_UICleantimeDisplayTextLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UICleantimeImageViewBase.html">LGV_UICleantimeImageViewBase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UICleantimeMultipleMedallionsImageView.html">LGV_UICleantimeMultipleMedallionsImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UIMultipleCleantimeKeytagImageView.html">LGV_UIMultipleCleantimeKeytagImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UISingleCleantimeKeytagImageView.html">LGV_UISingleCleantimeKeytagImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UISingleCleantimeKeytagImageView/KeytagResourceNamesRing.html">– KeytagResourceNamesRing</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LGV_UISingleCleantimeMedallionImageView.html">LGV_UISingleCleantimeMedallionImageView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/LGV_UICleantimeImageViewBaseProtocol.html">LGV_UICleantimeImageViewBaseProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/LGV_UICleantimeImageViewObserverProtocol.html">LGV_UICleantimeImageViewObserverProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <p><img src="icon.png" alt="The Project Icon"></p>
+<h1 id='lgv_uicleantime-widget' class='heading'>LGV_UICLEANTIME WIDGET</h1>
+
+<p>This is a set of methods and resources that will produce a <a href="https://developer.apple.com/documentation/uikit/uilabel">UIKit UILabel</a>, containing a localizable description of a span of cleantime, or <a href="https://developer.apple.com/documentation/uikit/uiimage/">UIKit UIImage</a>s, representing keytags or medallions (standard medallions).</p>
+
+<p><a href="https://github.com/LittleGreenViper/LGV_UICleantime/">Here is the GitHub repo for the project.</a></p>
+<h2 id='overview' class='heading'>OVERVIEW</h2>
+
+<p>Use these methods and resources to implement a visual, &ldquo;<a href="https://www.techopedia.com/definition/28955/skeuomorphism">skeuomorphic</a>,&rdquo; display of the calculations that are generated by the <a href="https://github.com/LittleGreenViper/LGV_Cleantime/">LGV_Cleantime</a> package (This package depends on that package).</p>
+<h2 id='what-problem-does-this-solve' class='heading'>WHAT PROBLEM DOES THIS SOLVE?</h2>
+
+<p>This makes it very easy to provide a visual representation of important NA Recovery milestones. <a href="https://github.com/LittleGreenViper/LGV_Cleantime/">LGV_Cleantime</a> will calculate them, but this module will display them (only on <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>).</p>
+<h2 id='implementation' class='heading'>IMPLEMENTATION</h2>
+<h3 id='installation' class='heading'>Installation</h3>
+<h4 id='a-href-https-swift-org-package-manager-swift-package-manager-spm-a' class='heading'><a href="https://swift.org/package-manager/">Swift Package Manager (SPM)</a>:</h4>
+
+<p>The URI for the repo is:</p>
+
+<ul>
+<li><a href="git@github.com:LittleGreenViper/LGV_UICleantime.git">git@github.com:LittleGreenViper/LGV_UICleantime.git</a> (SSH), or</li>
+<li><a href="https://github.com/LittleGreenViper/LGV_UICleantime.git">https://github.com/LittleGreenViper/LGV_UICleantime.git</a> (HTTPS).</li>
+</ul>
+
+<p>If you want to find out more about SPM, then you might want to <a href="https://littlegreenviper.com/series/spm/">view this series</a>).</p>
+<h4 id='a-href-https-github-com-carthage-carthage-carthage-a' class='heading'><a href="https://github.com/Carthage/Carthage">Carthage</a>:</h4>
+
+<p>You can include the library by adding the following line to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
+<pre class="highlight plaintext"><code>github "LittleGreenViper/LGV_UICleantime"
+</code></pre>
+<h3 id='resources' class='heading'>Resources</h3>
+
+<p>The package relies on resources that should be provided in a <a href="https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/Resources/Base.lproj/Localizable.strings">Localizable.strings</a> file, and <a href="https://github.com/LittleGreenViper/LGV_UICleantime/tree/master/Sources/Resources/Base.lproj/LGV_UICleantime.xcassets">embedded as images</a> in your app bundle.</p>
+
+<p>These are not being embedded into the package, because it is likely that you will want to mix them with your own localization resources.</p>
+<h3 id='usage' class='heading'>Usage</h3>
+
+<p>Once you have the package included in your project, you&rsquo;ll need to include the library:</p>
+<pre class="highlight plaintext"><code>import LGV_UICleantime
+</code></pre>
+
+<p>The package has four different classes that can be used. One, is a subclass of <a href="https://developer.apple.com/documentation/uikit/uilabel"><code>UILabel</code></a>, and the other three are subclasses of <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>.</p>
+<h2 id='license' class='heading'>LICENSE</h2>
+
+<p>The code and keytag images are <a href="https://opensource.org/licenses/MIT">MIT license</a>. Use them as you will.</p>
+
+<p>However, the medallion images are renderings of the standard bronze <a href="https://na.org">NA World Services</a> (NAWS, Inc.) <a href="https://cart-us.na.org/2-keytags-medallions/medallions-bronze/bronze-medallions-bronze">cleantime commemoration medallions</a>. The design of those medallions is copyrighted by NA World Services.</p>
+
+<p>It is important to treat the intellectual property of NA with respect.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-04-03)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
