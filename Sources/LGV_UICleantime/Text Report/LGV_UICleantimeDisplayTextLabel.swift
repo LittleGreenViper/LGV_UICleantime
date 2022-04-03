@@ -36,10 +36,31 @@ import LGV_Cleantime
 open class LGV_UICleantimeDateReportString {
     /* ################################################################## */
     /**
-     - returns: A String, denoting NA cleantime.
+     This allows the class to be instantiated, so the static function can be used.
+     */
+    required public init() { }
+    
+    /* ################################################################## */
+    /**
+     A special static version of the generator.
+     
      - parameter beginDate: The starting date. This must be provided.
      - parameter endDate: The ending date. If not provided, today is assumed.
      - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
+     - returns: A String, denoting NA cleantime.
+    */
+    public static func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
+        Self().naCleantimeText(beginDate: inBeginDate, endDate: inEndDate, calendar: inCalendar)
+    }
+    
+    /* ################################################################## */
+    /**
+     The string generator (as an instance method).
+     
+     - parameter beginDate: The starting date. This must be provided.
+     - parameter endDate: The ending date. If not provided, today is assumed.
+     - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
+     - returns: A String, denoting NA cleantime.
     */
     open func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
         // Assuming we have everything we need, we calculate the cleantime. Otherwise, just return "Infinity."
