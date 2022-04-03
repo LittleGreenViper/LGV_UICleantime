@@ -22,10 +22,10 @@
 		D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D4895DD326A230B700624F0D /* LGV_Cleantime */; };
 		D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */; };
 		D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */; };
-		D4C79A1F27F9189800FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */; };
 		D4C79A2027F9189800FBB7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */; };
 		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
 		D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1D27F9189800FBB7D3 /* Localizable.strings */; };
+		D4C79A2527F91D2700FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */; };
 		D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */; };
 /* End PBXBuildFile section */
 
@@ -71,10 +71,10 @@
 		D4A5FE91269732BE009D0D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UIMultipleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
 		D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagsViewController.swift; sourceTree = "<group>"; };
-		D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LGV_UICleantime.xcassets; sourceTree = "<group>"; };
 		D4C79A1A27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4C79A1C27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4C79A1E27F9189800FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D4C79A2427F91D2700FBB7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Base; path = Base.lproj/LGV_UICleantime.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +242,7 @@
 		D4C79A1727F9189800FBB7D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D4C79A1827F9189800FBB7D3 /* LGV_UICleantime.xcassets */,
+				D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */,
 				D4C79A1D27F9189800FBB7D3 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -351,7 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C79A1F27F9189800FBB7D3 /* LGV_UICleantime.xcassets in Resources */,
+				D4C79A2527F91D2700FBB7D3 /* LGV_UICleantime.xcassets in Resources */,
 				D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */,
 				D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */,
 				D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */,
@@ -459,6 +459,14 @@
 				D4C79A1E27F9189800FBB7D3 /* Base */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4C79A2427F91D2700FBB7D3 /* Base */,
+			);
+			name = LGV_UICleantime.xcassets;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
