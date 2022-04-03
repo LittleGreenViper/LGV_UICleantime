@@ -59,7 +59,7 @@ extension LGV_UICleantimeImageViewObserver {
 /**
  This is a protocol that describes the base class. We use it to make sure that we can override the generatedImage func easily, and allows us to cast to a protocol.
  */
-protocol LGV_UICleantimeImageViewBaseProtocol: AnyObject {
+protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProtocol {
     /* ################################################################## */
     /**
      The total number of days to display.
@@ -86,19 +86,40 @@ protocol LGV_UICleantimeImageViewBaseProtocol: AnyObject {
  This is a view class that will display a "cleantime" commemoration medallion.
  */
 @IBDesignable
-open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBaseProtocol, RVS_GeneralObservableProtocol {
+open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBaseProtocol {
+    /* ################################################################## */
+    /**
+     This returns the dynamically-generated  image. The base class is nil.
+     This is an internal property. It is not exposed.
+     This needs to be declared (as opposed to being defined as a protocol default).
+     This is why: https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/
+     This operates asynchronously, in the main thread.
+     */
+    var generatedImage: UIImage? { nil }
+
+    /* ################################################################## */
+    /**
+     Just make sure that we release all subscribers (belt and suspenders).
+     This has to be implemented in the main declaration.
+     */
+    deinit {
+        unsubscribeAll()
+    }
+
     /* ################################################################################################################################## */
-    // MARK: Not Private, But Not Open to the World. RVS_GeneralObservableProtocol Conformance
+    // MARK: Not Private, But Not Open to the World. RVS_GeneralObservableProtocol Conformance. These must be declared public.
     /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This is a unique UUID, for use by observers.
+     Do not use this, or change it.
      */
     public var uuid: UUID = UUID()
     
     /* ################################################################## */
     /**
      This is an Array of subscribers.
+     Do not use this, or change it.
      */
     public var observers: [RVS_GeneralObserverProtocol] = []
 
@@ -109,43 +130,26 @@ open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBa
     /**
      The total number of days to display.
      */
-    @IBInspectable public var totalDays: Int = 0 { didSet { image = nil } }
+    @IBInspectable open var totalDays: Int = 0 { didSet { image = nil } }
     
     /* ################################################################## */
     /**
      The total number of months to display (including years).
      */
-    @IBInspectable public var totalMonths: Int = 0 { didSet { image = nil } }
-    
-    /* ################################################################## */
-    /**
-     This returns the dynamically-generated  image. The base class is nil.
-     This needs to be declared (as opposed to being defined as a protocol default).
-     This is why: https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/
-     This operates asynchrnously, in the main thread.
-     */
-    var generatedImage: UIImage? { nil }
-
-    /* ################################################################## */
-    /**
-     Just make sure that we release all subscribers (belt and suspenders).
-     */
-    deinit {
-        unsubscribeAll()
-    }
+    @IBInspectable open var totalMonths: Int = 0 { didSet { image = nil } }
 }
 
 /* ###################################################################################################################################### */
 // MARK: Base Class Overrides
 /* ###################################################################################################################################### */
-public extension LGV_UICleantimeImageViewBase {
+extension LGV_UICleantimeImageViewBase {
     /* ################################################################## */
     /**
      Called when the view is laid out.
      
      We use this to create the image. It starts the image drawing (asynchronously, but in the main thread).
      */
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         if let cachedImage = image {
             newImage(cachedImage)
@@ -158,7 +162,14 @@ public extension LGV_UICleantimeImageViewBase {
 /* ###################################################################################################################################### */
 // MARK: Callbacks
 /* ###################################################################################################################################### */
-public extension LGV_UICleantimeImageViewBase {
+extension LGV_UICleantimeImageViewBase {
+    /* ################################################################## */
+    /**
+     This is called after rendering is complete.
+     It sets the image, triggers a redraw, and also calls the observers.
+     
+     - parameter inImage: The image to be set as the view's image.
+     */
     func newImage(_ inImage: UIImage?) {
         image = inImage
         observers.forEach { ($0 as? LGV_UICleantimeImageViewObserver)?.renderingComplete(view: self) }

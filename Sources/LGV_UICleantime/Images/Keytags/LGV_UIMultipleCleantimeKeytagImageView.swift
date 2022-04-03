@@ -71,6 +71,13 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
      Contains cached drawn tags.
      */
     private var _cachedHorizontalKeytags: UIImage?
+    
+    /* ################################################################## */
+    /**
+     This returns the dynamically-generated keytag set image.
+     This needs to be implemented in the main class declaration.
+     */
+    override var generatedImage: UIImage? { _generateKeytagImages }
 
     /* ################################################################################################################################## */
     // MARK: Open to the World
@@ -79,7 +86,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /**
      If true (default), the the keytags are arranged as a long vertical strip. If false, they are laid out in horizontal rows.
      */
-    @IBInspectable public var keytagsAreAVerticalStrip: Bool = true {
+    @IBInspectable open var keytagsAreAVerticalStrip: Bool = true {
         didSet {
             if oldValue != keytagsAreAVerticalStrip {
                 DispatchQueue.main.async {
@@ -94,13 +101,7 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /**
      This is the maximum number of columns to display. Its default is 8.
      */
-    @IBInspectable public var maxColumns: Int = 8
-    
-    /* ################################################################## */
-    /**
-     This returns the dynamically-generated keytag set image.
-     */
-    override public var generatedImage: UIImage? { _generateKeytagImages }
+    @IBInspectable open var maxColumns: Int = 8
 }
 
 /* ###################################################################################################################################### */

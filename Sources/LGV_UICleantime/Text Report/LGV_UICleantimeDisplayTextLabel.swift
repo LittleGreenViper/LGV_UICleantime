@@ -30,6 +30,8 @@ import LGV_Cleantime
 /* ###################################################################################################################################### */
 /**
  This is basically a namespace class, providing a static utility for generating a report string.
+ 
+ This is declared as its own class (as opposed to a struct), so it can be subclassed.
  */
 open class LGV_UICleantimeDateReportString {
     /* ################################################################## */
@@ -39,7 +41,7 @@ open class LGV_UICleantimeDateReportString {
      - parameter endDate: The ending date. If not provided, today is assumed.
      - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
     */
-    public static func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
+    open func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
         // Assuming we have everything we need, we calculate the cleantime. Otherwise, just return "Infinity."
         guard let beginDate = inBeginDate,
               let endDate = inEndDate else { return "" }
@@ -102,14 +104,19 @@ open class LGV_UICleantimeDateReportString {
 /* ###################################################################################################################################### */
 /**
  This class extends the label class to display a localizable cleantime "report."
+ 
+ This requires a begin date, and an end date be supplied, and it will generate a text report, in conversational English (by default), using format strings.
  */
 @IBDesignable
 open class LGV_UICleantimeDisplayTextLabel: UILabel {
+    /* ################################################################################################################################## */
+    // MARK: Required Properties
+    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      The date signifying the beginning of the period.
      */
-    public var beginDate: Date? {
+    open var beginDate: Date? {
         didSet { DispatchQueue.main.async { self.setNeedsLayout() } }
     }
     
@@ -117,16 +124,30 @@ open class LGV_UICleantimeDisplayTextLabel: UILabel {
     /**
      The last date. This defaults to today.
      */
-    public var endDate: Date? = Date() {
+    open var endDate: Date? = Date() {
         didSet { DispatchQueue.main.async { self.setNeedsLayout() } }
     }
+    
+    /* ################################################################################################################################## */
+    // MARK: Optional Overrides
+    /* ################################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is the instance that generates the text. It can be overridden or set to an instance of a derived subclass of `LGV_UICleantimeDateReportString`
+     */
+    open var reportStringClassInstance = LGV_UICleantimeDateReportString()
     
     /* ################################################################## */
     /**
      This is text to be displayed if no cleantime.
      */
-    public var textToDisplayIfNoDate: String = "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
-    
+    open var textToDisplayIfNoDate: String = "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
+}
+
+/* ###################################################################################################################################### */
+// MARK: Base Class Overrides
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeDisplayTextLabel {
     /* ################################################################## */
     /**
      Called when the views are to be laid out.
@@ -136,7 +157,7 @@ open class LGV_UICleantimeDisplayTextLabel: UILabel {
         if let beginDate = beginDate,
            let endDate = endDate,
            beginDate < endDate {
-            text = LGV_UICleantimeDateReportString.naCleantimeText(beginDate: beginDate, endDate: endDate)
+            text = reportStringClassInstance.naCleantimeText(beginDate: beginDate, endDate: endDate)
         } else {
             text = textToDisplayIfNoDate
         }

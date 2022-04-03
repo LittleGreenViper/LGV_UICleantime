@@ -118,8 +118,9 @@ open class LGV_UISingleCleantimeMedallionImageView: LGV_UICleantimeImageViewBase
     /* ################################################################## */
     /**
      This returns the dynamically-generated medallion  image.
+     This needs to be implemented in the main class declaration.
      */
-    override public var generatedImage: UIImage? {
+    override var generatedImage: UIImage? {
         super.image = _medallionImage
         
         return super.image
@@ -296,12 +297,12 @@ private extension LGV_UISingleCleantimeMedallionImageView {
 /* ###################################################################################################################################### */
 // MARK: Public Instance Computed Properties
 /* ###################################################################################################################################### */
-public extension LGV_UISingleCleantimeMedallionImageView {
+extension LGV_UISingleCleantimeMedallionImageView {
     /* ################################################################## */
     /**
      This returns the medallion  image. It may be cached. Clearing it, reverts the image to the background image.
      */
-    override var image: UIImage? {
+    public override var image: UIImage? {
         get { super.image ?? generatedImage }
         
         set {
@@ -325,24 +326,15 @@ public extension LGV_UISingleCleantimeMedallionImageView {
 open class LGV_UICleantimeMultipleMedallionsImageView: LGV_UICleantimeImageViewBase {
     /* ################################################################## */
     /**
-     This is the maximum number of columns to display. Its default is 4.
-     */
-    @IBInspectable public var maxColumns: Int = 4
-    
-    /* ################################################################## */
-    /**
      Contains cached drawn medallions.
      */
     private var _cachedMedallions: UIImage?
 
-    /* ################################################################################################################################## */
-    // MARK: Public Base Class Overrides
-    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This returns a generated matrix of medallions.
      */
-    override public var generatedImage: UIImage? {
+    override var generatedImage: UIImage? {
         guard nil == _cachedMedallions else { return _cachedMedallions }
         
         let totalYears = Int(totalMonths / 12)
@@ -402,8 +394,14 @@ open class LGV_UICleantimeMultipleMedallionsImageView: LGV_UICleantimeImageViewB
      We use this to force the images to be recreated.
      */
     public override func layoutSubviews() {
-        _cachedMedallions = nil
+        _cachedMedallions = nil // Make sure that we reset the cache, so it is rebuilt.
         super.layoutSubviews()
     }
+    
+    /* ################################################################## */
+    /**
+     This is the maximum number of columns to display. Its default is 4.
+     */
+    @IBInspectable open var maxColumns: Int = 4
 }
 #endif

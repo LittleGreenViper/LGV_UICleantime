@@ -62,7 +62,7 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
     /**
      True (default) if the ring is closed on top.
      */
-    @IBInspectable public var isRingClosed: Bool = true {
+    @IBInspectable open var isRingClosed: Bool = true {
         didSet {
             if isRingClosed != oldValue {
                 DispatchQueue.main.async {
@@ -76,8 +76,9 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
     /* ################################################################## */
     /**
      This returns a dynamically-generated keytag image.
+     This needs to be implemented in the main class declaration.
      */
-    override public var generatedImage: UIImage? {
+    override var generatedImage: UIImage? {
         guard let keyTagDescription = LGV_CleantimeKeytagDescription.getLastTagThatApplies(totalDays: totalDays, totalMonths: totalMonths),
            let bodyImage = UIImage(named: keyTagDescription.bodyImage.rawValue),
            let textImage = UIImage(named: keyTagDescription.textImage.rawValue),
