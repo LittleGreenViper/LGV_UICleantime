@@ -26,6 +26,7 @@ import PackageDescription
 
 let package = Package(
     name: "LGV_UICleantime",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v14),
         .tvOS(.v14),    // This needs to be here, even though we don't compile for tvOS.
