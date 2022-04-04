@@ -1,3 +1,7 @@
+**1.0.5** *April 4, 2022*
+
+- Added scrollers to the test harnesses.
+
 **1.0.4** *April 3, 2022*
 
 - The images in the DocC resources dir were out of sync.

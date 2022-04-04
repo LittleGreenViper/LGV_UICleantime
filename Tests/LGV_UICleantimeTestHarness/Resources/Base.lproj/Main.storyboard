@@ -195,19 +195,39 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUj-DP-ysA" userLabel="Keytag Display">
-                                <rect key="frame" x="0.0" y="213" width="414" height="600"/>
+                                <rect key="frame" x="20" y="213" width="374" height="600"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-AQ-Hu9" customClass="LGV_UIMultipleCleantimeKeytagImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" showsHorizontalScrollIndicator="NO" maximumZoomScale="4" id="VjT-o6-3Ti">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-AQ-Hu9" customClass="LGV_UIMultipleCleantimeKeytagImageView" customModule="LGV_UICleantime">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
+                                        <constraints>
+                                            <constraint firstItem="HCf-AQ-Hu9" firstAttribute="bottom" secondItem="1jY-xf-N14" secondAttribute="bottom" id="4i8-h3-0TI"/>
+                                            <constraint firstAttribute="trailing" secondItem="HCf-AQ-Hu9" secondAttribute="trailing" id="n8W-ky-glg"/>
+                                            <constraint firstItem="HCf-AQ-Hu9" firstAttribute="leading" secondItem="VjT-o6-3Ti" secondAttribute="leading" id="oce-bX-5Xw"/>
+                                            <constraint firstItem="HCf-AQ-Hu9" firstAttribute="top" secondItem="1jY-xf-N14" secondAttribute="top" id="puR-5l-hER"/>
+                                            <constraint firstItem="HCf-AQ-Hu9" firstAttribute="width" secondItem="FGE-YI-3D5" secondAttribute="width" id="wsi-Dk-aIU"/>
+                                            <constraint firstItem="HCf-AQ-Hu9" firstAttribute="bottom" secondItem="FGE-YI-3D5" secondAttribute="bottom" placeholder="YES" id="z79-BR-J1m"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="1jY-xf-N14"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="FGE-YI-3D5"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="WDk-24-O0R" id="VSN-di-ow0"/>
+                                        </connections>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HCf-AQ-Hu9" secondAttribute="bottom" id="SEa-K7-Zf7"/>
-                                    <constraint firstItem="HCf-AQ-Hu9" firstAttribute="top" secondItem="zUj-DP-ysA" secondAttribute="top" id="UWQ-3E-6sS"/>
-                                    <constraint firstItem="HCf-AQ-Hu9" firstAttribute="leading" secondItem="zUj-DP-ysA" secondAttribute="leading" id="d1h-ku-4AM"/>
-                                    <constraint firstAttribute="trailing" secondItem="HCf-AQ-Hu9" secondAttribute="trailing" id="lMU-rE-FAP"/>
+                                    <constraint firstItem="VjT-o6-3Ti" firstAttribute="top" secondItem="zUj-DP-ysA" secondAttribute="top" id="UOD-JU-Xm4"/>
+                                    <constraint firstAttribute="bottom" secondItem="VjT-o6-3Ti" secondAttribute="bottom" id="uRN-hW-eUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="VjT-o6-3Ti" secondAttribute="trailing" id="w0x-FR-lvN"/>
+                                    <constraint firstItem="VjT-o6-3Ti" firstAttribute="leading" secondItem="zUj-DP-ysA" secondAttribute="leading" id="zQr-Vq-n8B"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -223,10 +243,10 @@
                             <constraint firstAttribute="trailing" secondItem="jwJ-QG-7F4" secondAttribute="trailing" id="UAa-fb-tWs"/>
                             <constraint firstItem="IpH-WD-sOd" firstAttribute="top" secondItem="1dL-I4-Gfh" secondAttribute="top" id="WPA-n9-FM7"/>
                             <constraint firstItem="zUj-DP-ysA" firstAttribute="bottom" secondItem="1dL-I4-Gfh" secondAttribute="bottom" id="ZIv-yD-QEs"/>
-                            <constraint firstItem="zUj-DP-ysA" firstAttribute="trailing" secondItem="1dL-I4-Gfh" secondAttribute="trailing" id="bCL-WQ-Q56"/>
+                            <constraint firstItem="1dL-I4-Gfh" firstAttribute="trailing" secondItem="zUj-DP-ysA" secondAttribute="trailing" constant="20" id="bCL-WQ-Q56"/>
                             <constraint firstItem="zUj-DP-ysA" firstAttribute="top" secondItem="Mhp-66-lY1" secondAttribute="bottom" constant="8" symbolic="YES" id="gH0-5k-6fZ"/>
                             <constraint firstItem="jwJ-QG-7F4" firstAttribute="top" secondItem="sDJ-Vd-Pkn" secondAttribute="top" id="inY-iR-VCY"/>
-                            <constraint firstItem="zUj-DP-ysA" firstAttribute="leading" secondItem="1dL-I4-Gfh" secondAttribute="leading" id="kmn-PD-iuP"/>
+                            <constraint firstItem="zUj-DP-ysA" firstAttribute="leading" secondItem="1dL-I4-Gfh" secondAttribute="leading" constant="20" id="kmn-PD-iuP"/>
                             <constraint firstItem="jwJ-QG-7F4" firstAttribute="leading" secondItem="sDJ-Vd-Pkn" secondAttribute="leading" id="m1N-PV-b95"/>
                             <constraint firstItem="Mhp-66-lY1" firstAttribute="leading" secondItem="1dL-I4-Gfh" secondAttribute="leading" constant="20" id="pCk-rc-xfc"/>
                             <constraint firstItem="1dL-I4-Gfh" firstAttribute="trailing" secondItem="Mhp-66-lY1" secondAttribute="trailing" constant="20" id="qoJ-4U-q1A"/>
@@ -241,13 +261,14 @@
                         <outlet property="dateSelector" destination="IpH-WD-sOd" id="MlB-zi-YoI"/>
                         <outlet property="horizontalSwitchLabel" destination="5N4-z6-Qg0" id="3OH-0Q-9es"/>
                         <outlet property="horizontalVerticalSwitch" destination="yEt-MG-1MW" id="dg7-nW-xve"/>
+                        <outlet property="scrollView" destination="VjT-o6-3Ti" id="84D-dG-Vcm"/>
                         <outlet property="throbber" destination="eoO-vE-cOw" id="mhN-WB-ker"/>
                         <outlet property="verticalSwitchLabel" destination="Vzr-Jy-paZ" id="OTO-sc-8qo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iX1-wz-whN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="846"/>
+            <point key="canvasLocation" x="-342.02898550724638" y="845.75892857142856"/>
         </scene>
         <!--Keytag-->
         <scene sceneID="gL6-DZ-pBW">
@@ -382,19 +403,37 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-mE-gMX" userLabel="Medallion Display">
-                                <rect key="frame" x="0.0" y="174" width="414" height="639"/>
+                                <rect key="frame" x="20" y="174" width="374" height="639"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-cY-Xxh" customClass="LGV_UICleantimeMultipleMedallionsImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-fi-5tv">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="639"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-cY-Xxh" customClass="LGV_UICleantimeMultipleMedallionsImageView" customModule="LGV_UICleantime">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="639"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JrZ-cY-Xxh" firstAttribute="bottom" secondItem="Ly3-dq-lbn" secondAttribute="bottom" id="440-6g-pR3"/>
+                                            <constraint firstItem="Ly3-dq-lbn" firstAttribute="top" secondItem="JrZ-cY-Xxh" secondAttribute="top" id="EMo-5E-cxc"/>
+                                            <constraint firstAttribute="trailing" secondItem="JrZ-cY-Xxh" secondAttribute="trailing" id="LyV-hw-OjB"/>
+                                            <constraint firstItem="JrZ-cY-Xxh" firstAttribute="width" secondItem="5zO-QN-lZk" secondAttribute="width" id="bKK-QB-gmC"/>
+                                            <constraint firstItem="JrZ-cY-Xxh" firstAttribute="centerY" secondItem="gcx-fi-5tv" secondAttribute="centerY" placeholder="YES" id="eeY-Rb-6JU"/>
+                                            <constraint firstItem="JrZ-cY-Xxh" firstAttribute="leading" secondItem="gcx-fi-5tv" secondAttribute="leading" id="iIB-1e-EpO"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="Ly3-dq-lbn"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="5zO-QN-lZk"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FYt-bP-Kw1" id="Wck-BC-hbD"/>
+                                        </connections>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="JrZ-cY-Xxh" firstAttribute="leading" secondItem="YgI-mE-gMX" secondAttribute="leading" id="Q2z-Dq-ZXD"/>
-                                    <constraint firstItem="JrZ-cY-Xxh" firstAttribute="top" secondItem="YgI-mE-gMX" secondAttribute="top" id="UaH-Hg-cZz"/>
-                                    <constraint firstAttribute="trailing" secondItem="JrZ-cY-Xxh" secondAttribute="trailing" id="hwo-AC-62P"/>
-                                    <constraint firstAttribute="bottom" secondItem="JrZ-cY-Xxh" secondAttribute="bottom" id="usR-9c-lRd"/>
+                                    <constraint firstItem="gcx-fi-5tv" firstAttribute="leading" secondItem="YgI-mE-gMX" secondAttribute="leading" id="C4N-Y9-4Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="gcx-fi-5tv" secondAttribute="trailing" id="PGG-0J-2Hd"/>
+                                    <constraint firstItem="gcx-fi-5tv" firstAttribute="top" secondItem="YgI-mE-gMX" secondAttribute="top" id="QAA-SH-5ho"/>
+                                    <constraint firstAttribute="bottom" secondItem="gcx-fi-5tv" secondAttribute="bottom" id="nQa-3Q-kMH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -405,10 +444,10 @@
                             <constraint firstItem="hV5-j8-5ED" firstAttribute="top" secondItem="t39-yH-CZK" secondAttribute="top" id="J6a-Wh-Lba"/>
                             <constraint firstItem="hV5-j8-5ED" firstAttribute="height" secondItem="5k4-pn-52d" secondAttribute="height" multiplier="0.25" priority="750" id="Lyb-xy-sQd"/>
                             <constraint firstItem="YDQ-XI-E8H" firstAttribute="centerY" secondItem="5k4-pn-52d" secondAttribute="centerY" id="Qcz-40-EcK"/>
-                            <constraint firstItem="YgI-mE-gMX" firstAttribute="trailing" secondItem="t39-yH-CZK" secondAttribute="trailing" id="deF-Fa-rTG"/>
+                            <constraint firstItem="t39-yH-CZK" firstAttribute="trailing" secondItem="YgI-mE-gMX" secondAttribute="trailing" constant="20" id="deF-Fa-rTG"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="bottom" secondItem="t39-yH-CZK" secondAttribute="bottom" id="ew8-j5-vhB"/>
                             <constraint firstItem="YDQ-XI-E8H" firstAttribute="centerX" secondItem="5k4-pn-52d" secondAttribute="centerX" id="frn-61-TQi"/>
-                            <constraint firstItem="YgI-mE-gMX" firstAttribute="leading" secondItem="t39-yH-CZK" secondAttribute="leading" id="lLu-Qe-Vcd"/>
+                            <constraint firstItem="YgI-mE-gMX" firstAttribute="leading" secondItem="t39-yH-CZK" secondAttribute="leading" constant="20" id="lLu-Qe-Vcd"/>
                             <constraint firstAttribute="trailing" secondItem="19P-8Z-32O" secondAttribute="trailing" id="mrf-xm-DPd"/>
                             <constraint firstItem="YgI-mE-gMX" firstAttribute="top" secondItem="hV5-j8-5ED" secondAttribute="bottom" id="oA1-kN-q70"/>
                             <constraint firstItem="19P-8Z-32O" firstAttribute="top" secondItem="5k4-pn-52d" secondAttribute="top" id="rsB-Dk-ydq"/>
@@ -423,6 +462,7 @@
                     <connections>
                         <outlet property="cleantime" destination="JrZ-cY-Xxh" id="d8N-up-GsH"/>
                         <outlet property="dateSelector" destination="hV5-j8-5ED" id="pw2-3p-ZoI"/>
+                        <outlet property="scrollView" destination="gcx-fi-5tv" id="XBu-wi-TtX"/>
                         <outlet property="throbber" destination="YDQ-XI-E8H" id="aGg-3p-ahI"/>
                     </connections>
                 </viewController>

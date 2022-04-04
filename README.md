@@ -103,6 +103,8 @@ It has four tabs, which illustrate each of the above subclasses:
 |:----:|:----:|:----:|:----:|
 |![Tab0](img/Figure-07.png)|![Tab1](img/Figure-08.png)|![Tab2](img/Figure-09.png)|![Tab3](img/Figure-10.png)|
 
+The Keytags and Medallions tabs have scrollers, which will allow you to scroll the images.
+
 The two keytag tabs have switches, allowing you to change the appearance/layout:
 
 |Figure 11: Keytag Open Top|Figure 12: Vertical Keytag Strip|

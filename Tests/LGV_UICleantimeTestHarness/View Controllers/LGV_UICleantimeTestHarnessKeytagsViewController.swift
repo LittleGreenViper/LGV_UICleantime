@@ -49,6 +49,12 @@ class LGV_UICleantimeTestHarnessKeytagsViewController: LGV_UICleantimeBaseViewCo
 
     /* ################################################################## */
     /**
+     The scroller, containing the display.
+    */
+    @IBOutlet weak var scrollView: UIScrollView?
+
+    /* ################################################################## */
+    /**
      This will show a "busy throbber," while the images are being composited.
     */
     override func showThrobber() {
@@ -67,6 +73,33 @@ class LGV_UICleantimeTestHarnessKeytagsViewController: LGV_UICleantimeBaseViewCo
         horizontalVerticalSwitch?.isHidden = false
         horizontalSwitchLabel?.isHidden = false
         verticalSwitchLabel?.isHidden = false
+    }
+
+    /* ################################################################################################################################## */
+    // MARK: Base Class Overrides (In Main Declaration)
+    /* ################################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is called when the images have completed rendering.
+     
+     - parameter view: The completed UIImageView
+     */
+    override func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase) {
+        super.renderingComplete(view: inImageView)
+        guard let contentSize = scrollView?.contentSize,
+              0 < contentSize.height
+        else {
+            scrollView?.zoomScale = 1.0
+            return
+        }
+        
+        // This makes sure that the scroller goes to the top of the matrix, if it is resized.
+        let intW = inImageView.intrinsicContentSize.width
+        let intH = inImageView.intrinsicContentSize.height
+        let dispW = inImageView.bounds.size.width
+        let scale = intW / dispW
+        let differenceInHeight = max(0, (contentSize.height - (intH / scale)) / 2)
+        scrollView?.contentOffset.y = differenceInHeight
     }
 }
 
@@ -109,4 +142,15 @@ extension LGV_UICleantimeTestHarnessKeytagsViewController {
         super.viewWillAppear(inIsAnimated)
         horizontalVerticalSwitch?.isOn = (cleantime as? LGV_UIMultipleCleantimeKeytagImageView)?.keytagsAreAVerticalStrip ?? false
     }
+}
+
+/* ###################################################################################################################################### */
+// MARK: UIScrollViewDelegate Conformance
+/* ###################################################################################################################################### */
+extension LGV_UICleantimeTestHarnessKeytagsViewController: UIScrollViewDelegate {
+    /* ################################################################## */
+    /**
+     This simply sets the image view as a pinch to zoom target.
+     */
+    func viewForZooming(in: UIScrollView) -> UIView? { cleantime }
 }
