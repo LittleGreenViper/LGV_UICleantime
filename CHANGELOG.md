@@ -1,3 +1,7 @@
+**1.0.6** *May 13, 2022*
+
+- Updated the `RVS_Generic_Swift_Toolbox` dependency. No operational or API changes.
+
 **1.0.5** *April 4, 2022*
 
 - Added scrollers to the test harnesses.
