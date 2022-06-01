@@ -1,3 +1,7 @@
+**1.1.1** *May 31, 2022*
+
+- There was an issue with the generic swift toolbox dependency (wrong name).
+
 **1.1.0** *May 31, 2022*
 
 - Removed the "dash-notation."

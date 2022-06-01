@@ -51,7 +51,7 @@ let package = Package(
     targets: [
         .target(name: "LGV_UICleantime",    
                 dependencies: [
-                    .product(name: "RVS_Generic-Swift-Toolbox",
+                    .product(name: "RVS_Generic_Swift_Toolbox",
                              package: "RVS_Generic_Swift_Toolbox"),
                     .product(name: "RVS_GeneralObserver",
                              package: "RVS_GeneralObserver"),
