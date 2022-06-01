@@ -34,26 +34,26 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "LGV-UICleantime",
+            name: "LGV_UICleantime",
             targets: ["LGV_UICleantime"]
         )],
     dependencies: [
         .package(name: "RVS_Generic_Swift_Toolbox",
                  url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
-                 from: "1.7.2"),
+                 from: "1.8.1"),
         .package(name: "RVS_GeneralObserver",
                  url: "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git",
-                 from: "1.0.9"),
+                 from: "1.1.0"),
         .package(name: "LGV_Cleantime",
                  url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
-                 from: "1.3.4")
+                 from: "1.3.5")
     ],
     targets: [
         .target(name: "LGV_UICleantime",    
                 dependencies: [
-                    .product(name: "RVS-Generic-Swift-Toolbox",
+                    .product(name: "RVS_Generic-Swift-Toolbox",
                              package: "RVS_Generic_Swift_Toolbox"),
-                    .product(name: "RVS-GeneralObserver",
+                    .product(name: "RVS_GeneralObserver",
                              package: "RVS_GeneralObserver"),
                     .product(name: "LGV_Cleantime",
                              package: "LGV_Cleantime")]

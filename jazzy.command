@@ -7,10 +7,10 @@ echo "Creating Docs for the LGV_UICleantime Library\n"
 rm -drf docs/*
 
 jazzy  --readme ./README.md \
-       --build-tool-arguments -scheme,"LGV_UICleantime",-target,"LGV_UICleantime" \
        --github_url https://github.com/LittleGreenViper/LGV_UICleantime \
        --title "LGV_UICleantime Doumentation" \
        --min_acl public \
-       --theme fullwidth
+       --theme fullwidth \
+       --build-tool-arguments -scheme,"LGV_UICleantime",-target,"LGV_UICleantime"
 cp ./icon.png docs/
 cp ./img/* docs/img

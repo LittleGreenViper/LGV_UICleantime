@@ -1,3 +1,9 @@
+**1.1.0** *May 31, 2022*
+
+- Removed the "dash-notation."
+- Updated all the dependencies.
+- Updated the test harness to use a static lib.
+
 **1.0.6** *May 13, 2022*
 
 - Updated the `RVS_Generic_Swift_Toolbox` dependency. No operational or API changes.

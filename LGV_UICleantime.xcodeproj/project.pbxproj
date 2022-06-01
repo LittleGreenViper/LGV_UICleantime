@@ -7,50 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D400F6B02698971C001C261A /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */; };
-		D401FAF726989C2700540C9F /* LGV_UICleantimeMedallions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */; };
 		D40EF5B126AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40EF5B026AC44C4009153A8 /* LGV_UICleantimeTestHarnessMedallionsViewController.swift */; };
 		D41361C027F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41361BF27F8D80B00DA1AD4 /* LGV_UICleantimeBaseViewController.swift */; };
-		D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */; };
 		D43C66D02694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66C72694AC20007D5883 /* LGV_UICleantimeTestHarnessMedallionViewController.swift */; };
 		D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C82694AC20007D5883 /* Assets.xcassets */; };
 		D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */; };
-		D468D1A626A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */; };
-		D46C6D64269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */; };
-		D4878F862698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */; };
+		D452856B2846E0C900622DFA /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D452856A2846E0C900622DFA /* RVS_Generic_Swift_Toolbox */; };
+		D47C71BE2846E36A00530CDA /* LGV_UICleantimeImageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */; };
+		D47C71BF2846E36A00530CDA /* LGV_UICleantimeDisplayTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */; };
+		D47C71C02846E36A00530CDA /* LGV_UICleantimeMedallions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */; };
+		D47C71C12846E36A00530CDA /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */; };
+		D47C71C22846E36A00530CDA /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */; };
 		D4878F882698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */; };
-		D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D4895DD326A230B700624F0D /* LGV_Cleantime */; };
-		D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B247BE269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift */; };
+		D48BED9A2846E41800A99B0D /* RVS_GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D48BED992846E41800A99B0D /* RVS_GeneralObserver */; };
+		D48BED9B2846E41F00A99B0D /* LGV_UICleantime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47C71C32846E38200530CDA /* LGV_UICleantime.a */; };
+		D48BED9F2846E47500A99B0D /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D48BED9E2846E47500A99B0D /* LGV_Cleantime */; };
+		D48BEDA12846E48A00A99B0D /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */; };
+		D48BEDA32846E48A00A99B0D /* RVS_GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */; };
 		D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */; };
 		D4C79A2027F9189800FBB7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */; };
 		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
 		D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1D27F9189800FBB7D3 /* Localizable.strings */; };
 		D4C79A2527F91D2700FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */; };
-		D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D41772422698978A00DA944B /* PBXContainerItemProxy */ = {
+		D48BEDA52846E4F400A99B0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D43C667F2694AA88007D5883 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D42491BD2695F44C0094C15F;
-			remoteInfo = UICleantime;
+			remoteGlobalIDString = D47C71B62846E35100530CDA;
+			remoteInfo = LGV_UICleantime;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D42C6A40269642DA00CD27B9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeMedallions.swift; sourceTree = "<group>"; };
@@ -62,10 +51,10 @@
 		D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessAppDelegate.swift; sourceTree = "<group>"; };
 		D43C66CE2694AC20007D5883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43C66D82694AC33007D5883 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
-		D44261A527F86390004BCB6C /* LGV_UICleantime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LGV_UICleantime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LGV_UICleantimeTestHarness (Framework).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeImageViewBase.swift; sourceTree = "<group>"; };
 		D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeDisplayTextLabel.swift; sourceTree = "<group>"; };
+		D47C71C32846E38200530CDA /* LGV_UICleantime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = LGV_UICleantime.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4878F852698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UISingleCleantimeKeytagImageView.swift; sourceTree = "<group>"; };
 		D4878F872698F87D009080CD /* LGV_UICleantimeTestHarnessKeytagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeTestHarnessKeytagViewController.swift; sourceTree = "<group>"; };
 		D4A5FE91269732BE009D0D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,21 +67,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D42491BB2695F44C0094C15F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4E6423426AB228E00CA6EE7 /* RVS-GeneralObserver in Frameworks */,
-				D42491D12695FD6A0094C15F /* RVS-Generic-Swift-Toolbox in Frameworks */,
-				D4895DD426A230B700624F0D /* LGV_Cleantime in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D42491CA2695F44C0094C15F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D400F6B02698971C001C261A /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D48BED9B2846E41F00A99B0D /* LGV_UICleantime.a in Frameworks */,
+				D48BED9A2846E41800A99B0D /* RVS_GeneralObserver in Frameworks */,
+				D452856B2846E0C900622DFA /* RVS_Generic_Swift_Toolbox in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D47C71B42846E35100530CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48BEDA32846E48A00A99B0D /* RVS_GeneralObserver in Frameworks */,
+				D48BEDA12846E48A00A99B0D /* RVS_Generic_Swift_Toolbox in Frameworks */,
+				D48BED9F2846E47500A99B0D /* LGV_Cleantime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +131,9 @@
 				D43C66912694AB9E007D5883 /* Sources */,
 				D43C66C52694AC20007D5883 /* Tests */,
 				D43C66D72694AC33007D5883 /* Project-Meta */,
-				D44261A527F86390004BCB6C /* LGV_UICleantime.framework */,
 				D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */,
+				D47C71C32846E38200530CDA /* LGV_UICleantime.a */,
+				D48BED962846E41800A99B0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +182,13 @@
 				D43C66D82694AC33007D5883 /* Warnings.xcconfig */,
 			);
 			path = "Project-Meta";
+			sourceTree = "<group>";
+		};
+		D48BED962846E41800A99B0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D4A5FE90269732BE009D0D17 /* Meta */ = {
@@ -251,29 +250,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D42491BD2695F44C0094C15F /* LGV_UICleantime */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D42491C72695F44C0094C15F /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */;
-			buildPhases = (
-				D4BD88EF269E2E65009015D1 /* SwiftLint */,
-				D42491BA2695F44C0094C15F /* Sources */,
-				D42491BB2695F44C0094C15F /* Frameworks */,
-				D42491BC2695F44C0094C15F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LGV_UICleantime;
-			packageProductDependencies = (
-				D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */,
-				D4895DD326A230B700624F0D /* LGV_Cleantime */,
-				D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */,
-			);
-			productName = "UICleantime (Dylib)";
-			productReference = D44261A527F86390004BCB6C /* LGV_UICleantime.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		D43C66B02694ABFF007D5883 /* LGV_UICleantimeTestHarness (Framework) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D43C66C22694AC00007D5883 /* Build configuration list for PBXNativeTarget "LGV_UICleantimeTestHarness (Framework)" */;
@@ -282,20 +258,42 @@
 				D43C66AD2694ABFF007D5883 /* Sources */,
 				D43C66AF2694ABFF007D5883 /* Resources */,
 				D42491CA2695F44C0094C15F /* Frameworks */,
-				D42C6A40269642DA00CD27B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D41772432698978A00DA944B /* PBXTargetDependency */,
+				D48BEDA62846E4F400A99B0D /* PBXTargetDependency */,
 			);
 			name = "LGV_UICleantimeTestHarness (Framework)";
 			packageProductDependencies = (
-				D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */,
+				D452856A2846E0C900622DFA /* RVS_Generic_Swift_Toolbox */,
+				D48BED992846E41800A99B0D /* RVS_GeneralObserver */,
 			);
 			productName = UICleantimeTestHarness;
 			productReference = D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */;
 			productType = "com.apple.product-type.application";
+		};
+		D47C71B62846E35100530CDA /* LGV_UICleantime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D47C71BB2846E35100530CDA /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */;
+			buildPhases = (
+				D48BEDA42846E4BE00A99B0D /* SwiftLint */,
+				D47C71B32846E35100530CDA /* Sources */,
+				D47C71B42846E35100530CDA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LGV_UICleantime;
+			packageProductDependencies = (
+				D48BED9E2846E47500A99B0D /* LGV_Cleantime */,
+				D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */,
+				D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */,
+			);
+			productName = LGV_UICleantime;
+			productReference = D47C71C32846E38200530CDA /* LGV_UICleantime.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -303,15 +301,14 @@
 		D43C667F2694AA88007D5883 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					D42491BD2695F44C0094C15F = {
-						CreatedOnToolsVersion = 12.5.1;
-						LastSwiftMigration = 1250;
-					};
 					D43C66B02694ABFF007D5883 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					D47C71B62846E35100530CDA = {
+						CreatedOnToolsVersion = 13.4;
 					};
 				};
 			};
@@ -333,20 +330,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D42491BD2695F44C0094C15F /* LGV_UICleantime */,
+				D47C71B62846E35100530CDA /* LGV_UICleantime */,
 				D43C66B02694ABFF007D5883 /* LGV_UICleantimeTestHarness (Framework) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D42491BC2695F44C0094C15F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D43C66AF2694ABFF007D5883 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,7 +370,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
-		D4BD88EF269E2E65009015D1 /* SwiftLint */ = {
+		D48BEDA42846E4BE00A99B0D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,18 +391,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D42491BA2695F44C0094C15F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D46C6D64269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift in Sources */,
-				D4878F862698F739009080CD /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */,
-				D4B247BF269F09DE004D8D1E /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */,
-				D401FAF726989C2700540C9F /* LGV_UICleantimeMedallions.swift in Sources */,
-				D468D1A626A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D43C66AD2694ABFF007D5883 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,13 +404,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D47C71B32846E35100530CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D47C71BE2846E36A00530CDA /* LGV_UICleantimeImageViewBase.swift in Sources */,
+				D47C71BF2846E36A00530CDA /* LGV_UICleantimeDisplayTextLabel.swift in Sources */,
+				D47C71C12846E36A00530CDA /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */,
+				D47C71C02846E36A00530CDA /* LGV_UICleantimeMedallions.swift in Sources */,
+				D47C71C22846E36A00530CDA /* LGV_UIMultipleCleantimeKeytagImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D41772432698978A00DA944B /* PBXTargetDependency */ = {
+		D48BEDA62846E4F400A99B0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D42491BD2695F44C0094C15F /* LGV_UICleantime */;
-			targetProxy = D41772422698978A00DA944B /* PBXContainerItemProxy */;
+			target = D47C71B62846E35100530CDA /* LGV_UICleantime */;
+			targetProxy = D48BEDA52846E4F400A99B0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,79 +462,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D42491C82695F44C0094C15F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QZAZ424GRK;
-				DRIVERKIT_DEPLOYMENT_TARGET = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Meta/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.0.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = "";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = "";
-			};
-			name = Debug;
-		};
-		D42491C92695F44C0094C15F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QZAZ424GRK;
-				DRIVERKIT_DEPLOYMENT_TARGET = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Meta/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.0.7;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = "";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = "";
-			};
-			name = Release;
-		};
 		D43C668C2694AA88007D5883 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D43C66D82694AC33007D5883 /* Warnings.xcconfig */;
@@ -670,7 +587,6 @@
 		D43C66C32694AC00007D5883 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -696,7 +612,6 @@
 		D43C66C42694AC00007D5883 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -719,18 +634,47 @@
 			};
 			name = Release;
 		};
+		D47C71BC2846E35100530CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		D47C71BD2846E35100530CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D42491C72695F44C0094C15F /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D42491C82695F44C0094C15F /* Debug */,
-				D42491C92695F44C0094C15F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D43C66822694AA88007D5883 /* Build configuration list for PBXProject "LGV_UICleantime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -749,6 +693,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D47C71BB2846E35100530CDA /* Build configuration list for PBXNativeTarget "LGV_UICleantime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47C71BC2846E35100530CDA /* Debug */,
+				D47C71BD2846E35100530CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -757,7 +710,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.2;
+				minimumVersion = 1.8.1;
 			};
 		};
 		D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */ = {
@@ -765,7 +718,7 @@
 			repositoryURL = "git@github.com:LittleGreenViper/LGV_Cleantime.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.3;
+				minimumVersion = 1.3.5;
 			};
 		};
 		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {
@@ -773,31 +726,36 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.8;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D400F6AF2698971C001C261A /* RVS-Generic-Swift-Toolbox */ = {
+		D452856A2846E0C900622DFA /* RVS_Generic_Swift_Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D42491D02695FD6A0094C15F /* RVS-Generic-Swift-Toolbox */ = {
+		D48BED992846E41800A99B0D /* RVS_GeneralObserver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
+			productName = RVS_GeneralObserver;
 		};
-		D4895DD326A230B700624F0D /* LGV_Cleantime */ = {
+		D48BED9E2846E47500A99B0D /* LGV_Cleantime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */;
 			productName = LGV_Cleantime;
 		};
-		D4E6423326AB228E00CA6EE7 /* RVS-GeneralObserver */ = {
+		D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = RVS_Generic_Swift_Toolbox;
+		};
+		D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
-			productName = "RVS-GeneralObserver";
+			productName = RVS_GeneralObserver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
