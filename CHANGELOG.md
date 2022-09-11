@@ -1,3 +1,7 @@
+**1.1.2** *September 11, 2022*
+
+- Updated dependencies.
+
 **1.1.1** *May 31, 2022*
 
 - There was an issue with the generic swift toolbox dependency (wrong name).
