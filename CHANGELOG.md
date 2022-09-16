@@ -1,3 +1,7 @@
+**1.1.3** *September 16, 2022*
+
+- Updated to latest tools.
+
 **1.1.2** *September 11, 2022*
 
 - Updated dependencies.
