@@ -712,7 +712,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.2;
+				minimumVersion = 1.11.0;
 			};
 		};
 		D4895DD226A230B700624F0D /* XCRemoteSwiftPackageReference "LGV_Cleantime" */ = {

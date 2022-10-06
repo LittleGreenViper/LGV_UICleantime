@@ -3,8 +3,6 @@
 /*
   © Copyright 2022, Little Green Viper Software Development LLC
  
- Version: 1.0.0
- 
  LICENSE:
  
  MIT License
@@ -40,13 +38,13 @@ let package = Package(
     dependencies: [
         .package(name: "RVS_Generic_Swift_Toolbox",
                  url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
-                 from: "1.8.1"),
+                 from: "1.11.0"),
         .package(name: "RVS_GeneralObserver",
                  url: "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git",
-                 from: "1.1.0"),
+                 from: "1.1.1"),
         .package(name: "LGV_Cleantime",
                  url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
-                 from: "1.3.5")
+                 from: "1.3.6")
     ],
     targets: [
         .target(name: "LGV_UICleantime",    
