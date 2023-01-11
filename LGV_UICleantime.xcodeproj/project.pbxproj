@@ -720,7 +720,7 @@
 			repositoryURL = "git@github.com:LittleGreenViper/LGV_Cleantime.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.6;
+				minimumVersion = 1.4.0;
 			};
 		};
 		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {

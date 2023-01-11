@@ -44,7 +44,7 @@ let package = Package(
                  from: "1.1.1"),
         .package(name: "LGV_Cleantime",
                  url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
-                 from: "1.3.6")
+                 from: "1.4.0")
     ],
     targets: [
         .target(name: "LGV_UICleantime",    

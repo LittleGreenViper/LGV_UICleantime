@@ -1,3 +1,7 @@
+**1.1.6** *January 11, 2023*
+
+- Updated dependency. No API changes.
+
 **1.1.5** *October 6, 2022*
 
 - Updated dependency. No API changes.
