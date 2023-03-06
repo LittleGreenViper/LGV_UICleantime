@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/chrismarshall/Development/LGV/LGV_UICleantime/LGV_UICleantime.xcodeproj">
+      location = "group:LGV_UICleantime.xcodeproj">
    </FileRef>
    <Group
       location = "container:"

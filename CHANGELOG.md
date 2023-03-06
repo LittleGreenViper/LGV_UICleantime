@@ -1,3 +1,7 @@
+**1.1.7** *March 6, 2023*
+
+- Updated the tools.
+
 **1.1.6** *January 11, 2023*
 
 - Updated dependency. No API changes.
