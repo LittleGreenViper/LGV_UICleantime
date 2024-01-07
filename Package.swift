@@ -38,13 +38,13 @@ let package = Package(
     dependencies: [
         .package(name: "RVS_Generic_Swift_Toolbox",
                  url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
-                 from: "1.11.0"),
+                 from: "1.13.1"),
         .package(name: "RVS_GeneralObserver",
                  url: "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git",
-                 from: "1.1.1"),
+                 from: "1.1.3"),
         .package(name: "LGV_Cleantime",
                  url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
-                 from: "1.4.0")
+                 from: "1.4.1")
     ],
     targets: [
         .target(name: "LGV_UICleantime",    

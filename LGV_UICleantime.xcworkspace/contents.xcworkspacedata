@@ -17,7 +17,10 @@
          location = "group:README.md">
       </FileRef>
       <FileRef
-         location = "group:.swiftlint.yml">
+         location = "group:PRIVACY.md">
+      </FileRef>
+      <FileRef
+         location = "group:PrivacyInfo.xcprivacy">
       </FileRef>
       <FileRef
          location = "group:Package.swift">

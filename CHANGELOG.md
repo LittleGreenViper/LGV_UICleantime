@@ -1,3 +1,9 @@
+**1.1.8** *January 6, 2024*
+
+- Updated the tools.
+- Added privacy manifests.
+- Updated the dependencies.
+
 **1.1.7** *March 6, 2023*
 
 - Updated the tools.
