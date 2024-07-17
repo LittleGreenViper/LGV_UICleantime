@@ -1,3 +1,8 @@
+**1.1.9** *July 17, 2024*
+
+- Updated the tools.
+- Updated the calculator dependency.
+
 **1.1.8** *January 6, 2024*
 
 - Updated the tools.
