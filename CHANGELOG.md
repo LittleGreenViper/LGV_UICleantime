@@ -1,3 +1,7 @@
+**2.0.0** *January 17, 2025*
+
+- Completely replaced the keytag assets with more realistic, higher-resolution ones.
+
 **1.1.9** *July 17, 2024*
 
 - Updated the tools.
