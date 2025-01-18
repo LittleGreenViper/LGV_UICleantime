@@ -1,3 +1,7 @@
+**2.0.1** *January 18, 2025*
+
+- Cleaned up the keytags a bit.
+
 **2.0.0** *January 17, 2025*
 
 - Completely replaced the keytag assets with more realistic, higher-resolution ones.
