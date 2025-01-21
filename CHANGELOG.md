@@ -1,3 +1,8 @@
+**2.0.2** *January 21, 2025*
+
+- More cleanup.
+- Reintroduced SwiftLint
+
 **2.0.1** *January 18, 2025*
 
 - Cleaned up the keytags a bit.

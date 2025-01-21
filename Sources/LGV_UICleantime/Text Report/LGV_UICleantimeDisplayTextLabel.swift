@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.1
+ Version: 2.0.2
  
  LICENSE:
  
@@ -73,7 +73,10 @@ open class LGV_UICleantimeDateReportString {
         dateFormatter.dateStyle = .long
         var ret = "SLUG-STATEMENT-IN-RECOVERY-SINCE".localizedVariant + dateFormatter.string(from: beginDate) + "SLUG-ENDING-CHAR".localizedVariant
         
-        ret += "SLUG-STATEMENT-CLEANDATE-SEPARATOR".localizedVariant + (0 >= cleanTime.totalDays ? "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant : (1 == cleanTime.totalDays ? "SLUG-PREFIX-CLEANTIME-DAY".localizedVariant : String(format: "SLUG-PREFIX-CLEANTIME-DAYS".localizedVariant, cleanTime.totalDays))) + "SLUG-ENDING-CHAR".localizedVariant
+        ret += "SLUG-STATEMENT-CLEANDATE-SEPARATOR".localizedVariant
+            + (0 >= cleanTime.totalDays ? "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
+               : (1 == cleanTime.totalDays ? "SLUG-PREFIX-CLEANTIME-DAY".localizedVariant
+                  : String(format: "SLUG-PREFIX-CLEANTIME-DAYS".localizedVariant, cleanTime.totalDays))) + "SLUG-ENDING-CHAR".localizedVariant
         
         if 1 > cleanTime.totalDays {
             ret = "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
@@ -124,7 +127,8 @@ open class LGV_UICleantimeDateReportString {
 // MARK: - Cleantime Report Label Display View -
 /* ###################################################################################################################################### */
 /**
- This class extends the [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel) class to display a localizable cleantime "report." This report is built, using the [`String(format:)`](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html) builder.
+ This class extends the [`UILabel`](https://developer.apple.com/documentation/uikit/uilabel) class to display a localizable cleantime "report."
+ This report is built, using the [`String(format:)`](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html) builder.
  
  This requires a begin date, and an end date be supplied, and it will generate a text report, in conversational English (by default), using format strings. You can leave the end date, and "today" will be used. Date granularity is 1 day (24 hours).
  
@@ -132,7 +136,9 @@ open class LGV_UICleantimeDateReportString {
  
  The "engine" is an instance of `LGV_UICleantimeDateReportString`, which is designed to allow subclassing and customization.
  
- It uses localization tokens, and the [`RVS_Generic_Swift_Toolbox`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)[`.localizedVariant`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift#L39) extension to provide localization.
+ It uses localization tokens, and the [`RVS_Generic_Swift_Toolbox`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox)
+ [`.localizedVariant`](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox/blob/master/Sources/RVS_Generic_Swift_Toolbox/Extensions/RVS_String_Extensions.swift#L39)
+ extension to provide localization.
  
  Users of this class should take the strings in the [`Localizable.strings`](https://github.com/LittleGreenViper/LGV_UICleantime/blob/master/Sources/Resources/Base.lproj/Localizable.strings) file, and add the tokens to their own app localizations.
  

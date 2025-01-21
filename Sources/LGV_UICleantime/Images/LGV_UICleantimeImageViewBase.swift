@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.1
+ Version: 2.0.2
  
  LICENSE:
  
@@ -36,7 +36,8 @@ import RVS_GeneralObserver
  
  The images are generated in a separate thread _(sort of -it's the main thread)_, and this is called when rendering is complete.
  
- Note that this class extends [the `RVS_GeneralObserverSubTrackerProtocol` protocol](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L378). This means that the observer needs to be a class _(not a struct)_, and should define a couple of instance properties:
+ Note that this class extends [the `RVS_GeneralObserverSubTrackerProtocol` protocol](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L378).
+ This means that the observer needs to be a class _(not a struct)_, and should define a couple of instance properties:
  
     - [`uuid: UUID`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L273)
     - [`subscriptions: [RVS_GeneralObservableProtocol]`](https://github.com/RiftValleySoftware/RVS_GeneralObserver/blob/master/Sources/RVS_GeneralObserver/RVS_GeneralObserver_Protocols.swift#L383)

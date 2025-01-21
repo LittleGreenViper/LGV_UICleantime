@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.1
+ Version: 2.0.2
  
  LICENSE:
  
@@ -28,7 +28,8 @@ import LGV_Cleantime
 // MARK: - Single Cleantime Keytag Display View -
 /* ###################################################################################################################################### */
 /**
- This is a view class that will display a single "cleantime" commemoration keytag, delivered as a [`UIImage`](https://developer.apple.com/documentation/uikit/uiimage), which is then set into the [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview)[`.image`](https://developer.apple.com/documentation/uikit/uiimageview/1621069-image) property.
+ This is a view class that will display a single "cleantime" commemoration keytag, delivered as a [`UIImage`](https://developer.apple.com/documentation/uikit/uiimage),
+ which is then set into the [`UIImageView`](https://developer.apple.com/documentation/uikit/uiimageview)[`.image`](https://developer.apple.com/documentation/uikit/uiimageview/1621069-image) property.
 
  This class uses the [`LGV_CleantimeKeytagDescription`](https://github.com/LittleGreenViper/LGV_Cleantime/blob/master/Sources/LGV_Cleantime/LGV_CleantimeKeytagDescription.swift) struct to get names for the components of the 3-layer ARGB image (transparent PNG).
  
