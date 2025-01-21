@@ -20,9 +20,9 @@
  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import RVS_GeneralObserver
 #if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 import UIKit
-import RVS_GeneralObserver
 
 /* ###################################################################################################################################### */
 // MARK: - This is the Protocol that Obesrvers of the Views Must Use -

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,6 +52,7 @@
 		D43C66CE2694AC20007D5883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D43C66D82694AC33007D5883 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		D44261A627F86390004BCB6C /* LGV_UICleantimeTestHarness (Framework).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LGV_UICleantimeTestHarness (Framework).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D450EC552D3FF217001F8CBC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeImageViewBase.swift; sourceTree = "<group>"; };
 		D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGV_UICleantimeDisplayTextLabel.swift; sourceTree = "<group>"; };
 		D47C71C32846E38200530CDA /* LGV_UICleantime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = LGV_UICleantime.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +129,7 @@
 		D43C667E2694AA88007D5883 = {
 			isa = PBXGroup;
 			children = (
+				D450EC552D3FF217001F8CBC /* .swiftlint.yml */,
 				D43C66912694AB9E007D5883 /* Sources */,
 				D43C66C52694AC20007D5883 /* Tests */,
 				D43C66D72694AC33007D5883 /* Project-Meta */,
@@ -313,7 +315,7 @@
 				};
 			};
 			buildConfigurationList = D43C66822694AA88007D5883 /* Build configuration list for PBXProject "LGV_UICleantime" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -709,7 +711,7 @@
 			repositoryURL = "https://github.com/LittleGreenViper/LGV_Cleantime";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.2;
+				minimumVersion = 1.4.3;
 			};
 		};
 		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {
