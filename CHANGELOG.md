@@ -1,3 +1,7 @@
+**2.0.3** *January 26, 2025*
+
+- Re-renderd the keytags.
+
 **2.0.2** *January 21, 2025*
 
 - More cleanup.
