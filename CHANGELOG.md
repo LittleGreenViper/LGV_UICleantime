@@ -1,3 +1,7 @@
+**2.0.4** *February 6, 2025*
+
+- Removed the iOS qualifiers, as this needs to be usable in the Watch, as well.
+
 **2.0.3** *January 26, 2025*
 
 - Re-renderd the keytags.

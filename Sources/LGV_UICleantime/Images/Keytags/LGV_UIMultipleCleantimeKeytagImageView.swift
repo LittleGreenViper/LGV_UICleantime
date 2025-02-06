@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.3
+ Version: 2.0.4
  
  LICENSE:
  
@@ -21,7 +21,6 @@
  */
 
 import LGV_Cleantime
-#if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 import UIKit
 
 /* ###################################################################################################################################### */
@@ -266,4 +265,3 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
         super.layoutSubviews()
     }
 }
-#endif
