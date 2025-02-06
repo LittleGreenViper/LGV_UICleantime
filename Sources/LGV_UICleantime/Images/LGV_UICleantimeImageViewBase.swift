@@ -23,6 +23,7 @@
 import RVS_GeneralObserver
 import UIKit
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
 // MARK: - This is the Protocol that Obesrvers of the Views Must Use -
 /* ###################################################################################################################################### */
@@ -63,6 +64,7 @@ extension LGV_UICleantimeImageViewObserverProtocol {
      */
     func renderingComplete(view: LGV_UICleantimeImageViewBase) { }
 }
+#endif
 
 /* ###################################################################################################################################### */
 // MARK: - Cleantime Display View Base -
@@ -90,6 +92,7 @@ public protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProto
     var generatedImage: UIImage? { get }
 }
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
 // MARK: - Base Class for All Views -
 /* ###################################################################################################################################### */
@@ -207,3 +210,4 @@ extension LGV_UICleantimeImageViewBase {
         }
     }
 }
+#endif

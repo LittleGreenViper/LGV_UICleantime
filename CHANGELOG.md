@@ -1,3 +1,5 @@
+**2.0.5** *TBD*
+
 **2.0.4** *February 6, 2025*
 
 - Removed the iOS qualifiers, as this needs to be usable in the Watch, as well.

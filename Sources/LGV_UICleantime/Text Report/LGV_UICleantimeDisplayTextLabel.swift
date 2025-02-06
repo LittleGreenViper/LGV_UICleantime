@@ -122,6 +122,7 @@ open class LGV_UICleantimeDateReportString {
     }
 }
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
 // MARK: - Cleantime Report Label Display View -
 /* ###################################################################################################################################### */
@@ -199,3 +200,4 @@ extension LGV_UICleantimeDisplayTextLabel {
         }
     }
 }
+#endif

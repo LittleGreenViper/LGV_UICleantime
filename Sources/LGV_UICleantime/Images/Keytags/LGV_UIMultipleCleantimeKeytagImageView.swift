@@ -20,6 +20,7 @@
  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 import LGV_Cleantime
 import UIKit
 
@@ -265,3 +266,4 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
         super.layoutSubviews()
     }
 }
+#endif

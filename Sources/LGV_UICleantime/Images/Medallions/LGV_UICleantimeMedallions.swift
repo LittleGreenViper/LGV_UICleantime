@@ -61,6 +61,7 @@ fileprivate extension UIImage {
     }
 }
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
 // MARK: - Single Cleantime Medallion Display Image -
 /* ###################################################################################################################################### */
@@ -78,45 +79,9 @@ open class LGV_UISingleCleantimeMedallionImageView: LGV_UICleantimeImageViewBase
     /* ################################################################################################################################## */
     /* ################################################################## */
     /**
-     If the center image has a "wide" aspect, then it will need to fit in a diamond that has this size relation to the main image.
+     This will generate a new medallion image for us.
      */
-    private static let _centerWideSizeCoefficient = CGFloat(0.43)
-
-    /* ################################################################## */
-    /**
-     This is the aspect threshold, for determining whether or not an image is "wide."
-     */
-    private static let _centerWideAspectThreshold = CGFloat(0.9)
-
-    /* ################################################################## */
-    /**
-     This is the aspect threshold, for determining whether or not an image is to be compressed.
-     */
-    private static let _centerWideAspectCompressionThreshold = CGFloat(0.5)
-
-    /* ################################################################## */
-    /**
-     This is how much to compress.
-     */
-    private static let _centerWideAspectCompressionCoefficient = CGFloat(0.5)
-
-    /* ################################################################## */
-    /**
-     In some cases, we will want to join images together. We do so, by removing this precentage of the height, from the joining edges.
-     */
-    private static let _cropInsetForClumping = CGFloat(0.07)
-    
-    /* ################################################################## */
-    /**
-     The background doesn't change, so we only need to render it once.
-     */
-    private var _cachedBackground: UIImage?
-    
-    /* ################################################################## */
-    /**
-     The foreground changes more frequently, but we can still cache it.
-     */
-    private var _cachedForeground: UIImage?
+    private let _medallionImageGenerator = LGV_MedallionImage()
     
     /* ################################################################## */
     /**
@@ -131,32 +96,6 @@ open class LGV_UISingleCleantimeMedallionImageView: LGV_UICleantimeImageViewBase
 }
 
 /* ###################################################################################################################################### */
-// MARK: Private Static Methods
-/* ###################################################################################################################################### */
-extension LGV_UISingleCleantimeMedallionImageView {
-    /* ################################################################## */
-    /**
-     This will return a size that will fit into the center diamond.
-     
-     - parameter from: The current size of the image to be fitted into the center.
-     - parameter in: The main image rect.
-     - returns: A new size for the image.
-     */
-    private static func _calculateCenterSize(from inSize: CGSize, in inMainSize: CGSize) -> CGSize {
-        let aspect = inSize.height / inSize.width
-        var ret = inSize
-        
-        if Self._centerWideAspectThreshold > aspect {
-            let fitSize = CGSize(width: inMainSize.width * _centerWideSizeCoefficient, height: inMainSize.height * _centerWideSizeCoefficient)
-            ret.width = fitSize.width - (ret.width * aspect)
-            ret.height = ret.width * aspect
-        }
-        
-        return ret
-    }
-}
-
-/* ###################################################################################################################################### */
 // MARK: Private Computed Properties
 /* ###################################################################################################################################### */
 private extension LGV_UISingleCleantimeMedallionImageView {
@@ -164,33 +103,187 @@ private extension LGV_UISingleCleantimeMedallionImageView {
     /**
      This builds and returns a new medallion image, reflecting the number of years in the cleantime.
      */
-    private var _medallionImage: UIImage? {
-        #if DEBUG
-            print("Drawing medallion into \(bounds) (\(frame)).")
-        #endif
+    private var _medallionImage: UIImage? { _medallionImageGenerator.drawImage(in: bounds, totalMonths: totalMonths) }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Public Instance Computed Properties
+/* ###################################################################################################################################### */
+extension LGV_UISingleCleantimeMedallionImageView {
+    /* ################################################################## */
+    /**
+     This returns the medallion  image. It may be cached. Clearing it, reverts the image to the background image.
+     */
+    public override var image: UIImage? {
+        get { super.image ?? generatedImage }
+        set { super.image = newValue }
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Multiple Cleantime Medallion Display Image -
+/* ###################################################################################################################################### */
+/**
+ This is a view class that will display a whole set of cleantime medallions, in a matrix. Each medallion is an image generated by an instance of `LGV_UISingleCleantimeMedallionImageView`.
+ */
+@IBDesignable
+open class LGV_UICleantimeMultipleMedallionsImageView: LGV_UICleantimeImageViewBase {
+    /* ################################################################## */
+    /**
+     Contains cached drawn medallions.
+     */
+    private var _cachedMedallions: UIImage?
+
+    /* ################################################################## */
+    /**
+     This returns a generated matrix of medallions.
+     */
+    public override var generatedImage: UIImage? {
+        guard nil == _cachedMedallions else { return _cachedMedallions }
         
-        guard let coinbase = _cachedBackground ?? UIImage(named: "CoinBlank") else { return nil }
+        let totalYears = Int(totalMonths / 12)
         
-        _cachedBackground = coinbase
-        
-        UIGraphicsBeginImageContextWithOptions(coinbase.size, false, 0)
-        coinbase.draw(in: CGRect(origin: .zero, size: coinbase.size), blendMode: .normal, alpha: 1)
-        
-        if let centerImage = _cachedForeground ?? _centerImage {
-            _cachedForeground = centerImage
-            let newSize = Self._calculateCenterSize(from: centerImage.size, in: coinbase.size)
-            if let centerImage = centerImage.resized(toNewWidth: newSize.width, toNewHeight: newSize.height) {
-                var centerFrame = CGRect(origin: .zero, size: newSize)
-                centerFrame.origin.x = (coinbase.size.width - newSize.width) / 2
-                centerFrame.origin.y = (coinbase.size.height - newSize.height) / 2
-                centerImage.draw(in: centerFrame, blendMode: .normal, alpha: 1)
+        if 0 < totalYears {
+            var medallionDescriptions: [Int] = []
+            medallionDescriptions.append(12)
+            if 18 <= totalMonths {
+                medallionDescriptions.append(18)
+            }
+            
+            if 1 < totalYears {
+                for i in 2...totalYears {
+                    medallionDescriptions.append(i * 12)
+                }
+            }
+            
+            if let imageSize = LGV_UISingleCleantimeMedallionImageView().image?.size {
+                // This trick will give us the "squarest" possible matrix, given the number of medallions.
+                let rowMax = Int(CGFloat(medallionDescriptions.count).squareRoot())
+                let columns = min(maxColumns, rowMax, medallionDescriptions.count)
+                let rows = (medallionDescriptions.count + (columns - 1)) / columns
+                
+                UIGraphicsBeginImageContextWithOptions(CGSize(width: imageSize.width * CGFloat(columns), height: imageSize.height * CGFloat(rows)), false, 0)
+                var index = 0
+                var newOriginPoint = CGPoint.zero
+                for _ in 0..<rows {
+                    newOriginPoint.x = 0
+                    for _ in 0..<columns {
+                        if index < medallionDescriptions.count {
+                            let currentMedallion = LGV_UISingleCleantimeMedallionImageView()
+                            currentMedallion.totalMonths = medallionDescriptions[index]
+                            if let medallionImage = currentMedallion.generatedImage {
+                                medallionImage.draw(in: CGRect(origin: newOriginPoint, size: imageSize))
+                            }
+                            newOriginPoint.x += imageSize.width
+                            index += 1
+                        } else {
+                            break
+                        }
+                    }
+                    newOriginPoint.y += imageSize.height
+                }
+                
+                _cachedMedallions = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
             }
         }
-    
-        defer { UIGraphicsEndImageContext() }
-        return UIGraphicsGetImageFromCurrentImageContext()
+        
+        return _cachedMedallions
     }
     
+    /* ################################################################## */
+    /**
+     Called when the view is laid out.
+     
+     We use this to force the images to be recreated.
+     */
+    public override func layoutSubviews() {
+        _cachedMedallions = nil // Make sure that we reset the cache, so it is rebuilt.
+        super.layoutSubviews()
+    }
+    
+    /* ################################################################## */
+    /**
+     This is the maximum number of columns to display. Its default is 4.
+     */
+    @IBInspectable open var maxColumns: Int = 4
+}
+#endif
+
+/* ###################################################################################################################################### */
+// MARK: - This creates a UIImage for a single medallion -
+/* ###################################################################################################################################### */
+/**
+ This tries to cache the image, as much as possible. An instance of this class should be instantiated and retained.
+ */
+open class LGV_MedallionImage {
+    /* ################################################################## */
+    /**
+     If the center image has a "wide" aspect, then it will need to fit in a diamond that has this size relation to the main image.
+     */
+    private static let _centerWideSizeCoefficient = CGFloat(0.43)
+    
+    /* ################################################################## */
+    /**
+     This is the aspect threshold, for determining whether or not an image is "wide."
+     */
+    private static let _centerWideAspectThreshold = CGFloat(0.9)
+    
+    /* ################################################################## */
+    /**
+     This is the aspect threshold, for determining whether or not an image is to be compressed.
+     */
+    private static let _centerWideAspectCompressionThreshold = CGFloat(0.5)
+    
+    /* ################################################################## */
+    /**
+     This is how much to compress.
+     */
+    private static let _centerWideAspectCompressionCoefficient = CGFloat(0.5)
+    
+    /* ################################################################## */
+    /**
+     In some cases, we will want to join images together. We do so, by removing this precentage of the height, from the joining edges.
+     */
+    private static let _cropInsetForClumping = CGFloat(0.07)
+
+    /* ################################################################## */
+    /**
+     The background doesn't change, so we only need to render it once.
+     */
+    private var _cachedBackground: UIImage?
+    
+    /* ################################################################## */
+    /**
+     The foreground changes more frequently, but we can still cache it.
+     */
+    private var _cachedForeground: UIImage?
+    
+    /* ################################################################## */
+    /**
+     This is the rendered image. It may be nil, in which case drawImage(in, frame) should be called.
+     */
+    var image: UIImage? {
+        didSet {
+            if nil == image {
+                _cachedForeground = nil
+                _cachedBackground = nil
+            }
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     The total number of months to display (including years).
+     If it is changed, the cached image is deleted, forcing a recalculation.
+     */
+    var totalMonths: Int = 0 { didSet { image = nil } }
+}
+
+/* ###################################################################################################################################### */
+// MARK: Computed Properties
+/* ###################################################################################################################################### */
+extension LGV_MedallionImage {
     /* ################################################################## */
     /**
      This returns the center image.
@@ -297,112 +390,68 @@ private extension LGV_UISingleCleantimeMedallionImageView {
 }
 
 /* ###################################################################################################################################### */
-// MARK: Public Instance Computed Properties
+// MARK: Instance Methods
 /* ###################################################################################################################################### */
-extension LGV_UISingleCleantimeMedallionImageView {
+extension LGV_MedallionImage {
     /* ################################################################## */
     /**
-     This returns the medallion  image. It may be cached. Clearing it, reverts the image to the background image.
-     */
-    public override var image: UIImage? {
-        get { super.image ?? generatedImage }
-        
-        set {
-            if nil == newValue {
-                _cachedForeground = nil
-                super.image = _cachedBackground
-            }
-            
-            super.image = newValue
-        }
-    }
-}
-
-/* ###################################################################################################################################### */
-// MARK: - Multiple Cleantime Medallion Display Image -
-/* ###################################################################################################################################### */
-/**
- This is a view class that will display a whole set of cleantime medallions, in a matrix. Each medallion is an image generated by an instance of `LGV_UISingleCleantimeMedallionImageView`.
- */
-@IBDesignable
-open class LGV_UICleantimeMultipleMedallionsImageView: LGV_UICleantimeImageViewBase {
-    /* ################################################################## */
-    /**
-     Contains cached drawn medallions.
-     */
-    private var _cachedMedallions: UIImage?
-
-    /* ################################################################## */
-    /**
-     This returns a generated matrix of medallions.
-     */
-    public override var generatedImage: UIImage? {
-        guard nil == _cachedMedallions else { return _cachedMedallions }
-        
-        let totalYears = Int(totalMonths / 12)
-        
-        if 0 < totalYears {
-            var medallionDescriptions: [Int] = []
-            medallionDescriptions.append(12)
-            if 18 <= totalMonths {
-                medallionDescriptions.append(18)
-            }
-            
-            if 1 < totalYears {
-                for i in 2...totalYears {
-                    medallionDescriptions.append(i * 12)
-                }
-            }
-            
-            if let imageSize = LGV_UISingleCleantimeMedallionImageView().image?.size {
-                // This trick will give us the "squarest" possible matrix, given the number of medallions.
-                let rowMax = Int(CGFloat(medallionDescriptions.count).squareRoot())
-                let columns = min(maxColumns, rowMax, medallionDescriptions.count)
-                let rows = (medallionDescriptions.count + (columns - 1)) / columns
-                
-                UIGraphicsBeginImageContextWithOptions(CGSize(width: imageSize.width * CGFloat(columns), height: imageSize.height * CGFloat(rows)), false, 0)
-                var index = 0
-                var newOriginPoint = CGPoint.zero
-                for _ in 0..<rows {
-                    newOriginPoint.x = 0
-                    for _ in 0..<columns {
-                        if index < medallionDescriptions.count {
-                            let currentMedallion = LGV_UISingleCleantimeMedallionImageView()
-                            currentMedallion.totalMonths = medallionDescriptions[index]
-                            if let medallionImage = currentMedallion.generatedImage {
-                                medallionImage.draw(in: CGRect(origin: newOriginPoint, size: imageSize))
-                            }
-                            newOriginPoint.x += imageSize.width
-                            index += 1
-                        } else {
-                            break
-                        }
-                    }
-                    newOriginPoint.y += imageSize.height
-                }
-                
-                _cachedMedallions = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
-            }
-        }
-        
-        return _cachedMedallions
-    }
-    
-    /* ################################################################## */
-    /**
-     Called when the view is laid out.
+     This actually creates and caches the image. The date can be updated, here.
      
-     We use this to force the images to be recreated.
+     - parameters:
+        - in: The bounds rect. REQUIRED
+        - totalMonths: The total number of months represented by the medallion. OPTIONAL
      */
-    public override func layoutSubviews() {
-        _cachedMedallions = nil // Make sure that we reset the cache, so it is rebuilt.
-        super.layoutSubviews()
-    }
+    func drawImage(in inBounds: CGRect, totalMonths inTotalMonths: Int? = nil) -> UIImage? {
+        /* ############################################################## */
+        /**
+         This will return a size that will fit into the center diamond.
+         
+         - parameter from: The current size of the image to be fitted into the center.
+         - parameter in: The main image rect.
+         - returns: A new size for the image.
+         */
+        func _calculateCenterSize(from inSize: CGSize, in inMainSize: CGSize) -> CGSize {
+            let aspect = inSize.height / inSize.width
+            var ret = inSize
+            
+            if Self._centerWideAspectThreshold > aspect {
+                let fitSize = CGSize(width: inMainSize.width * Self._centerWideSizeCoefficient, height: inMainSize.height * Self._centerWideSizeCoefficient)
+                ret.width = fitSize.width - (ret.width * aspect)
+                ret.height = ret.width * aspect
+            }
+            
+            return ret
+        }
+
+        if let inTotalMonths { totalMonths = inTotalMonths }
+        
+        if let cachedImage = image,
+           inBounds.size == cachedImage.size {
+            return cachedImage
+        }
+        
+        guard let coinbase = _cachedBackground ?? UIImage(named: "CoinBlank") else { return nil }
+        
+        _cachedBackground = coinbase
+        
+        UIGraphicsBeginImageContextWithOptions(coinbase.size, false, 0)
+        coinbase.draw(in: CGRect(origin: .zero, size: coinbase.size), blendMode: .normal, alpha: 1)
+        
+        if let centerImage = _cachedForeground ?? _centerImage {
+            _cachedForeground = centerImage
+            let newSize = _calculateCenterSize(from: centerImage.size, in: coinbase.size)
+            if let centerImage = centerImage.resized(toNewWidth: newSize.width, toNewHeight: newSize.height) {
+                var centerFrame = CGRect(origin: .zero, size: newSize)
+                centerFrame.origin.x = (coinbase.size.width - newSize.width) / 2
+                centerFrame.origin.y = (coinbase.size.height - newSize.height) / 2
+                centerImage.draw(in: centerFrame, blendMode: .normal, alpha: 1)
+            }
+        }
     
-    /* ################################################################## */
-    /**
-     This is the maximum number of columns to display. Its default is 4.
-     */
-    @IBInspectable open var maxColumns: Int = 4
+        defer { UIGraphicsEndImageContext() }
+        
+        image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        return image
+    }
 }
