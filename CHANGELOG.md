@@ -1,4 +1,6 @@
-**2.0.5** *TBD*
+**2.1.0** *February 7, 2025*
+
+- Broke the medallion and keytag image generators into separate clases, so they will be available for the Watch.
 
 **2.0.4** *February 6, 2025*
 
