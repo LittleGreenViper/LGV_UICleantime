@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.4
+ Version: 2.1.2
  
  LICENSE:
  
@@ -278,6 +278,16 @@ open class LGV_MedallionImage {
      If it is changed, the cached image is deleted, forcing a recalculation.
      */
     var totalMonths: Int = 0 { didSet { image = nil } }
+    
+    /* ################################################################## */
+    /**
+     Initializer
+     
+     - parameter totalMonths: The total number of months to display (including years).
+     */
+    public init(totalMonths inTotalMonths: Int? = nil) {
+        totalMonths = inTotalMonths ?? 0
+    }
 }
 
 /* ###################################################################################################################################### */
@@ -392,16 +402,16 @@ extension LGV_MedallionImage {
 /* ###################################################################################################################################### */
 // MARK: Instance Methods
 /* ###################################################################################################################################### */
-extension LGV_MedallionImage {
+public extension LGV_MedallionImage {
     /* ################################################################## */
     /**
      This actually creates and caches the image. The date can be updated, here.
      
      - parameters:
-        - in: The bounds rect. REQUIRED
+        - in: The bounds rect. OPTIONAL
         - totalMonths: The total number of months represented by the medallion. OPTIONAL
      */
-    func drawImage(in inBounds: CGRect, totalMonths inTotalMonths: Int? = nil) -> UIImage? {
+    func drawImage(in inBounds: CGRect? = nil, totalMonths inTotalMonths: Int? = nil) -> UIImage? {
         /* ############################################################## */
         /**
          This will return a size that will fit into the center diamond.
@@ -423,10 +433,14 @@ extension LGV_MedallionImage {
             return ret
         }
 
+        guard let sizeMaker = _cachedBackground ?? UIImage(named: "CoinBlank") else { return nil }
+        
+        let myBounds = inBounds ?? CGRect(origin: .zero, size: sizeMaker.size)
+        
         if let inTotalMonths { totalMonths = inTotalMonths }
         
         if let cachedImage = image,
-           inBounds.size == cachedImage.size {
+           myBounds.size == cachedImage.size {
             return cachedImage
         }
         

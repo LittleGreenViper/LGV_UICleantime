@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.0.4
+ Version: 2.1.2
  
  LICENSE:
  
@@ -112,7 +112,7 @@ open class LGV_UISingleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase {
 /**
  This is specified as a separate class, so it can be used by the Watch.
  */
-class LGV_KeytagImageGenerator {
+open class LGV_KeytagImageGenerator {
     /* ################################################################################################################################## */
     // MARK: - Cleantime Keytag Ring Resource Names -
     /* ################################################################################################################################## */
@@ -145,28 +145,28 @@ class LGV_KeytagImageGenerator {
      True (default) if the ring is closed on top.
      If it is changed, the cached image is deleted, forcing a recalculation.
      */
-    var isRingClosed: Bool = true
+    public var isRingClosed: Bool = true
     
     /* ################################################################## */
     /**
      The total number of days to display.
      If it is changed, the cached image is deleted, forcing a recalculation.
      */
-    var totalDays: Int = 0
+    public var totalDays: Int = 0
     
     /* ################################################################## */
     /**
      The total number of months to display (including years).
      If it is changed, the cached image is deleted, forcing a recalculation.
      */
-    var totalMonths: Int = 0
+    public var totalMonths: Int = 0
 
     /* ################################################################## */
     /**
      This returns a dynamically-generated keytag image.
      This needs to be implemented in the main class declaration.
      */
-    var generatedImage: UIImage? {
+    public var generatedImage: UIImage? {
         guard let keyTagDescription = LGV_CleantimeKeytagDescription.getLastTagThatApplies(totalDays: totalDays, totalMonths: totalMonths),
            let bodyImage = UIImage(named: keyTagDescription.bodyImage.rawValue),
            let textImage = UIImage(named: keyTagDescription.textImage.rawValue),
@@ -193,7 +193,7 @@ class LGV_KeytagImageGenerator {
      - parameter totalDays: The total number of days, represented by the keytag.
      - parameter totalMonths: The total number of months, represented by the keytag.
      */
-    init(isRingClosed inIsRingClosed: Bool, totalDays inTotalDays: Int, totalMonths inTotalMonths: Int) {
+    public init(isRingClosed inIsRingClosed: Bool, totalDays inTotalDays: Int, totalMonths inTotalMonths: Int) {
         isRingClosed = inIsRingClosed
         totalDays = inTotalDays
         totalMonths = inTotalMonths

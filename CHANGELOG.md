@@ -1,3 +1,11 @@
+**2.1.2** *February 7, 2025*
+
+- More visibility work on the new classes.
+
+**2.1.1** *February 7, 2025*
+
+- Forgot to make the new classes public.
+
 **2.1.0** *February 7, 2025*
 
 - Broke the medallion and keytag image generators into separate clases, so they will be available for the Watch.
