@@ -1,3 +1,7 @@
+**2.2.0** *February 12, 2025*
+
+- Added the "short" parameter to the text report.
+
 **2.1.2** *February 7, 2025*
 
 - More visibility work on the new classes.

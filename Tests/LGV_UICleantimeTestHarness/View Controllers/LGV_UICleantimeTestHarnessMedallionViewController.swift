@@ -38,10 +38,16 @@ class LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeBaseView
 
     /* ################################################################## */
     /**
-     If on, then the view will display the latest tag earned.
+     The text label for the switch
     */
-    @IBOutlet weak var includeTagsSwitch: UISwitch?
-
+    @IBOutlet weak var shortLabelLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     If on, then the text report will be the short version.
+    */
+    @IBOutlet weak var shortLabelSwitch: UISwitch?
+    
     /* ################################################################## */
     /**
      This will show a "busy throbber," while the images are being composited.
@@ -49,7 +55,6 @@ class LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeBaseView
     override func showThrobber() {
         super.showThrobber()
         cleantimeReportLabel?.isHidden = true
-        includeTagsSwitch?.isHidden = true
     }
     
     /* ################################################################## */
@@ -59,7 +64,6 @@ class LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeBaseView
     override func hideThrobber() {
         super.hideThrobber()
         cleantimeReportLabel?.isHidden = false
-        includeTagsSwitch?.isHidden = false
     }
     
     /* ################################################################## */
@@ -71,5 +75,13 @@ class LGV_UICleantimeTestHarnessMedallionViewController: LGV_UICleantimeBaseView
     override func newDate(_ inDatePicker: UIDatePicker) {
         cleantimeReportLabel?.beginDate = inDatePicker.date
         super.newDate(inDatePicker)
+    }
+    
+    /* ################################################################## */
+    /**
+     The short label switch was hit.
+    */
+    @IBAction func shortLabelSwitchHit(_ inSwitch: UISwitch) {
+        cleantimeReportLabel?.isShort = inSwitch.isOn
     }
 }

@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.1.2
+ Version: 2.2.0
  
  LICENSE:
  
@@ -59,9 +59,10 @@ open class LGV_UICleantimeDateReportString {
      - parameter beginDate: The starting date. This must be provided.
      - parameter endDate: The ending date. If not provided, today is assumed.
      - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
+     - parameter short: OPTIONAL (Default false). If true, then the report is shortened.
      - returns: A String, denoting NA cleantime.
     */
-    open func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
+    open func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current, short inShort: Bool = false) -> String? {
         // Assuming we have everything we need, we calculate the cleantime. Otherwise, just return "Infinity."
         guard let beginDate = inBeginDate,
               let endDate = inEndDate else { return "" }
@@ -70,25 +71,25 @@ open class LGV_UICleantimeDateReportString {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
-        var ret = "SLUG-STATEMENT-IN-RECOVERY-SINCE".localizedVariant + dateFormatter.string(from: beginDate) + "SLUG-ENDING-CHAR".localizedVariant
+        var ret = inShort ? "" : "SLUG-STATEMENT-IN-RECOVERY-SINCE".localizedVariant + dateFormatter.string(from: beginDate) + "SLUG-ENDING-CHAR".localizedVariant
         
-        ret += "SLUG-STATEMENT-CLEANDATE-SEPARATOR".localizedVariant
+        ret += (inShort ? "" : ("SLUG-STATEMENT-CLEANDATE-SEPARATOR".localizedVariant))
             + (0 >= cleanTime.totalDays ? "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
                : (1 == cleanTime.totalDays ? "SLUG-PREFIX-CLEANTIME-DAY".localizedVariant
-                  : String(format: "SLUG-PREFIX-CLEANTIME-DAYS".localizedVariant, cleanTime.totalDays))) + "SLUG-ENDING-CHAR".localizedVariant
+                  : String(format: "SLUG-PREFIX-CLEANTIME-DAYS".localizedVariant, cleanTime.totalDays))) + (inShort ? "" : "SLUG-ENDING-CHAR".localizedVariant)
         
         if 1 > cleanTime.totalDays {
             ret = "SLUG-STATEMENT-NO-CLEANTIME".localizedVariant
         } else if 90 < cleanTime.totalDays {
-            ret += "SLUG-CLEANTIME-DIVIDER".localizedVariant
+            ret = inShort ? "" : ret + "SLUG-CLEANTIME-DIVIDER".localizedVariant
             if 0 == cleanTime.months,
                0 == cleanTime.days,
                1 == cleanTime.years {
-                ret += "SLUG-PREFIX-CLEANTIME-YEAR-EXACT".localizedVariant
+                ret += inShort ? "SLUG-PREFIX-CLEANTIME-YEAR".localizedVariant : "SLUG-PREFIX-CLEANTIME-YEAR-EXACT".localizedVariant
             } else if 0 == cleanTime.months,
                       0 == cleanTime.days,
                       1 < cleanTime.years {
-                ret += String(format: "SLUG-PREFIX-CLEANTIME-YEARS-EXACT".localizedVariant, cleanTime.years)
+                ret += (inShort ? String(format: "SLUG-PREFIX-CLEANTIME-YEARS".localizedVariant, cleanTime.years) : String(format: "SLUG-PREFIX-CLEANTIME-YEARS-EXACT".localizedVariant, cleanTime.years))
             } else {
                 var retArray: [String] = []
                 if 0 < cleanTime.years {
@@ -115,7 +116,7 @@ open class LGV_UICleantimeDateReportString {
                     }
                 }
                 
-                ret += retArray.joined(separator: "SLUG-JOINING-CHAR".localizedVariant) + "SLUG-ENDING-CHAR".localizedVariant
+                ret += retArray.joined(separator: "SLUG-JOINING-CHAR".localizedVariant) + (inShort ? "" : "SLUG-ENDING-CHAR".localizedVariant)
             }
         }
         return ret
@@ -165,6 +166,14 @@ open class LGV_UICleantimeDisplayTextLabel: UILabel {
         didSet { DispatchQueue.main.async { self.setNeedsLayout() } }
     }
     
+    /* ################################################################## */
+    /**
+     If true, then the display will be the short version.
+     */
+    open var isShort: Bool = false {
+        didSet { DispatchQueue.main.async { self.setNeedsLayout() } }
+    }
+
     /* ################################################################################################################################## */
     // MARK: Optional Overrides
     /* ################################################################################################################################## */
@@ -194,7 +203,7 @@ extension LGV_UICleantimeDisplayTextLabel {
         if let beginDate = beginDate,
            let endDate = endDate,
            beginDate < endDate {
-            text = reportStringClassInstance.naCleantimeText(beginDate: beginDate, endDate: endDate)
+            text = reportStringClassInstance.naCleantimeText(beginDate: beginDate, endDate: endDate, short: isShort)
         } else {
             text = textToDisplayIfNoDate
         }

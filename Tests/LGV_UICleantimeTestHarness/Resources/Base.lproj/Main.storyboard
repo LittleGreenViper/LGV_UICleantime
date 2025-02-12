@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NfT-p7-QCK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NfT-p7-QCK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -47,7 +48,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-wx-aJT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="OLc-p7-1aj"/>
                                 </constraints>
@@ -58,8 +59,32 @@
                                     <action selector="newDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="dLb-g1-wcM"/>
                                 </connections>
                             </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2yv-Hs-XNZ">
+                                <rect key="frame" x="0.0" y="178" width="414" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHORT:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-MC-zMU">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-to-HRs">
+                                        <rect key="frame" x="217" y="0.0" width="199" height="31"/>
+                                        <connections>
+                                            <action selector="shortLabelSwitchHit:" destination="BYZ-38-t0r" eventType="valueChanged" id="LPP-Cy-3uQ"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Oxr-MC-zMU" secondAttribute="bottom" id="L4h-ab-Sfx"/>
+                                    <constraint firstItem="Oxr-MC-zMU" firstAttribute="width" secondItem="2yv-Hs-XNZ" secondAttribute="width" multiplier="0.5" id="NVm-hz-7Iq"/>
+                                    <constraint firstItem="Oxr-MC-zMU" firstAttribute="top" secondItem="2yv-Hs-XNZ" secondAttribute="top" id="lB2-rh-eyg"/>
+                                    <constraint firstItem="Oxr-MC-zMU" firstAttribute="leading" secondItem="2yv-Hs-XNZ" secondAttribute="leading" id="uJ7-nt-oBv"/>
+                                    <constraint firstAttribute="height" constant="31" id="wZ9-nq-Zut"/>
+                                </constraints>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E8-cf-CxM" customClass="LGV_UICleantimeDisplayTextLabel" customModule="LGV_UICleantime">
-                                <rect key="frame" x="20" y="174" width="374" height="90"/>
+                                <rect key="frame" x="20" y="209" width="374" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" placeholder="YES" id="ddz-nQ-kQn"/>
                                 </constraints>
@@ -68,10 +93,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-HZ-3EB">
-                                <rect key="frame" x="0.0" y="272" width="414" height="541"/>
+                                <rect key="frame" x="0.0" y="307" width="414" height="506"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-py-38B" customClass="LGV_UISingleCleantimeMedallionImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="83" y="146.5" width="248" height="248"/>
+                                        <rect key="frame" x="83" y="129" width="248" height="248"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bsA-py-38B" secondAttribute="height" multiplier="1:1" id="3Ch-DM-wJc"/>
                                         </constraints>
@@ -97,15 +122,18 @@
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CgY-jk-L7X"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D9Y-Fk-v9o"/>
                             <constraint firstItem="xd3-VC-I9g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fq1-7i-AXM"/>
-                            <constraint firstItem="0E8-cf-CxM" firstAttribute="top" secondItem="kj7-wx-aJT" secondAttribute="bottom" id="Kg4-fG-gVn"/>
+                            <constraint firstItem="0E8-cf-CxM" firstAttribute="top" secondItem="2yv-Hs-XNZ" secondAttribute="bottom" id="Kg4-fG-gVn"/>
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="top" secondItem="0E8-cf-CxM" secondAttribute="bottom" constant="8" symbolic="YES" id="Lim-Xc-BZb"/>
                             <constraint firstItem="xd3-VC-I9g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zll-N3-mcE"/>
                             <constraint firstItem="tSD-HZ-3EB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bPu-gr-efd"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fHB-nR-LwN"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hT7-za-ISJ"/>
                             <constraint firstItem="kj7-wx-aJT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" priority="750" id="mkQ-z9-K36"/>
+                            <constraint firstItem="2yv-Hs-XNZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s9X-rz-FgT"/>
                             <constraint firstItem="0E8-cf-CxM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tLz-xe-KaM"/>
+                            <constraint firstItem="2yv-Hs-XNZ" firstAttribute="top" secondItem="kj7-wx-aJT" secondAttribute="bottom" id="ukg-4T-qWa"/>
                             <constraint firstAttribute="bottom" secondItem="5dR-iV-gKf" secondAttribute="bottom" id="xTK-Hw-w27"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2yv-Hs-XNZ" secondAttribute="trailing" id="yHd-dP-14z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tSD-HZ-3EB" secondAttribute="trailing" id="zhO-tT-OS0"/>
                         </constraints>
                     </view>
@@ -116,6 +144,8 @@
                         <outlet property="cleantime" destination="bsA-py-38B" id="wMG-ZI-621"/>
                         <outlet property="cleantimeReportLabel" destination="0E8-cf-CxM" id="eRn-cT-Zcg"/>
                         <outlet property="dateSelector" destination="kj7-wx-aJT" id="gTx-5z-6nR"/>
+                        <outlet property="shortLabelLabel" destination="Oxr-MC-zMU" id="Ldr-Am-ifd"/>
+                        <outlet property="shortLabelSwitch" destination="wkU-to-HRs" id="0tL-88-iqr"/>
                         <outlet property="throbber" destination="xd3-VC-I9g" id="ahF-1S-5TG"/>
                     </connections>
                 </viewController>
@@ -139,7 +169,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="IpH-WD-sOd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="qO7-Mm-OFE"/>
                                 </constraints>
@@ -151,7 +181,7 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhp-66-lY1" userLabel="Switch Container">
-                                <rect key="frame" x="20" y="174" width="374" height="31"/>
+                                <rect key="frame" x="20" y="178" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HORIZONTAL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5N4-z6-Qg0">
                                         <rect key="frame" x="0.0" y="0.0" width="155.5" height="31"/>
@@ -195,14 +225,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUj-DP-ysA" userLabel="Keytag Display">
-                                <rect key="frame" x="20" y="213" width="374" height="600"/>
+                                <rect key="frame" x="20" y="217" width="374" height="596"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" showsHorizontalScrollIndicator="NO" maximumZoomScale="4" id="VjT-o6-3Ti">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="596"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-AQ-Hu9" customClass="LGV_UIMultipleCleantimeKeytagImageView" customModule="LGV_UICleantime">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="596"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -286,7 +316,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-Uh-ejl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="4if-ZO-fJp"/>
                                 </constraints>
@@ -298,7 +328,7 @@
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-Yg-dHX">
-                                <rect key="frame" x="20" y="174" width="374" height="31"/>
+                                <rect key="frame" x="20" y="178" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP CLOSED:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yun-JZ-gJw">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
@@ -322,10 +352,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-5X-DXL" userLabel="Keytag Container View">
-                                <rect key="frame" x="0.0" y="213" width="414" height="600"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t7q-2t-yY1" customClass="LGV_UISingleCleantimeKeytagImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="596"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
@@ -391,7 +421,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hV5-j8-5ED">
-                                <rect key="frame" x="0.0" y="44" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="hTF-Xv-wiF"/>
                                 </constraints>
@@ -403,13 +433,13 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-mE-gMX" userLabel="Medallion Display">
-                                <rect key="frame" x="20" y="174" width="374" height="639"/>
+                                <rect key="frame" x="20" y="178" width="374" height="635"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-fi-5tv">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="639"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="635"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-cY-Xxh" customClass="LGV_UICleantimeMultipleMedallionsImageView" customModule="LGV_UICleantime">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="639"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="635"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -471,17 +501,12 @@
             <point key="canvasLocation" x="382.60869565217394" y="845.75892857142856"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0E8-cf-CxM">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
-        </designable>
-    </designables>
     <resources>
         <image name="background-gradient" width="1" height="1000"/>
-        <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
+        <image name="circle.grid.3x3.fill" catalog="system" width="128" height="110"/>
         <image name="circle.square.fill" catalog="system" width="128" height="114"/>
-        <image name="square.grid.3x3.fill" catalog="system" width="128" height="112"/>
-        <image name="triangle" catalog="system" width="128" height="112"/>
+        <image name="square.grid.3x3.fill" catalog="system" width="128" height="113"/>
+        <image name="triangle" catalog="system" width="128" height="109"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
