@@ -1,3 +1,7 @@
+**2.3.0** *February 14, 2025*
+
+- Broke the multi keytag generator into a separate class.
+
 **2.2.0** *February 12, 2025*
 
 - Added the "short" parameter to the text report.

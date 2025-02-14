@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.2.0
+ Version: 2.3.0
  
  LICENSE:
  
@@ -57,47 +57,19 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
     /* ################################################################################################################################## */
     /* ################################################################## */
     /**
-     This is used to determine how far each tag in a vertical line is shifted down from the one above.
+     This is used to generate the image.
      */
-    private static let _verticalOrientationOffsetCoefficient = CGFloat(0.315)
+    private var _generator: LGV_MultiKeytagImageGenerator?
     
-    /* ################################################################## */
-    /**
-     This is used to determine how far each tag in a horizontal matrix is shifted down from the one above.
-     */
-    private static let _horizontalTopOrientationOffsetCoefficient = CGFloat(0.72)
-    
-    /* ################################################################## */
-    /**
-     This is used to determine how far each tag in a horizontal matrix is shifted sideways from the previous one.
-     */
-    private static let _horizontalSideOrientationOffsetCoefficient = CGFloat(0.75)
-    
-    /* ################################################################## */
-    /**
-     To speed things up, we cache the bodies, so we don't have to reload images.
-     The key is the image resource name.
-     */
-    private var _cachedBodyImages: [String: UIImage] = [:]
-    
-    /* ################################################################## */
-    /**
-     Contains cached drawn tags.
-     */
-    private var _cachedVerticalKeytags: UIImage?
-    
-    /* ################################################################## */
-    /**
-     Contains cached drawn tags.
-     */
-    private var _cachedHorizontalKeytags: UIImage?
-    
+    /* ################################################################################################################################## */
+    // MARK: Public Overrides
+    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This returns the dynamically-generated keytag set image.
      This needs to be implemented in the main class declaration.
      */
-    public override var generatedImage: UIImage? { _generateKeytagImages }
+    public override var generatedImage: UIImage? { _generator?.generatedImage }
 
     /* ################################################################################################################################## */
     // MARK: Open to the World
@@ -136,14 +108,71 @@ open class LGV_UIMultipleCleantimeKeytagImageView: LGV_UICleantimeImageViewBase 
 }
 
 /* ###################################################################################################################################### */
-// MARK: Private Instance Computed Properties
+// MARK: Base Class Overrides
 /* ###################################################################################################################################### */
 extension LGV_UIMultipleCleantimeKeytagImageView {
     /* ################################################################## */
     /**
+     Called when the view is laid out.
+     
+     We use this to force the images to be recreated.
+     */
+    public override func layoutSubviews() {
+        _generator = LGV_MultiKeytagImageGenerator(isVerticalStrip: keytagsAreAVerticalStrip, totalDays: totalDays, totalMonths: totalMonths, maxColumns: maxColumns)
+        super.layoutSubviews()
+    }
+}
+#endif
+
+/* ###################################################################################################################################### */
+// MARK: - Multiple Cleantime Keytag Image Generator -
+/* ###################################################################################################################################### */
+/**
+ This is specified as a separate class, so it can be used by the Watch.
+ */
+open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
+    /* ################################################################## */
+    /**
+     This is used to determine how far each tag in a vertical line is shifted down from the one above.
+     */
+    private static let _verticalOrientationOffsetCoefficient = CGFloat(0.315)
+    
+    /* ################################################################## */
+    /**
+     This is used to determine how far each tag in a horizontal matrix is shifted down from the one above.
+     */
+    private static let _horizontalTopOrientationOffsetCoefficient = CGFloat(0.72)
+    
+    /* ################################################################## */
+    /**
+     This is used to determine how far each tag in a horizontal matrix is shifted sideways from the previous one.
+     */
+    private static let _horizontalSideOrientationOffsetCoefficient = CGFloat(0.75)
+    
+    /* ################################################################## */
+    /**
+     To speed things up, we cache the bodies, so we don't have to reload images.
+     The key is the image resource name.
+     */
+    private var _cachedBodyImages: [String: UIImage] = [:]
+    
+    /* ################################################################## */
+    /**
+     Contains cached drawn tags.
+     */
+    private var _cachedVerticalKeytags: UIImage?
+    
+    /* ################################################################## */
+    /**
+     Contains cached drawn tags.
+     */
+    private var _cachedHorizontalKeytags: UIImage?
+    
+    /* ################################################################## */
+    /**
      This handles drawing all the keytags into the image.
      */
-    private var _generateKeytagImages: UIImage? { keytagsAreAVerticalStrip ? _cachedVerticalKeytags ?? _verticalKeytags : _cachedHorizontalKeytags ?? _horizontalKeytags }
+    private var _generateKeytagImages: UIImage? { isRingClosed ? _cachedHorizontalKeytags ?? _horizontalKeytags : _cachedVerticalKeytags ?? _verticalKeytags }
     
     /* ################################################################## */
     /**
@@ -153,7 +182,7 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
         #if DEBUG
             print("Drawing Vertical keytags.")
         #endif
-
+        
         if nil == _cachedVerticalKeytags,
            var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue),
            let openRingImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Open.rawValue) {
@@ -199,7 +228,7 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
                 
                 let imageWidth = (sideOffsetIncrement * CGFloat(columns - 1)) + ringImage.size.width
                 let imageHeight = (topOffsetIncrement * CGFloat(rows - 1)) + ringImage.size.height
-
+                
                 UIGraphicsBeginImageContextWithOptions(CGSize(width: imageWidth, height: imageHeight), false, 0)
                 var index = 0
                 var topOffset = CGFloat(0)
@@ -222,12 +251,7 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
         
         return _cachedHorizontalKeytags
     }
-}
-
-/* ###################################################################################################################################### */
-// MARK: Private Instance Methods
-/* ###################################################################################################################################### */
-extension LGV_UIMultipleCleantimeKeytagImageView {
+    
     /* ################################################################## */
     /**
      This draws one keytag into the given rect, in the current context.
@@ -248,22 +272,40 @@ extension LGV_UIMultipleCleantimeKeytagImageView {
             textImage.draw(in: inRect, blendMode: .normal, alpha: 1)
         }
     }
-}
-
-/* ###################################################################################################################################### */
-// MARK: Base Class Overrides
-/* ###################################################################################################################################### */
-extension LGV_UIMultipleCleantimeKeytagImageView {
+    
     /* ################################################################## */
     /**
-     Called when the view is laid out.
+     Main initializer.
      
-     We use this to force the images to be recreated.
+     - parameter isVerticalStrip: True, if the image is for a vertical strip of tags.
+     - parameter totalDays: The total number of days, represented by the keytag.
+     - parameter totalMonths: The total number of months, represented by the keytag.
+     - parameter maxColumns: The maximum number of horizontal columns. Optional. Default is 8.
      */
-    public override func layoutSubviews() {
+    public init(isVerticalStrip inIsVerticalStrip: Bool, totalDays inTotalDays: Int, totalMonths inTotalMonths: Int, maxColumns inMaxColumns: Int = 8) {
+        super.init(isRingClosed: !inIsVerticalStrip, totalDays: inTotalDays, totalMonths: inTotalMonths)
+        maxColumns = inMaxColumns
+    }
+
+    /* ################################################################## */
+    /**
+     This is the maximum number of columns to display. Its default is 8.
+     If it is changed, the cached image is deleted, forcing a recalculation.
+     */
+    public var maxColumns: Int = 8 { didSet { resetCache() } }
+    
+    /* ################################################################## */
+    /**
+     This returns a dynamically-generated keytag image.
+     This needs to be implemented in the main class declaration.
+     */
+    override public var generatedImage: UIImage? { _generateKeytagImages }
+
+    /* ################################################################## */
+    /**
+     */
+    public func resetCache() {
         _cachedVerticalKeytags = nil
         _cachedHorizontalKeytags = nil
-        super.layoutSubviews()
     }
 }
-#endif
