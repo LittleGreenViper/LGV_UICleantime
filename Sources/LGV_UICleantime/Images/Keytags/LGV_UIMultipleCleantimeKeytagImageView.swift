@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.3.2
+ Version: 2.3.3
  
  LICENSE:
  
@@ -184,8 +184,8 @@ open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
         #endif
         
         if nil == _cachedVerticalKeytags,
-           var ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue),
-           let openRingImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Open.rawValue) {
+           var ringImage = UIImage(named: KeytagResourceNamesRing.ring_Closed.rawValue),
+           let openRingImage = UIImage(named: KeytagResourceNamesRing.ring_Open.rawValue) {
             let keytagDescriptions = LGV_CleantimeKeytagDescription.getTheFullMonty(totalDays: totalDays, totalMonths: totalMonths)
             
             var imageSize = ringImage.size

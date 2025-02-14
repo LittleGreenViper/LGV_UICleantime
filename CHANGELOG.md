@@ -1,3 +1,7 @@
+**2.3.3** *February 14, 2025*
+
+- Sigh. Now, another issue cropped up (only in Watch, of course).
+
 **2.3.2** *February 14, 2025*
 
 - Fixed yet another error in the macro.
