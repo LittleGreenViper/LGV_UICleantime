@@ -216,7 +216,7 @@ open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
         #endif
         
         if  nil == _cachedHorizontalKeytags,
-            let ringImage = UIImage(named: LGV_UISingleCleantimeKeytagImageView.KeytagResourceNamesRing.ring_Closed.rawValue) {
+            let ringImage = UIImage(named: KeytagResourceNamesRing.ring_Closed.rawValue) {
             let keytagDescriptions = LGV_CleantimeKeytagDescription.getTheFullMonty(totalDays: totalDays, totalMonths: totalMonths)
             if !keytagDescriptions.isEmpty {
                 let topOffsetIncrement = (ringImage.size.height * Self._horizontalTopOrientationOffsetCoefficient)
