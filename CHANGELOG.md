@@ -1,3 +1,7 @@
+**2.3.1** *February 14, 2025*
+
+- Fixed an error in the macro.
+
 **2.3.0** *February 14, 2025*
 
 - Broke the multi keytag generator into a separate class.
