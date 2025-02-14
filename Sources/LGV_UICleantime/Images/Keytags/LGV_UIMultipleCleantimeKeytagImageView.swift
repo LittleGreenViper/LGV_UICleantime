@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.3.1
+ Version: 2.3.2
  
  LICENSE:
  
@@ -20,11 +20,10 @@
  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import Foundation
 import LGV_Cleantime
-#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 import UIKit
 
+#if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
 // MARK: - Cleantime Keytag Display View -
 /* ###################################################################################################################################### */

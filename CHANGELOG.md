@@ -1,3 +1,7 @@
+**2.3.2** *February 14, 2025*
+
+- Fixed yet another error in the macro.
+
 **2.3.1** *February 14, 2025*
 
 - Fixed an error in the macro.
