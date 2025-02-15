@@ -1,3 +1,7 @@
+**2.4.1** *February 15, 2025*
+
+- I reduced dependence on an external resource.
+
 **2.4.0** *February 15, 2025*
 
 - Added the ability to "govern" the size of keytag images.

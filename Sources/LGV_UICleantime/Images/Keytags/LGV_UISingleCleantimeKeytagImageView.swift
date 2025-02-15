@@ -22,7 +22,42 @@
 
 import LGV_Cleantime
 import UIKit
-import RVS_UIKit_Toolbox
+
+/* ###################################################################################################################################### */
+// MARK: - Internal Use Image Extension -
+/* ###################################################################################################################################### */
+fileprivate extension UIImage {
+    /* ################################################################## */
+    /**
+     This allows an image to be resized, given both a width and a height, or just one of the dimensions.
+     
+     - parameters:
+         - toNewWidth: The width (in pixels) of the desired image. If not provided, a scale will be determined from the toNewHeight parameter.
+         - toNewHeight: The height (in pixels) of the desired image. If not provided, a scale will be determined from the toNewWidth parameter.
+     
+     - returns: A new image, with the given dimensions. May be nil, if no width or height was supplied, or if there was an error.
+     */
+    func resized(toNewWidth inNewWidth: CGFloat? = nil, toNewHeight inNewHeight: CGFloat? = nil) -> UIImage? {
+        guard nil == inNewWidth,
+              nil == inNewHeight else {
+            var scaleX: CGFloat = (inNewWidth ?? size.width) / size.width
+            var scaleY: CGFloat = (inNewHeight ?? size.height) / size.height
+
+            scaleX = nil == inNewWidth ? scaleY : scaleX
+            scaleY = nil == inNewHeight ? scaleX : scaleY
+
+            let destinationSize = CGSize(width: size.width * scaleX, height: size.height * scaleY)
+            let destinationRect = CGRect(origin: .zero, size: destinationSize)
+
+            UIGraphicsBeginImageContextWithOptions(destinationSize, false, 0)
+            defer { UIGraphicsEndImageContext() }   // This makes sure that we get rid of the offscreen context.
+            draw(in: destinationRect, blendMode: .normal, alpha: 1)
+            return UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(renderingMode)
+        }
+        
+        return nil
+    }
+}
 
 #if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */

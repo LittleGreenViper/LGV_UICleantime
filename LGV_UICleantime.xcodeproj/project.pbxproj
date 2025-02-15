@@ -29,7 +29,6 @@
 		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
 		D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1D27F9189800FBB7D3 /* Localizable.strings */; };
 		D4C79A2527F91D2700FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */; };
-		D4F07C942D61339200C8D1DD /* RVS_UIKit_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4F07C932D61339200C8D1DD /* RVS_UIKit_Toolbox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +84,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48BEDA32846E48A00A99B0D /* RVS_GeneralObserver in Frameworks */,
-				D4F07C942D61339200C8D1DD /* RVS_UIKit_Toolbox in Frameworks */,
 				D48BEDA12846E48A00A99B0D /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +291,6 @@
 			packageProductDependencies = (
 				D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */,
 				D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */,
-				D4F07C932D61339200C8D1DD /* RVS_UIKit_Toolbox */,
 			);
 			productName = LGV_UICleantime;
 			productReference = D47C71C32846E38200530CDA /* LGV_UICleantime.a */;
@@ -330,7 +327,6 @@
 				D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
 				D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */,
 				D42759352B4A451500A540F2 /* XCRemoteSwiftPackageReference "LGV_Cleantime" */,
-				D4F07C922D61339200C8D1DD /* XCRemoteSwiftPackageReference "RVS_UIKit_Toolbox" */,
 			);
 			productRefGroup = D43C667E2694AA88007D5883;
 			projectDirPath = "";
@@ -726,14 +722,6 @@
 				minimumVersion = 1.1.2;
 			};
 		};
-		D4F07C922D61339200C8D1DD /* XCRemoteSwiftPackageReference "RVS_UIKit_Toolbox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RiftValleySoftware/RVS_UIKit_Toolbox";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -761,11 +749,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
 			productName = RVS_GeneralObserver;
-		};
-		D4F07C932D61339200C8D1DD /* RVS_UIKit_Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D4F07C922D61339200C8D1DD /* XCRemoteSwiftPackageReference "RVS_UIKit_Toolbox" */;
-			productName = RVS_UIKit_Toolbox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
