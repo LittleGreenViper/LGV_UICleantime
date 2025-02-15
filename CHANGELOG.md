@@ -1,3 +1,7 @@
+**2.4.0** *February 15, 2025*
+
+- Added the ability to "govern" the size of keytag images.
+
 **2.3.3** *February 14, 2025*
 
 - Sigh. Now, another issue cropped up (only in Watch, of course).

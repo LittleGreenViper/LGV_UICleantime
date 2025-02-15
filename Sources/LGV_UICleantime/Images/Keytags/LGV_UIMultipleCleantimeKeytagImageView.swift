@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.3.3
+ Version: 2.4.0
  
  LICENSE:
  
@@ -281,9 +281,15 @@ open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
      - parameter totalDays: The total number of days, represented by the keytag.
      - parameter totalMonths: The total number of months, represented by the keytag.
      - parameter maxColumns: The maximum number of horizontal columns. Optional. Default is 8.
+     - parameter widestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
      */
-    public init(isVerticalStrip inIsVerticalStrip: Bool, totalDays inTotalDays: Int, totalMonths inTotalMonths: Int, maxColumns inMaxColumns: Int = 8) {
-        super.init(isRingClosed: !inIsVerticalStrip, totalDays: inTotalDays, totalMonths: inTotalMonths)
+    public init(isVerticalStrip inIsVerticalStrip: Bool,
+                totalDays inTotalDays: Int,
+                totalMonths inTotalMonths: Int,
+                maxColumns inMaxColumns: Int = 8,
+                widestKeytagImageInDisplayUnits inWidestKeytagImageInDisplayUnits: CGFloat = -1
+    ) {
+        super.init(isRingClosed: !inIsVerticalStrip, totalDays: inTotalDays, totalMonths: inTotalMonths, widestKeytagImageInDisplayUnits: inWidestKeytagImageInDisplayUnits)
         maxColumns = inMaxColumns
     }
 

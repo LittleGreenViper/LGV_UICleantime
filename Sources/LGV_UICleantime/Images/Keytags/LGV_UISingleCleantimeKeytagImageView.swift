@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.3.3
+ Version: 2.4.0
  
  LICENSE:
  
@@ -22,6 +22,7 @@
 
 import LGV_Cleantime
 import UIKit
+import RVS_UIKit_Toolbox
 
 #if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
 /* ###################################################################################################################################### */
@@ -142,6 +143,12 @@ open class LGV_KeytagImageGenerator {
 
     /* ################################################################## */
     /**
+     This allows us to specify a maximum width of the keytag images.
+     */
+    private var _widestKeytagImageInDisplayUnits: CGFloat = -1
+    
+    /* ################################################################## */
+    /**
      True (default) if the ring is closed on top.
      If it is changed, the cached image is deleted, forcing a recalculation.
      */
@@ -167,10 +174,15 @@ open class LGV_KeytagImageGenerator {
      This needs to be implemented in the main class declaration.
      */
     public var generatedImage: UIImage? {
-        guard let keyTagDescription = LGV_CleantimeKeytagDescription.getLastTagThatApplies(totalDays: totalDays, totalMonths: totalMonths),
-           let bodyImage = UIImage(named: keyTagDescription.bodyImage.rawValue),
-           let textImage = UIImage(named: keyTagDescription.textImage.rawValue),
-           let ringImage = UIImage(named: (isRingClosed ? KeytagResourceNamesRing.ring_Closed : KeytagResourceNamesRing.ring_Open).rawValue) else { return nil }
+        let ringImage = UIImage(named: (isRingClosed ? KeytagResourceNamesRing.ring_Closed : KeytagResourceNamesRing.ring_Open).rawValue)
+        let imageWidth = max(ringImage?.size.width ?? 0, _widestKeytagImageInDisplayUnits)
+        
+        guard nil != ringImage,
+              let keyTagDescription = LGV_CleantimeKeytagDescription.getLastTagThatApplies(totalDays: totalDays, totalMonths: totalMonths),
+              let bodyImage = UIImage(named: keyTagDescription.bodyImage.rawValue)?.resized(toNewWidth: imageWidth),
+              let textImage = UIImage(named: keyTagDescription.textImage.rawValue)?.resized(toNewWidth: imageWidth),
+              let ringImage = UIImage(named: (isRingClosed ? KeytagResourceNamesRing.ring_Closed : KeytagResourceNamesRing.ring_Open).rawValue)?.resized(toNewWidth: imageWidth)
+        else { return nil }
         
         let imageSize = bodyImage.size
         let boundRect = CGRect(origin: .zero, size: imageSize)
@@ -192,10 +204,16 @@ open class LGV_KeytagImageGenerator {
      - parameter isRingClosed: True, if the ring is "closed."
      - parameter totalDays: The total number of days, represented by the keytag.
      - parameter totalMonths: The total number of months, represented by the keytag.
+     - parameter widestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
      */
-    public init(isRingClosed inIsRingClosed: Bool, totalDays inTotalDays: Int, totalMonths inTotalMonths: Int) {
+    public init(isRingClosed inIsRingClosed: Bool,
+                totalDays inTotalDays: Int,
+                totalMonths inTotalMonths: Int,
+                widestKeytagImageInDisplayUnits inWidestKeytagImageInDisplayUnits: CGFloat = -1
+    ) {
         isRingClosed = inIsRingClosed
         totalDays = inTotalDays
         totalMonths = inTotalMonths
+        _widestKeytagImageInDisplayUnits = inWidestKeytagImageInDisplayUnits
     }
 }
