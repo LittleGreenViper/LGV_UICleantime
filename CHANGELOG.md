@@ -1,3 +1,9 @@
+**2.4.2** *October 3, 2025*
+
+- Added a Watch support spec
+- updated the docs
+- Updated the project
+
 **2.4.1** *February 15, 2025*
 
 - I reduced dependence on an external resource.
