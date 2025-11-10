@@ -1,7 +1,7 @@
 // swift-tools-version:5.9
 
 /*
-  © Copyright 2022-2025, Little Green Viper Software Development LLC
+  © Copyright 2022-2025, Little Green Viper Software Development LLC 
  
  LICENSE:
  
@@ -36,14 +36,11 @@ let package = Package(
             targets: ["LGV_UICleantime"]
         )],
     dependencies: [
-        .package(name: "RVS_Generic_Swift_Toolbox",
-                 url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
-                 from: "1.15.7"),
-        .package(name: "RVS_GeneralObserver",
-                 url: "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git",
+        .package(url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
+                 from: "1.16.1"),
+        .package(url: "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git",
                  from: "1.1.3"),
-        .package(name: "LGV_Cleantime",
-                 url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
+        .package(url: "git@github.com:LittleGreenViper/LGV_Cleantime.git",
                  from: "1.4.5")
     ],
     targets: [
