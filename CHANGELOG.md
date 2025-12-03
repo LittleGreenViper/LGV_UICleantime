@@ -1,3 +1,7 @@
+**2.5.0** *December 3, 2025*
+
+- Added support for direct callbacks.
+
 **2.4.3** *November 10, 2025*
 
 - Tweaked the package dependency syntax.

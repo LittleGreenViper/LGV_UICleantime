@@ -51,6 +51,17 @@ class LGV_UICleantimeBaseViewController: UIViewController, LGV_UICleantimeImageV
 
     /* ################################################################## */
     /**
+     This just prints a report, on whether or not the rendering callback happened.
+    */
+    func renderingCallback(_ inImage: UIImage?) {
+        #if DEBUG
+            print("Rendering callback called.")
+            print("Image is\(nil == inImage ? " not " : " ")valid.")
+        #endif
+    }
+    
+    /* ################################################################## */
+    /**
      This will show a "busy throbber," while the images are being composited.
     */
     func showThrobber() {
@@ -105,6 +116,7 @@ class LGV_UICleantimeBaseViewController: UIViewController, LGV_UICleantimeImageV
     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        cleantime?.renderingCallback = self.renderingCallback
         cleantime?.subscribe(self)
     }
     

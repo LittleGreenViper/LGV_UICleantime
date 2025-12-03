@@ -90,6 +90,12 @@ public protocol LGV_UICleantimeImageViewBaseProtocol: RVS_GeneralObservableProto
      This returns the dynamically-generated  image.
      */
     var generatedImage: UIImage? { get }
+    
+    /* ################################################################## */
+    /**
+     This allows us to directly assign a rendering callback.
+     */
+    var renderingCallback: ((UIImage?) -> Void)? {get set}
 }
 
 #if os(iOS) // We don't want this around, if we will be using it in non-IOS contexts.
@@ -146,7 +152,13 @@ open class LGV_UICleantimeImageViewBase: UIImageView, LGV_UICleantimeImageViewBa
      This is a unique UUID, for use by observers.
      Do not use this, or change it.
      */
-    public var uuid: UUID = UUID()
+    public private(set) var uuid: UUID = UUID()
+    
+    /* ################################################################## */
+    /**
+     This allows us to directly assign a rendering callback.
+     */
+    public var renderingCallback: ((UIImage?) -> Void)?
     
     /* ################################################################## */
     /**
@@ -186,6 +198,7 @@ extension LGV_UICleantimeImageViewBase {
      */
     private func _newImage(_ inImage: UIImage?) {
         image = inImage // Doing this will set a redraw.
+        renderingCallback?(inImage)
         observers.forEach { ($0 as? LGV_UICleantimeImageViewObserverProtocol)?.renderingComplete(view: self) }
     }
 }
