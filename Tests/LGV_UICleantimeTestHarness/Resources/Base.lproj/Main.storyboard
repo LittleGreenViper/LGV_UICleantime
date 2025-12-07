@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NfT-p7-QCK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NfT-p7-QCK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -48,7 +48,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-wx-aJT">
-                                <rect key="frame" x="0.0" y="96" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="OLc-p7-1aj"/>
                                 </constraints>
@@ -60,7 +60,7 @@
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2yv-Hs-XNZ">
-                                <rect key="frame" x="0.0" y="226" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="178" width="414" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHORT:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-MC-zMU">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
@@ -69,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-to-HRs">
-                                        <rect key="frame" x="217" y="1.5" width="199" height="28"/>
+                                        <rect key="frame" x="217" y="0.0" width="199" height="31"/>
                                         <connections>
                                             <action selector="shortLabelSwitchHit:" destination="BYZ-38-t0r" eventType="valueChanged" id="LPP-Cy-3uQ"/>
                                         </connections>
@@ -84,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E8-cf-CxM" customClass="LGV_UICleantimeDisplayTextLabel" customModule="LGV_UICleantime">
-                                <rect key="frame" x="20" y="257" width="374" height="90"/>
+                                <rect key="frame" x="20" y="209" width="374" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" placeholder="YES" id="ddz-nQ-kQn"/>
                                 </constraints>
@@ -93,10 +93,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-HZ-3EB">
-                                <rect key="frame" x="0.0" y="355" width="414" height="424"/>
+                                <rect key="frame" x="0.0" y="307" width="414" height="506"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-py-38B" customClass="LGV_UISingleCleantimeMedallionImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="83" y="88" width="248" height="248"/>
+                                        <rect key="frame" x="83" y="129" width="248" height="248"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bsA-py-38B" secondAttribute="height" multiplier="1:1" id="3Ch-DM-wJc"/>
                                         </constraints>
@@ -169,7 +169,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="IpH-WD-sOd">
-                                <rect key="frame" x="0.0" y="96" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="qO7-Mm-OFE"/>
                                 </constraints>
@@ -181,24 +181,25 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhp-66-lY1" userLabel="Switch Container">
-                                <rect key="frame" x="20" y="226" width="374" height="31"/>
+                                <rect key="frame" x="20" y="178" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HORIZONTAL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5N4-z6-Qg0">
-                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="31"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERTICAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzr-Jy-paZ">
-                                        <rect key="frame" x="225.5" y="0.0" width="148.5" height="31"/>
+                                        <rect key="frame" x="218.5" y="0.0" width="155.5" height="31"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-MG-1MW">
-                                        <rect key="frame" x="156.5" y="0.0" width="63" height="31"/>
+                                        <rect key="frame" x="163.5" y="0.0" width="49" height="31"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="Cq1-mf-J5v"/>
                                             <constraint firstAttribute="height" constant="31" id="cHo-oD-uBh"/>
                                         </constraints>
                                         <color key="onTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.01" colorSpace="custom" customColorSpace="sRGB"/>
@@ -224,14 +225,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUj-DP-ysA" userLabel="Keytag Display">
-                                <rect key="frame" x="20" y="265" width="374" height="514"/>
+                                <rect key="frame" x="20" y="217" width="374" height="596"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" showsHorizontalScrollIndicator="NO" maximumZoomScale="4" id="VjT-o6-3Ti">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="514"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="596"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-AQ-Hu9" customClass="LGV_UIMultipleCleantimeKeytagImageView" customModule="LGV_UICleantime">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="514"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="596"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -315,7 +316,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-Uh-ejl">
-                                <rect key="frame" x="0.0" y="96" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="4if-ZO-fJp"/>
                                 </constraints>
@@ -327,7 +328,7 @@
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-Yg-dHX">
-                                <rect key="frame" x="20" y="226" width="374" height="31"/>
+                                <rect key="frame" x="20" y="178" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP CLOSED:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yun-JZ-gJw">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
@@ -336,7 +337,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoR-mo-une">
-                                        <rect key="frame" x="197" y="1.5" width="179" height="28"/>
+                                        <rect key="frame" x="197" y="0.0" width="179" height="31"/>
                                         <connections>
                                             <action selector="switchChanged:" destination="dlN-Op-hEN" eventType="valueChanged" id="5me-wr-eIl"/>
                                         </connections>
@@ -351,10 +352,10 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-5X-DXL" userLabel="Keytag Container View">
-                                <rect key="frame" x="0.0" y="265" width="414" height="514"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t7q-2t-yY1" customClass="LGV_UISingleCleantimeKeytagImageView" customModule="LGV_UICleantime">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="514"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="596"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
@@ -420,7 +421,7 @@
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hV5-j8-5ED">
-                                <rect key="frame" x="0.0" y="96" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="hTF-Xv-wiF"/>
                                 </constraints>
@@ -432,13 +433,13 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-mE-gMX" userLabel="Medallion Display">
-                                <rect key="frame" x="20" y="226" width="374" height="553"/>
+                                <rect key="frame" x="20" y="178" width="374" height="635"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-fi-5tv">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="553"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="635"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-cY-Xxh" customClass="LGV_UICleantimeMultipleMedallionsImageView" customModule="LGV_UICleantime">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="553"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="635"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -513,7 +514,7 @@
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
