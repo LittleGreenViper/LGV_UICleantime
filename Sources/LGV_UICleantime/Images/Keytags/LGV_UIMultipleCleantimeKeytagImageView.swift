@@ -1,7 +1,7 @@
 /*
   © Copyright 2022-2025, Little Green Viper Software Development LLC
  
- Version: 2.4.3
+ Version: 2.5.1
  
  LICENSE:
  
@@ -260,6 +260,7 @@ open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
      - parameter in: The rect in which to draw the image. It should be the size of the entire keytag.
      */
     private func _drawAKeytagImage(for inDescription: LGV_CleantimeKeytagDescription, putARingOnIt inRingImage: UIImage?, in inRect: CGRect) {
+        if Task.isCancelled { return }
         if let ringImage = inRingImage,
            let bodyImage = _cachedBodyImages[inDescription.bodyImage.rawValue] ?? UIImage(named: inDescription.bodyImage.rawValue),
            let textImage = UIImage(named: inDescription.textImage.rawValue) {

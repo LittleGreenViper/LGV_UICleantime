@@ -1,3 +1,7 @@
+**2.5.1** *December 7, 2025*
+
+Added support for fast task cancellation.
+
 **2.5.0** *December 3, 2025*
 
 - Added support for direct callbacks.
