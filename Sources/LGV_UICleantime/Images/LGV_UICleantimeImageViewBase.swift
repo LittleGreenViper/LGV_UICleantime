@@ -47,7 +47,7 @@ public protocol LGV_UICleantimeImageViewObserverProtocol: RVS_GeneralObserverSub
     /**
      This is called when the images have completed rendering.
      
-     - parameter view: The completed UIImageView
+     - parameter inImageView: The completed UIImageView
      */
     func renderingComplete(view inImageView: LGV_UICleantimeImageViewBase)
 }

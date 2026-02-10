@@ -1,5 +1,7 @@
 # ``LGV_UICleantime``
 
+![](icon.png)
+
 This is a set of methods and resources that will produce a UIKit UILabel, containing a localizable description of a span of cleantime, or UIKit UIImages, representing keytags or medallions (standard medallions).
 
 ## Overview

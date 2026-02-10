@@ -277,11 +277,11 @@ open class LGV_MultiKeytagImageGenerator: LGV_KeytagImageGenerator {
     /**
      Main initializer.
      
-     - parameter isVerticalStrip: True, if the image is for a vertical strip of tags.
-     - parameter totalDays: The total number of days, represented by the keytag.
-     - parameter totalMonths: The total number of months, represented by the keytag.
-     - parameter maxColumns: The maximum number of horizontal columns. Optional. Default is 8.
-     - parameter widestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
+     - parameter inIsVerticalStrip: True, if the image is for a vertical strip of tags.
+     - parameter inTotalDays: The total number of days, represented by the keytag.
+     - parameter inTotalMonths: The total number of months, represented by the keytag.
+     - parameter inMaxColumns: The maximum number of horizontal columns. Optional. Default is 8.
+     - parameter inWidestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
      */
     public init(isVerticalStrip inIsVerticalStrip: Bool,
                 totalDays inTotalDays: Int,

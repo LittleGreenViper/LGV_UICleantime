@@ -236,10 +236,10 @@ open class LGV_KeytagImageGenerator {
     /**
      Main initializer.
      
-     - parameter isRingClosed: True, if the ring is "closed."
-     - parameter totalDays: The total number of days, represented by the keytag.
-     - parameter totalMonths: The total number of months, represented by the keytag.
-     - parameter widestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
+     - parameter inIsRingClosed: True, if the ring is "closed."
+     - parameter inTotalDays: The total number of days, represented by the keytag.
+     - parameter inTotalMonths: The total number of months, represented by the keytag.
+     - parameter inWidestKeytagImageInDisplayUnits: This allows us to "govern" the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.
      */
     public init(isRingClosed inIsRingClosed: Bool,
                 totalDays inTotalDays: Int,

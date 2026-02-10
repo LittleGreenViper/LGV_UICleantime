@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LGV_UICleantimeImageViewBase Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/LGV_UICleantimeImageViewBase" class="dashAnchor"></a>
+
+    <a title="LGV_UICleantimeImageViewBase Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          LGV_UICleantime Doumentation
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/LittleGreenViper/LGV_UICleantime">
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Index</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      <a class="breadcrumb" href="../Classes.html">Classes</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      LGV_UICleantime.LGV_UICleantimeImageViewBase Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_KeytagImageGenerator.html">LGV_KeytagImageGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_KeytagImageGenerator/KeytagResourceNamesRing.html">– KeytagResourceNamesRing</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_MedallionImage.html">LGV_MedallionImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_MultiKeytagImageGenerator.html">LGV_MultiKeytagImageGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UICleantimeDateReportString.html">LGV_UICleantimeDateReportString</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UICleantimeDisplayTextLabel.html">LGV_UICleantimeDisplayTextLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UICleantimeImageViewBase.html">LGV_UICleantimeImageViewBase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UICleantimeMultipleMedallionsImageView.html">LGV_UICleantimeMultipleMedallionsImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UIMultipleCleantimeKeytagImageView.html">LGV_UIMultipleCleantimeKeytagImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UISingleCleantimeKeytagImageView.html">LGV_UISingleCleantimeKeytagImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UISingleCleantimeKeytagImageView/KeytagResourceNamesRing.html">– KeytagResourceNamesRing</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LGV_UISingleCleantimeMedallionImageView.html">LGV_UISingleCleantimeMedallionImageView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LGV_UICleantimeImageViewBaseProtocol.html">LGV_UICleantimeImageViewBaseProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LGV_UICleantimeImageViewObserverProtocol.html">LGV_UICleantimeImageViewObserverProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>LGV_UICleantimeImageViewBase</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
+<span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_UICleantimeImageViewBase</span> <span class="p">:</span> <span class="kt">UIImageView</span><span class="p">,</span> <span class="kt"><a href="../Protocols/LGV_UICleantimeImageViewBaseProtocol.html">LGV_UICleantimeImageViewBaseProtocol</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This class extends <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>, and provides common functionality for the
+keytag and medallion image generators.</p>
+
+<p>The heart of the generator, is the <code>generatedImage: UIImage?</code> computed property. It will actually compose the images.</p>
+
+<p>The way to use the classes, is to treat them just like any <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a>.
+Instead of an image being externally applied, the image is generated by the view, itself.</p>
+
+<p><code>generatedImage</code> can take quite some time, so it is dispatched to a separate (but main) thread, with observers being called when it is done (and a redraw happens, anyway).</p>
+
+<p>The <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a><a href="https://developer.apple.com/documentation/uikit/uiimageview/1621069-image"><code>.image</code></a> property
+is used as a &ldquo;cache&rdquo; for the generated image, with recalculation being applied, as necessary.</p>
+
+<p>The class can be created by Interface Builder, or programmatically. There are two main inspectable properties:</p>
+
+<ul>
+<li><code>totalDays: Int</code> This is the total number of days in the cleantime being represented. This is only used by the keytag renderers.</li>
+<li><code>totalMonths: Int</code> This is the total number of months (including years), in the cleantime being represented. This is used by both keytag and medallion renderers. Medallions use only this property.</li>
+</ul>
+
+<p>This does not do an actual cleantime calculation. It leaves that to the caller.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B13ImageViewBaseC09generatedC0So7UIImageCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/generatedImage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B13ImageViewBaseC09generatedC0So7UIImageCSgvp">generatedImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the dynamically-generated image. The base class returns nil.
+This needs to be declared as an instance property (as opposed to being defined as a protocol default).
+<a href="https://littlegreenviper.com/miscellany/swiftwater/the-curious-case-of-the-protocol-default/">This is why.</a>
+This operates asynchronously, in the main thread.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Not%20Private%2C%20But%20Not%20Open%20to%20the%20World.%20RVS_GeneralObservableProtocol%20Conformance.%20These%20must%20be%20declared%20public."></a>
+                <a name="//apple_ref/swift/Section/Not Private, But Not Open to the World. RVS_GeneralObservableProtocol Conformance. These must be declared public." class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Not%20Private%2C%20But%20Not%20Open%20to%20the%20World.%20RVS_GeneralObservableProtocol%20Conformance.%20These%20must%20be%20declared%20public."></a>
+                  <h3 class="section-name"><span>Not Private, But Not Open to the World. RVS_GeneralObservableProtocol Conformance. These must be declared public.</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B13ImageViewBaseC4uuid10Foundation4UUIDVvp"></a>
+                    <a name="//apple_ref/swift/Property/uuid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B13ImageViewBaseC4uuid10Foundation4UUIDVvp">uuid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a unique UUID, for use by observers.
+Do not use this, or change it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">uuid</span><span class="p">:</span> <span class="kt">UUID</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B13ImageViewBaseC17renderingCallbackySo7UIImageCSgcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/renderingCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B13ImageViewBaseC17renderingCallbackySo7UIImageCSgcSgvp">renderingCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to directly assign a rendering callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">renderingCallback</span><span class="p">:</span> <span class="p">((</span><span class="kt">UIImage</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B13ImageViewBaseC9observersSay19RVS_GeneralObserver0g1_hI8Protocol_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/observers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B13ImageViewBaseC9observersSay19RVS_GeneralObserver0g1_hI8Protocol_pGvp">observers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is an Array of subscribers.
+Do not use this, or change it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">observers</span><span class="p">:</span> <span class="p">[</span><span class="kt">RVS_GeneralObserverProtocol</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Open%20to%20the%20World"></a>
+                <a name="//apple_ref/swift/Section/Open to the World" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Open%20to%20the%20World"></a>
+                  <h3 class="section-name"><span>Open to the World</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(py)totalDays"></a>
+                    <a name="//apple_ref/swift/Property/totalDays" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(py)totalDays">totalDays</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total number of days to display.
+If it is changed, the cached image is deleted, forcing a recalculation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">totalDays</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(py)totalMonths"></a>
+                    <a name="//apple_ref/swift/Property/totalMonths" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(py)totalMonths">totalMonths</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total number of months to display (including years).
+If it is changed, the cached image is deleted, forcing a recalculation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">totalMonths</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Base%20Class%20Overrides"></a>
+                <a name="//apple_ref/swift/Section/Base Class Overrides" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Base%20Class%20Overrides"></a>
+                  <h3 class="section-name"><span>Base Class Overrides</span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(im)layoutSubviews"></a>
+                    <a name="//apple_ref/swift/Method/layoutSubviews()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@LGV_UICleantime@objc(cs)LGV_UICleantimeImageViewBase(im)layoutSubviews">layoutSubviews()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the view is laid out.</p>
+
+<p>We use this to create the image. It starts the image drawing (asynchronously, but in the main thread).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2026-02-10)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

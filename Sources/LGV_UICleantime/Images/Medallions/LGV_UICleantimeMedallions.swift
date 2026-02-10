@@ -283,7 +283,7 @@ open class LGV_MedallionImage {
     /**
      Initializer
      
-     - parameter totalMonths: The total number of months to display (including years).
+     - parameter inTotalMonths: The total number of months to display (including years).
      */
     public init(totalMonths inTotalMonths: Int? = nil) {
         totalMonths = inTotalMonths ?? 0
@@ -408,8 +408,8 @@ public extension LGV_MedallionImage {
      This actually creates and caches the image. The date can be updated, here.
      
      - parameters:
-        - in: The bounds rect. OPTIONAL
-        - totalMonths: The total number of months represented by the medallion. OPTIONAL
+        - inBounds: The bounds rect. OPTIONAL
+        - inTotalMonths: The total number of months represented by the medallion. OPTIONAL
      */
     func drawImage(in inBounds: CGRect? = nil, totalMonths inTotalMonths: Int? = nil) -> UIImage? {
         /* ############################################################## */

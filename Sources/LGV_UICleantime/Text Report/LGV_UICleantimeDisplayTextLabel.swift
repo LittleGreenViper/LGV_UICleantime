@@ -43,9 +43,9 @@ open class LGV_UICleantimeDateReportString {
     /**
      A special static version of the generator. This should work, even if the instance method is overloaded.
      
-     - parameter beginDate: The starting date. This must be provided.
-     - parameter endDate: The ending date. If not provided, today is assumed.
-     - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
+     - parameter inBeginDate: The starting date. This must be provided.
+     - parameter inEndDate: The ending date. If not provided, today is assumed.
+     - parameter inCalendar: The calendar to use. If not provided, the current user calendar is specified.
      - returns: A String, denoting NA cleantime.
     */
     public static func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current) -> String? {
@@ -56,10 +56,10 @@ open class LGV_UICleantimeDateReportString {
     /**
      The string generator (as an instance method).
      
-     - parameter beginDate: The starting date. This must be provided.
-     - parameter endDate: The ending date. If not provided, today is assumed.
-     - parameter calendar: The calendar to use. If not provided, the current user calendar is specified.
-     - parameter short: OPTIONAL (Default false). If true, then the report is shortened.
+     - parameter inBeginDate: The starting date. This must be provided.
+     - parameter inEndDate: The ending date. If not provided, today is assumed.
+     - parameter inCalendar: The calendar to use. If not provided, the current user calendar is specified.
+     - parameter inShort: OPTIONAL (Default false). If true, then the report is shortened.
      - returns: A String, denoting NA cleantime.
     */
     open func naCleantimeText(beginDate inBeginDate: Date?, endDate inEndDate: Date?, calendar inCalendar: Calendar? = Calendar.current, short inShort: Bool = false) -> String? {

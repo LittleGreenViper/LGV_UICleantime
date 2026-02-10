@@ -25,6 +25,7 @@
 		D48BED9B2846E41F00A99B0D /* LGV_UICleantime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47C71C32846E38200530CDA /* LGV_UICleantime.a */; };
 		D48BEDA12846E48A00A99B0D /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */; };
 		D48BEDA32846E48A00A99B0D /* RVS_GeneralObserver in Frameworks */ = {isa = PBXBuildFile; productRef = D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */; };
+		D48F62632F3BEC5D0018447D /* LGV_UICleantime.docc in Sources */ = {isa = PBXBuildFile; fileRef = D42272C927A45D9C0006A828 /* LGV_UICleantime.docc */; };
 		D4BD88F1269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD88F0269E2FAA009015D1 /* LGV_UICleantimeTestHarnessKeytagsViewController.swift */; };
 		D4C79A2027F9189800FBB7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1927F9189800FBB7D3 /* LaunchScreen.storyboard */; };
 		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
@@ -307,7 +308,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 2610;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					D43C66B02694ABFF007D5883 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -397,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47C71BE2846E36A00530CDA /* LGV_UICleantimeImageViewBase.swift in Sources */,
+				D48F62632F3BEC5D0018447D /* LGV_UICleantime.docc in Sources */,
 				D47C71BF2846E36A00530CDA /* LGV_UICleantimeDisplayTextLabel.swift in Sources */,
 				D47C71C12846E36A00530CDA /* LGV_UISingleCleantimeKeytagImageView.swift in Sources */,
 				D47C71C02846E36A00530CDA /* LGV_UICleantimeMedallions.swift in Sources */,
@@ -593,7 +595,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -619,7 +621,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
