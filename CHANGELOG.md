@@ -1,3 +1,7 @@
+**2.5.6** *February 10, 2026*
+
+- Updated one more dependency (redux).
+
 **2.5.5** *February 10, 2026*
 
 - Updated one more dependency.
