@@ -1,3 +1,11 @@
+**2.5.5** *February 10, 2026*
+
+- Updated one more dependency.
+
+**2.5.4** *February 10, 2026*
+
+- Updated the various dependencies.
+
 **2.5.3** *February 10, 2026*
 
 - Updated documentation.

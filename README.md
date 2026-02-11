@@ -1,4 +1,4 @@
-![The Project Icon](icon.png)
+![The Project Icon](img/icon.png)
 
 # LGV_UICLEANTIME WIDGET
 

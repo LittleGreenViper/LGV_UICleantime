@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LGV_UISingleCleantimeMedallionImageView Class Reference</title>
+    <title>LGV_UICleantimeImageViewBaseProtocol Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/LGV_UISingleCleantimeMedallionImageView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/LGV_UICleantimeImageViewBaseProtocol" class="dashAnchor"></a>
 
-    <a title="LGV_UISingleCleantimeMedallionImageView Class Reference"></a>
+    <a title="LGV_UICleantimeImageViewBaseProtocol Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -42,11 +42,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html">Index</a>
+      <a class="breadcrumb" href="../index.html">LGV_UICleantime</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      <a class="breadcrumb" href="../Classes.html">Classes</a>
+      <a class="breadcrumb" href="../Protocols.html">Protocols</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      LGV_UICleantime.LGV_UISingleCleantimeMedallionImageView Class Reference
+      LGV_UICleantimeImageViewBaseProtocol Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -110,21 +110,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>LGV_UISingleCleantimeMedallionImageView</h1>
+            <h1>LGV_UICleantimeImageViewBaseProtocol</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
-<span class="kd">@MainActor</span>
-<span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_UISingleCleantimeMedallionImageView</span> <span class="p">:</span> <span class="kt"><a href="../Classes/LGV_UICleantimeImageViewBase.html">LGV_UICleantimeImageViewBase</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LGV_UICleantimeImageViewBaseProtocol</span> <span class="p">:</span> <span class="kt">RVS_GeneralObservableProtocol</span></code></pre>
 
                 </div>
               </div>
-            <p>This is a view class that will display a single &ldquo;cleantime&rdquo; commemoration medallion.</p>
-
-<p>The medallion is composed of two parts: A &ldquo;base,&rdquo; which is a &ldquo;blank&rdquo; medallion, and a set of Roman numerals, composed as a transparent bitmap image, over the &ldquo;base,&rdquo; in the center.</p>
-
-<p>Resizing of the Roman numerals is a dynamic process, as they need to fit within a central &ldquo;diamond.&rdquo;</p>
+            <p>This is a protocol that describes the base class. We use it to make sure that we can override the generatedImage func easily, and allows us to cast to a protocol.</p>
 
           </div>
         </section>
@@ -132,22 +126,13 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Private%20Property"></a>
-                <a name="//apple_ref/swift/Section/Private Property" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Private%20Property"></a>
-                  <h3 class="section-name"><span>Private Property</span>
-</h3>
-                </div>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15LGV_UICleantime0A36_UISingleCleantimeMedallionImageViewC09generatedF0So7UIImageCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/generatedImage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A36_UISingleCleantimeMedallionImageViewC09generatedF0So7UIImageCSgvp">generatedImage</a>
+                    <a name="/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP9totalDaysSivp"></a>
+                    <a name="//apple_ref/swift/Property/totalDays" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP9totalDaysSivp">totalDays</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -155,41 +140,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns the dynamically-generated medallion  image.
-This needs to be implemented in the main class declaration.</p>
+                        <p>The total number of days to display.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
-<span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">totalDays</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Public%20Instance%20Computed%20Properties"></a>
-                <a name="//apple_ref/swift/Section/Public Instance Computed Properties" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Public%20Instance%20Computed%20Properties"></a>
-                  <h3 class="section-name"><span>Public Instance Computed Properties</span>
-</h3>
-                </div>
-              </div>
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@LGV_UICleantime@objc(cs)LGV_UISingleCleantimeMedallionImageView(py)image"></a>
-                    <a name="//apple_ref/swift/Property/image" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@LGV_UICleantime@objc(cs)LGV_UISingleCleantimeMedallionImageView(py)image">image</a>
+                    <a name="/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP11totalMonthsSivp"></a>
+                    <a name="//apple_ref/swift/Property/totalMonths" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP11totalMonthsSivp">totalMonths</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -197,15 +167,68 @@ This needs to be implemented in the main class declaration.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns the medallion  image. It may be cached. Clearing it, reverts the image to the background image.</p>
+                        <p>The total number of months to display (including years).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
-<span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">totalMonths</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP09generatedC0So7UIImageCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/generatedImage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP09generatedC0So7UIImageCSgvp">generatedImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This returns the dynamically-generated  image.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP17renderingCallbackySo7UIImageCSgcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/renderingCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B21ImageViewBaseProtocolP17renderingCallbackySo7UIImageCSgcSgvp">renderingCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This allows us to directly assign a rendering callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">renderingCallback</span><span class="p">:</span> <span class="p">((</span><span class="kt">UIImage</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

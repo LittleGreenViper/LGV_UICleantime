@@ -11,6 +11,6 @@ jazzy  --readme ./README.md \
        --title "LGV_UICleantime Doumentation" \
        --min_acl public \
        --theme fullwidth \
-       --build-tool-arguments -scheme,"LGV_UICleantime",-target,"LGV_UICleantime"
-cp ./icon.png docs/
+       --module LGV_UICleantime \
+       --xcodebuild-arguments -project,LGV_UICleantime.xcodeproj,-scheme,LGV_UICleantime,-destination,generic/platform=iOS,CODE_SIGNING_ALLOWED=NO,CODE_SIGNING_REQUIRED=NO,CODE_SIGN_IDENTITY=
 cp ./img/* docs/img

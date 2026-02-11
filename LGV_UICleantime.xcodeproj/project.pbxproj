@@ -14,7 +14,6 @@
 		D43C66D12694AC20007D5883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43C66C82694AC20007D5883 /* Assets.xcassets */; };
 		D43C66D42694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C66CD2694AC20007D5883 /* LGV_UICleantimeTestHarnessAppDelegate.swift */; };
 		D452856B2846E0C900622DFA /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D452856A2846E0C900622DFA /* RVS_Generic_Swift_Toolbox */; };
-		D464CB812EC2A7AF00BD0481 /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D464CB802EC2A7AF00BD0481 /* LGV_Cleantime */; };
 		D47C71BE2846E36A00530CDA /* LGV_UICleantimeImageViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468D1A526A0B94B00CE8206 /* LGV_UICleantimeImageViewBase.swift */; };
 		D47C71BF2846E36A00530CDA /* LGV_UICleantimeDisplayTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46C6D63269EF14A0057A080 /* LGV_UICleantimeDisplayTextLabel.swift */; };
 		D47C71C02846E36A00530CDA /* LGV_UICleantimeMedallions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D401FAF626989C2700540C9F /* LGV_UICleantimeMedallions.swift */; };
@@ -31,6 +30,7 @@
 		D4C79A2127F9189800FBB7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1B27F9189800FBB7D3 /* Main.storyboard */; };
 		D4C79A2227F9189800FBB7D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A1D27F9189800FBB7D3 /* Localizable.strings */; };
 		D4C79A2527F91D2700FBB7D3 /* LGV_UICleantime.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C79A2327F91D2700FBB7D3 /* LGV_UICleantime.xcassets */; };
+		D4E461972F3C205300B0B33E /* LGV_Cleantime in Frameworks */ = {isa = PBXBuildFile; productRef = D4E461962F3C205300B0B33E /* LGV_Cleantime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D464CB812EC2A7AF00BD0481 /* LGV_Cleantime in Frameworks */,
+				D4E461972F3C205300B0B33E /* LGV_Cleantime in Frameworks */,
 				D48BEDA32846E48A00A99B0D /* RVS_GeneralObserver in Frameworks */,
 				D48BEDA12846E48A00A99B0D /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
@@ -294,7 +294,7 @@
 			packageProductDependencies = (
 				D48BEDA02846E48A00A99B0D /* RVS_Generic_Swift_Toolbox */,
 				D48BEDA22846E48A00A99B0D /* RVS_GeneralObserver */,
-				D464CB802EC2A7AF00BD0481 /* LGV_Cleantime */,
+				D4E461962F3C205300B0B33E /* LGV_Cleantime */,
 			);
 			productName = LGV_UICleantime;
 			productReference = D47C71C32846E38200530CDA /* LGV_UICleantime.a */;
@@ -589,13 +589,14 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = QZAZ424GRK;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/LGV_UICleantimeTestHarness/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.5.3;
+				MARKETING_VERSION = 2.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -615,13 +616,14 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = QZAZ424GRK;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/LGV_UICleantimeTestHarness/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.5.3;
+				MARKETING_VERSION = 2.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.LGV-UICleantime-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -639,14 +641,18 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -665,11 +671,11 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -716,7 +722,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.16.1;
+				minimumVersion = 1.16.4;
 			};
 		};
 		D42759352B4A451500A540F2 /* XCRemoteSwiftPackageReference "LGV_Cleantime" */ = {
@@ -724,7 +730,7 @@
 			repositoryURL = "https://github.com/LittleGreenViper/LGV_Cleantime";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.5;
+				minimumVersion = 1.4.8;
 			};
 		};
 		D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */ = {
@@ -732,7 +738,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_GeneralObserver.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.3;
+				minimumVersion = 1.1.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -748,11 +754,6 @@
 			package = D42491B52695EF270094C15F /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D464CB802EC2A7AF00BD0481 /* LGV_Cleantime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D42759352B4A451500A540F2 /* XCRemoteSwiftPackageReference "LGV_Cleantime" */;
-			productName = LGV_Cleantime;
-		};
 		D48BED992846E41800A99B0D /* RVS_GeneralObserver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
@@ -767,6 +768,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D4E6423226AB228E00CA6EE7 /* XCRemoteSwiftPackageReference "RVS_GeneralObserver" */;
 			productName = RVS_GeneralObserver;
+		};
+		D4E461962F3C205300B0B33E /* LGV_Cleantime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D42759352B4A451500A540F2 /* XCRemoteSwiftPackageReference "LGV_Cleantime" */;
+			productName = LGV_Cleantime;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

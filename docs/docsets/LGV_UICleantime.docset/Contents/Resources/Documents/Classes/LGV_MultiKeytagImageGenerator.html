@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LGV_UISingleCleantimeKeytagImageView Class Reference</title>
+    <title>LGV_MultiKeytagImageGenerator Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/LGV_UISingleCleantimeKeytagImageView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/LGV_MultiKeytagImageGenerator" class="dashAnchor"></a>
 
-    <a title="LGV_UISingleCleantimeKeytagImageView Class Reference"></a>
+    <a title="LGV_MultiKeytagImageGenerator Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -42,11 +42,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html">Index</a>
+      <a class="breadcrumb" href="../index.html">LGV_UICleantime</a>
       <img class="carat" src="../img/carat.png" alt=""/>
       <a class="breadcrumb" href="../Classes.html">Classes</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      LGV_UICleantime.LGV_UISingleCleantimeKeytagImageView Class Reference
+      LGV_MultiKeytagImageGenerator Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -110,37 +110,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>LGV_UISingleCleantimeKeytagImageView</h1>
+            <h1>LGV_MultiKeytagImageGenerator</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
-<span class="kd">@MainActor</span>
-<span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_UISingleCleantimeKeytagImageView</span> <span class="p">:</span> <span class="kt"><a href="../Classes/LGV_UICleantimeImageViewBase.html">LGV_UICleantimeImageViewBase</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_MultiKeytagImageGenerator</span> <span class="p">:</span> <span class="kt"><a href="../Classes/LGV_KeytagImageGenerator.html">LGV_KeytagImageGenerator</a></span></code></pre>
 
                 </div>
               </div>
-            <p>This is a view class that will display a single &ldquo;cleantime&rdquo; commemoration keytag, delivered as a <a href="https://developer.apple.com/documentation/uikit/uiimage"><code>UIImage</code></a>,
-which is then set into the <a href="https://developer.apple.com/documentation/uikit/uiimageview"><code>UIImageView</code></a><a href="https://developer.apple.com/documentation/uikit/uiimageview/1621069-image"><code>.image</code></a> property.</p>
-
-<p>This class uses the <a href="https://github.com/LittleGreenViper/LGV_Cleantime/blob/master/Sources/LGV_Cleantime/LGV_CleantimeKeytagDescription.swift"><code>LGV_CleantimeKeytagDescription</code></a> struct to get names for the components of the 3-layer ARGB image (transparent PNG).</p>
-
-<p>The tags are all shown with their &ldquo;backs&rdquo; visible. This eliminates the issue of dealing with the registered trademark NA logo that appears on the front of each tag.</p>
-
-<p>The tag is composed of three layers of transparent PNG:</p>
-
-<ol>
-<li>The image has a ring, on top. This can be &ldquo;open&rdquo; or &ldquo;closed.&rdquo; &ldquo;Open&rdquo; means that the top is missing, and is sized to make a &ldquo;chain&rdquo; of keytags. Default is &ldquo;closed.&rdquo;</li>
-</ol>
-
-<p>This ring is placed under the other two layers.</p>
-
-<ol>
-<li><p>The second layer is a &ldquo;body.&rdquo; This is the blank, colored keytag.</p></li>
-<li><p>The top layer is the &ldquo;text&rdquo; layer. This is rendered text for the given keytag. This is the asset that can be localized.</p></li>
-</ol>
-
-<p>All layers are the same size (the entire keytag size).</p>
+            <p>This is specified as a separate class, so it can be used by the Watch.</p>
 
           </div>
         </section>
@@ -148,22 +126,13 @@ which is then set into the <a href="https://developer.apple.com/documentation/ui
         <section class="section">
           <div class="section-content">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Cleantime%20Keytag%20Ring%20Resource%20Names"></a>
-                <a name="//apple_ref/swift/Section/Cleantime Keytag Ring Resource Names" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Cleantime%20Keytag%20Ring%20Resource%20Names"></a>
-                  <h3 class="section-name"><span>Cleantime Keytag Ring Resource Names</span>
-</h3>
-                </div>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15LGV_UICleantime0A33_UISingleCleantimeKeytagImageViewC0E17ResourceNamesRingO"></a>
-                    <a name="//apple_ref/swift/Enum/KeytagResourceNamesRing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A33_UISingleCleantimeKeytagImageViewC0E17ResourceNamesRingO">KeytagResourceNamesRing</a>
+                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC15isVerticalStrip9totalDays0J6Months10maxColumns06widestdE14InDisplayUnitsACSb_S3i14CoreFoundation7CGFloatVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(isVerticalStrip:totalDays:totalMonths:maxColumns:widestKeytagImageInDisplayUnits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC15isVerticalStrip9totalDays0J6Months10maxColumns06widestdE14InDisplayUnitsACSb_S3i14CoreFoundation7CGFloatVtcfc">init(isVerticalStrip:<wbr>totalDays:<wbr>totalMonths:<wbr>maxColumns:<wbr>widestKeytagImageInDisplayUnits:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -171,41 +140,98 @@ which is then set into the <a href="https://developer.apple.com/documentation/ui
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This enum has the names for all of the various keytag ring visual resources.
-It is string, because we use the values to get images from the bundle.</p>
+                        <p>Main initializer.</p>
 
-                        <a href="../Classes/LGV_UISingleCleantimeKeytagImageView/KeytagResourceNamesRing.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">KeytagResourceNamesRing</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">isVerticalStrip</span> <span class="nv">inIsVerticalStrip</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+            <span class="n">totalDays</span> <span class="nv">inTotalDays</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+            <span class="n">totalMonths</span> <span class="nv">inTotalMonths</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+            <span class="n"><a href="../Classes/LGV_MultiKeytagImageGenerator.html#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp">maxColumns</a></span> <span class="nv">inMaxColumns</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="n">widestKeytagImageInDisplayUnits</span> <span class="nv">inWidestKeytagImageInDisplayUnits</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inIsVerticalStrip</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>True, if the image is for a vertical strip of tags.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inTotalDays</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The total number of days, represented by the keytag.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inTotalMonths</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The total number of months, represented by the keytag.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inMaxColumns</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum number of horizontal columns. Optional. Default is 8.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inWidestKeytagImageInDisplayUnits</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>This allows us to &ldquo;govern&rdquo; the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Public%20Instance%20Property"></a>
-                <a name="//apple_ref/swift/Section/Public Instance Property" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Public%20Instance%20Property"></a>
-                  <h3 class="section-name"><span>Public Instance Property</span>
-</h3>
-                </div>
-              </div>
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@LGV_UICleantime@objc(cs)LGV_UISingleCleantimeKeytagImageView(py)isRingClosed"></a>
-                    <a name="//apple_ref/swift/Property/isRingClosed" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@LGV_UICleantime@objc(cs)LGV_UISingleCleantimeKeytagImageView(py)isRingClosed">isRingClosed</a>
+                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp"></a>
+                    <a name="//apple_ref/swift/Property/maxColumns" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp">maxColumns</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -213,7 +239,7 @@ It is string, because we use the values to get images from the bundle.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>True (default) if the ring is closed on top.
+                        <p>This is the maximum number of columns to display. Its default is 8.
 If it is changed, the cached image is deleted, forcing a recalculation.</p>
 
                       </div>
@@ -221,9 +247,7 @@ If it is changed, the cached image is deleted, forcing a recalculation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">@MainActor</span>
-<span class="kd">open</span> <span class="k">var</span> <span class="nv">isRingClosed</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxColumns</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -233,9 +257,9 @@ If it is changed, the cached image is deleted, forcing a recalculation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15LGV_UICleantime0A33_UISingleCleantimeKeytagImageViewC09generatedF0So7UIImageCSgvp"></a>
+                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC09generatedE0So7UIImageCSgvp"></a>
                     <a name="//apple_ref/swift/Property/generatedImage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A33_UISingleCleantimeKeytagImageViewC09generatedF0So7UIImageCSgvp">generatedImage</a>
+                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC09generatedE0So7UIImageCSgvp">generatedImage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -251,8 +275,33 @@ This needs to be implemented in the main class declaration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
-<span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10resetCacheyyF"></a>
+                    <a name="//apple_ref/swift/Method/resetCache()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10resetCacheyyF">resetCache()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resetCache</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>

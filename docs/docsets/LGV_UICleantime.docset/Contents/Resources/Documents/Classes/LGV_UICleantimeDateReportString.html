@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LGV_MultiKeytagImageGenerator Class Reference</title>
+    <title>LGV_UICleantimeDateReportString Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/LGV_MultiKeytagImageGenerator" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/LGV_UICleantimeDateReportString" class="dashAnchor"></a>
 
-    <a title="LGV_MultiKeytagImageGenerator Class Reference"></a>
+    <a title="LGV_UICleantimeDateReportString Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -42,11 +42,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html">Index</a>
+      <a class="breadcrumb" href="../index.html">LGV_UICleantime</a>
       <img class="carat" src="../img/carat.png" alt=""/>
       <a class="breadcrumb" href="../Classes.html">Classes</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      LGV_UICleantime.LGV_MultiKeytagImageGenerator Class Reference
+      LGV_UICleantimeDateReportString Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -110,15 +110,17 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>LGV_MultiKeytagImageGenerator</h1>
+            <h1>LGV_UICleantimeDateReportString</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_MultiKeytagImageGenerator</span> <span class="p">:</span> <span class="kt"><a href="../Classes/LGV_KeytagImageGenerator.html">LGV_KeytagImageGenerator</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">LGV_UICleantimeDateReportString</span></code></pre>
 
                 </div>
               </div>
-            <p>This is specified as a separate class, so it can be used by the Watch.</p>
+            <p>This is basically a namespace class, providing a static utility for generating a report string.</p>
+
+<p>This is declared as its own class (as opposed to a struct), so it can be subclassed.</p>
 
           </div>
         </section>
@@ -130,9 +132,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC15isVerticalStrip9totalDays0J6Months10maxColumns06widestdE14InDisplayUnitsACSb_S3i14CoreFoundation7CGFloatVtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(isVerticalStrip:totalDays:totalMonths:maxColumns:widestKeytagImageInDisplayUnits:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC15isVerticalStrip9totalDays0J6Months10maxColumns06widestdE14InDisplayUnitsACSb_S3i14CoreFoundation7CGFloatVtcfc">init(isVerticalStrip:<wbr>totalDays:<wbr>totalMonths:<wbr>maxColumns:<wbr>widestKeytagImageInDisplayUnits:<wbr>)</a>
+                    <a name="/s:15LGV_UICleantime0a1_B16DateReportStringCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B16DateReportStringCACycfc">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -140,19 +142,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Main initializer.</p>
+                        <p>This allows the class to be instantiated, so the static function can be used.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">isVerticalStrip</span> <span class="nv">inIsVerticalStrip</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
-            <span class="n">totalDays</span> <span class="nv">inTotalDays</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-            <span class="n">totalMonths</span> <span class="nv">inTotalMonths</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-            <span class="n"><a href="../Classes/LGV_MultiKeytagImageGenerator.html#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp">maxColumns</a></span> <span class="nv">inMaxColumns</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
-            <span class="n">widestKeytagImageInDisplayUnits</span> <span class="nv">inWidestKeytagImageInDisplayUnits</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15LGV_UICleantime0a1_B16DateReportStringC15naCleantimeText05beginC003endC08calendarSSSg10Foundation0C0VSg_AlI8CalendarVSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/naCleantimeText(beginDate:endDate:calendar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B16DateReportStringC15naCleantimeText05beginC003endC08calendarSSSg10Foundation0C0VSg_AlI8CalendarVSgtFZ">naCleantimeText(beginDate:<wbr>endDate:<wbr>calendar:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A special static version of the generator. This should work, even if the instance method is overloaded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">naCleantimeText</span><span class="p">(</span><span class="n">beginDate</span> <span class="nv">inBeginDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">endDate</span> <span class="nv">inEndDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -163,93 +187,45 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>inIsVerticalStrip</em>
+                                <em>inBeginDate</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>True, if the image is for a vertical strip of tags.</p>
+                                  <p>The starting date. This must be provided.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>inTotalDays</em>
+                                <em>inEndDate</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The total number of days, represented by the keytag.</p>
+                                  <p>The ending date. If not provided, today is assumed.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>inTotalMonths</em>
+                                <em>inCalendar</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The total number of months, represented by the keytag.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>inMaxColumns</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The maximum number of horizontal columns. Optional. Default is 8.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>inWidestKeytagImageInDisplayUnits</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>This allows us to &ldquo;govern&rdquo; the width of the keytags, thus, reducing the size of our images (and less memory). Optional, default is full width.</p>
+                                  <p>The calendar to use. If not provided, the current user calendar is specified.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp"></a>
-                    <a name="//apple_ref/swift/Property/maxColumns" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10maxColumnsSivp">maxColumns</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This is the maximum number of columns to display. Its default is 8.
-If it is changed, the cached image is deleted, forcing a recalculation.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxColumns</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, denoting NA cleantime.</p>
                       </div>
                     </section>
                   </div>
@@ -257,9 +233,9 @@ If it is changed, the cached image is deleted, forcing a recalculation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC09generatedE0So7UIImageCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/generatedImage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC09generatedE0So7UIImageCSgvp">generatedImage</a>
+                    <a name="/s:15LGV_UICleantime0a1_B16DateReportStringC15naCleantimeText05beginC003endC08calendar5shortSSSg10Foundation0C0VSg_AmJ8CalendarVSgSbtF"></a>
+                    <a name="//apple_ref/swift/Method/naCleantimeText(beginDate:endDate:calendar:short:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15LGV_UICleantime0a1_B16DateReportStringC15naCleantimeText05beginC003endC08calendar5shortSSSg10Foundation0C0VSg_AmJ8CalendarVSgSbtF">naCleantimeText(beginDate:<wbr>endDate:<wbr>calendar:<wbr>short:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,43 +243,75 @@ If it is changed, the cached image is deleted, forcing a recalculation.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns a dynamically-generated keytag image.
-This needs to be implemented in the main class declaration.</p>
+                        <p>The string generator (as an instance method).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">generatedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">naCleantimeText</span><span class="p">(</span><span class="n">beginDate</span> <span class="nv">inBeginDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">endDate</span> <span class="nv">inEndDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span> <span class="n">calendar</span> <span class="nv">inCalendar</span><span class="p">:</span> <span class="kt">Calendar</span><span class="p">?</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="p">,</span> <span class="n">short</span> <span class="nv">inShort</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10resetCacheyyF"></a>
-                    <a name="//apple_ref/swift/Method/resetCache()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15LGV_UICleantime0A26_MultiKeytagImageGeneratorC10resetCacheyyF">resetCache()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inBeginDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting date. This must be provided.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inEndDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ending date. If not provided, today is assumed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inCalendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The calendar to use. If not provided, the current user calendar is specified.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inShort</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>OPTIONAL (Default false). If true, then the report is shortened.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resetCache</span><span class="p">()</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A String, denoting NA cleantime.</p>
                       </div>
                     </section>
                   </div>
